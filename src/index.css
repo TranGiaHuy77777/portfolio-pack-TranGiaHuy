@@ -1,8 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-background: #08080A;
+  --color-primary: #6D5DF6;
+  --color-secondary: #9E7BFF;
+  --color-accent: #00D9FF;
+  --color-darkCard: #121216;
+  --color-darkBorder: rgba(255, 255, 255, 0.08);
+
+  --font-sora: "Sora", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --shadow-neon-glow: 0 0 20px rgba(109, 93, 246, 0.15);
+  --shadow-neon-accent: 0 0 20px rgba(0, 217, 255, 0.15);
+
+  --background-image-glow-gradient: linear-gradient(135deg, #6D5DF6 0%, #9E7BFF 50%, #00D9FF 100%);
+  --background-image-dark-gradient: linear-gradient(180deg, #0C0C0F 0%, #08080A 100%);
+}
+
+@utility glass-panel {
+  background: rgba(18, 18, 22, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@utility glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    background: rgba(18, 18, 22, 0.8);
+    border-color: rgba(109, 93, 246, 0.2);
+    box-shadow: 0 0 30px rgba(109, 93, 246, 0.05);
+  }
+}
+
+@utility glow-card {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.06), transparent 40%);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
 
 @layer base {
   body {
@@ -29,48 +82,6 @@
   background: #2D2D3B;
 }
 
-/* Custom Glassmorphism styles */
-.glass-panel {
-  background: rgba(18, 18, 22, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-panel-hover:hover {
-  background: rgba(18, 18, 22, 0.8);
-  border-color: rgba(109, 93, 246, 0.2);
-  box-shadow: 0 0 30px rgba(109, 93, 246, 0.05);
-}
-
-/* Dynamic glowing light effect */
-.glow-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.glow-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.06), transparent 40%);
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.glow-card:hover::before {
-  opacity: 1;
-}
-
 /* Keyframes and custom animations */
 @keyframes float {
   0% { transform: translateY(0px); }
@@ -91,17 +102,4 @@
   animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Hide default cursor on desktop when CustomCursor is active */
-@media (min-width: 1024px) {
-  .custom-cursor-active {
-    cursor: none;
-  }
-  .custom-cursor-active a,
-  .custom-cursor-active button,
-  .custom-cursor-active select,
-  .custom-cursor-active input,
-  .custom-cursor-active textarea,
-  .custom-cursor-active [role="button"] {
-    cursor: none;
-  }
-}
+

@@ -1,0 +1,235 @@
+{
+  "name": "Trần Gia Huy",
+  "role": "Fullstack Developer",
+  "focus": "Frontend",
+  "tagline": "Building scalable digital products with strong frontend execution and business thinking.",
+  "about": "I build real products, optimize user experience and transform business requirements into scalable technical solutions. Combining startup background and store operations experience with modern React/TypeScript engineering, I build digital products with a deep empathy for business performance and end-user satisfaction.",
+  "positioning": "Frontend-focused Fullstack Developer",
+  "stats": [
+    {
+      "value": "15+",
+      "label": "Projects Completed",
+      "description": "Successfully designed, built, and deployed high-impact digital systems."
+    },
+    {
+      "value": "100%",
+      "label": "Product Mindset",
+      "description": "Converting business requirements into scalable digital architectures."
+    },
+    {
+      "value": "60 FPS",
+      "label": "Motion Target",
+      "description": "Superfluid, GPU-friendly interfaces without compromises."
+    }
+  ],
+  "skills": {
+    "frontend": [
+      {
+        "name": "React",
+        "level": "Expert"
+      },
+      {
+        "name": "Redux",
+        "level": "Advanced"
+      },
+      {
+        "name": "TypeScript",
+        "level": "Advanced"
+      },
+      {
+        "name": "JavaScript",
+        "level": "Expert"
+      },
+      {
+        "name": "TailwindCSS",
+        "level": "Expert"
+      },
+      {
+        "name": "Bootstrap",
+        "level": "Advanced"
+      },
+      {
+        "name": "HTML5 & CSS3",
+        "level": "Expert"
+      }
+    ],
+    "backend": [
+      {
+        "name": "Java & Spring Boot",
+        "level": "Advanced"
+      },
+      {
+        "name": "Node.js",
+        "level": "Advanced"
+      },
+      {
+        "name": "Express",
+        "level": "Advanced"
+      },
+      {
+        "name": "REST APIs",
+        "level": "Expert"
+      },
+      {
+        "name": "PostgreSQL",
+        "level": "Intermediate"
+      }
+    ],
+    "tools": [
+      {
+        "name": "GitHub & Git",
+        "level": "Expert"
+      },
+      {
+        "name": "Vite",
+        "level": "Expert"
+      },
+      {
+        "name": "VS Code",
+        "level": "Expert"
+      },
+      {
+        "name": "Postman",
+        "level": "Expert"
+      },
+      {
+        "name": "Figma",
+        "level": "Advanced"
+      }
+    ],
+    "ai": [
+      {
+        "name": "Claude",
+        "level": "Expert"
+      },
+      {
+        "name": "Antigravity",
+        "level": "Expert"
+      },
+      {
+        "name": "VS Copilot",
+        "level": "Expert"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "period": "Phase 1: Operations",
+      "title": "Store Operations & Communication",
+      "description": "Managed direct store operations, interface directly with customers. Analyzed pain points in day-to-day retail workflows, customer purchasing patterns, and requirement logs."
+    },
+    {
+      "period": "Phase 2: Product Strategy",
+      "title": "Business Requirement Analyst",
+      "description": "Translated hands-on operational experience into digital specifications. Spearheaded user stories, product design strategies, and system blueprints for custom store automation tools."
+    },
+    {
+      "period": "Phase 3: Elite Engineering",
+      "title": "Frontend-Focused Developer",
+      "description": "Engineered highly optimized web applications. Focused on seamless state management, GPU-friendly animations, fluid user experience, and robust REST APIs."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Startup Operations & Automation",
+      "role": "Operations Lead & Integrator",
+      "period": "2024 - Present",
+      "highlights": [
+        "Managed physical store operational pipelines, gathering real-world user feedback.",
+        "Designed operational optimization strategies that reduced communication bottlenecks.",
+        "Built custom scripts and local applications to speed up invoice analysis."
+      ]
+    },
+    {
+      "company": "Software Development",
+      "role": "Fullstack Developer",
+      "period": "2025 - Present",
+      "highlights": [
+        "Architected scalable React applications using TypeScript and Tailwind CSS.",
+        "Built robust Java and Node.js REST endpoints with clean architecture principles.",
+        "Implemented GPU-accelerated interactive flows using Framer Motion."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "parking-building-management",
+      "title": "Smart Parking & Building Hub",
+      "subtitle": "Real-time Slot Allocation & Analytics",
+      "role": "Lead Fullstack Developer",
+      "businessGoal": "Reduce search times for open parking spots by 45%, automate ticketing systems, and optimize slot allocations during peak building hours to increase operations efficiency.",
+      "challenges": "Handling highly concurrent spot reservation requests from hundreds of users simultaneously without race conditions (double bookings), and displaying live, fluid slot status grids in the client browser.",
+      "learnings": "Mastered database pessimistic locks and Redis caching for high-speed transaction handling. Gained deep experience in real-time WebSockets communication and fluid rendering of responsive SVG grids in React.",
+      "techStack": [
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Java",
+        "Spring Boot",
+        "PostgreSQL",
+        "Redis"
+      ],
+      "downloadPath": "/projects/parking-building-management/parkingmanagerment-building.rar",
+      "github": "https://github.com/trangiahuy/parking-building-management",
+      "demo": "https://parking-hub.example.com",
+      "gallery": [
+        {
+          "type": "dashboard",
+          "image": "/projects/parking-building-management/gallery/14.png",
+          "title": "Real-time Admin Dashboard",
+          "description": "Interactive building occupancy grid, occupied vs vacant ratios, and revenue tracking metrics."
+        },
+        {
+          "type": "reservation",
+          "image": "/projects/parking-building-management/gallery/3.png",
+          "title": "Resident & Visitor Portal",
+          "description": "Dynamic slot reservation maps, license plate scanning simulation, and automatic QR code generation."
+        },
+        {
+          "type": "analytics",
+          "image": "/projects/parking-building-management/gallery/12.png",
+          "title": "Monthly Reports & Analytics",
+          "description": "Peak hour trends, average park durations, monthly revenue projections, and billing history tables."
+        }
+      ]
+    },
+    {
+      "id": "storeops-ai",
+      "title": "StoreOps AI Management",
+      "subtitle": "Operations Optimization Portal",
+      "role": "Founder & Lead Developer",
+      "businessGoal": "Streamline store workflows, automate customer requirements parsing, and reduce daily operational overhead by 30% through an integrated intelligent dashboard.",
+      "challenges": "Converting messy, unstructured customer communications and store logs into clean, structured data categories, and managing complex application state transitions.",
+      "learnings": "Designed robust state trees using Redux Toolkit. Built AI workflows that leverage large language models to automate retail logs processing, boosting requirement analysis speed.",
+      "techStack": [
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Redux",
+        "Node.js",
+        "Express",
+        "OpenAI API"
+      ],
+      "downloadPath": "/projects/storeops-ai/source.rar",
+      "github": "https://github.com/trangiahuy/storeops-ai",
+      "demo": "https://storeops.example.com",
+      "gallery": [
+        {
+          "type": "dashboard",
+          "title": "Workflow Orchestrator",
+          "description": "Drag-and-drop store tasks pipeline, staff schedules, and real-time operations status."
+        },
+        {
+          "type": "reservation",
+          "title": "Customer Requirement Analyzer",
+          "description": "Live parsing of customer logs, sentiment indicators, and automated service ticket generation."
+        },
+        {
+          "type": "analytics",
+          "title": "Business Performance Metrics",
+          "description": "Visualizations showing operating costs reduction, staff work efficiency, and customer satisfaction logs."
+        }
+      ]
+    }
+  ]
+}
