@@ -10,6 +10,7 @@ interface Project {
   techStack: string[];
   downloadPath: string;
   github: string;
+  githubBE?: string;
   demo: string;
 }
 
@@ -60,11 +61,18 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
       />
 
       <div className="z-10 relative">
-        <div className="flex justify-between items-center mb-3">
-          <span className="text-[10px] bg-primary/10 border border-primary/20 px-2 py-0.5 rounded text-primary font-bold font-mono">
-            {project.role}
-          </span>
-          <span className="text-[10px] text-gray-500 font-mono">
+        <div className="flex justify-between items-center mb-3 gap-2">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="text-[10px] bg-primary/10 border border-primary/20 px-2 py-0.5 rounded text-primary font-bold font-mono">
+              {project.role}
+            </span>
+            {project.id === 'mumcare-platform' && (
+              <span className="text-[8px] bg-accent/20 border border-accent/30 px-1.5 py-0.5 rounded text-accent font-bold font-sora tracking-wide">
+                📱 MOBILE + 💻 WEB
+              </span>
+            )}
+          </div>
+          <span className="text-[10px] text-gray-500 font-mono flex-shrink-0">
             ID: {project.id.toUpperCase()}
           </span>
         </div>
@@ -104,26 +112,40 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
           VIEW INTERACTIVE DEMO
         </button>
 
-        <div className="grid grid-cols-2 gap-2 mt-1">
+        <div className={`grid ${project.github ? (project.githubBE ? 'grid-cols-3' : 'grid-cols-2') : 'grid-cols-1'} gap-1.5 mt-1`}>
           <a
             href={project.downloadPath}
             download
             onClick={(e) => e.stopPropagation()}
-            className="py-2 bg-[#181820] hover:bg-[#20202a] border border-white/5 text-gray-300 font-sora font-semibold text-[10px] rounded-lg flex items-center justify-center gap-1 transition-colors"
+            className="py-2 bg-[#181820] hover:bg-[#20202a] border border-white/5 text-gray-300 font-sora font-semibold text-[9px] rounded-lg flex items-center justify-center gap-1 transition-colors"
           >
             <Download size={10} />
             SOURCE (.RAR)
           </a>
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="py-2 bg-[#181820] hover:bg-[#20202a] border border-white/5 text-gray-300 font-sora font-semibold text-[10px] rounded-lg flex items-center justify-center gap-1 transition-colors"
-          >
-            <ExternalLink size={10} />
-            GITHUB
-          </a>
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="py-2 bg-[#181820] hover:bg-[#20202a] border border-white/5 text-gray-300 font-sora font-semibold text-[9px] rounded-lg flex items-center justify-center gap-1 transition-colors"
+            >
+              <ExternalLink size={10} />
+              {project.githubBE ? 'GIT FE' : 'GITHUB'}
+            </a>
+          )}
+          {project.githubBE && (
+            <a
+              href={project.githubBE}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="py-2 bg-[#181820] hover:bg-[#20202a] border border-white/5 text-gray-300 font-sora font-semibold text-[9px] rounded-lg flex items-center justify-center gap-1 transition-colors"
+            >
+              <ExternalLink size={10} />
+              GIT BE
+            </a>
+          )}
         </div>
       </div>
     </motion.div>

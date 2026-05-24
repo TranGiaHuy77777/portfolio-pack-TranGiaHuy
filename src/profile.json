@@ -170,64 +170,88 @@
         "Redis"
       ],
       "downloadPath": "/projects/parking-building-management/parkingmanagerment-building.rar",
-      "github": "https://github.com/trangiahuy/parking-building-management",
+      "github": "https://github.com/locphamxuan/ParkingManagement_FE_WDP301.git",
+      "githubBE": "https://github.com/locphamxuan/ParkingManagement_BE.git",
       "demo": "https://parking-hub.example.com",
       "gallery": [
         {
+          "type": "landing",
+          "image": "/projects/parking-building-management/gallery/landing.png",
+          "title": "Smart Parking Gateway",
+          "description": "High-impact entry portal showcasing occupancy overviews, live status trackers, and building entry diagnostics."
+        },
+        {
           "type": "dashboard",
-          "image": "/projects/parking-building-management/gallery/14.png",
-          "title": "Real-time Admin Dashboard",
-          "description": "Interactive building occupancy grid, occupied vs vacant ratios, and revenue tracking metrics."
+          "image": "/projects/parking-building-management/gallery/dashboard.png",
+          "title": "Real-time Spot Management",
+          "description": "Interactive building occupancy grid, occupied vs vacant ratios, and live status click-to-toggle console."
         },
         {
           "type": "reservation",
-          "image": "/projects/parking-building-management/gallery/3.png",
+          "image": "/projects/parking-building-management/gallery/reservation.png",
           "title": "Resident & Visitor Portal",
-          "description": "Dynamic slot reservation maps, license plate scanning simulation, and automatic QR code generation."
+          "description": "Dynamic slot reservation interface with license plate matching simulation and instant secure QR pass generation."
+        },
+        {
+          "type": "subscriptions",
+          "image": "/projects/parking-building-management/gallery/subscriptions.png",
+          "title": "RFID Subscriptions Console",
+          "description": "Manage long-term resident parking passes, billing logs, subscription tiers, and quick renewals."
         },
         {
           "type": "analytics",
-          "image": "/projects/parking-building-management/gallery/12.png",
-          "title": "Monthly Reports & Analytics",
-          "description": "Peak hour trends, average park durations, monthly revenue projections, and billing history tables."
+          "image": "/projects/parking-building-management/gallery/analytics.png",
+          "title": "Flow & Financial Analytics",
+          "description": "Visualize peak-hour load trends, average parking durations, hourly revenue targets, and predictive occupancy forecasting."
+        },
+        {
+          "type": "logs",
+          "image": "/projects/parking-building-management/gallery/13.png",
+          "title": "System Activity Log & Vehicles List",
+          "description": "Nhật ký lịch sử xe ra vào bãi đỗ, tự động nhận dạng biển số ANPR, đối chiếu hình ảnh camera an ninh."
         }
       ]
     },
     {
-      "id": "storeops-ai",
-      "title": "StoreOps AI Management",
-      "subtitle": "Operations Optimization Portal",
-      "role": "Founder & Lead Developer",
-      "businessGoal": "Streamline store workflows, automate customer requirements parsing, and reduce daily operational overhead by 30% through an integrated intelligent dashboard.",
-      "challenges": "Converting messy, unstructured customer communications and store logs into clean, structured data categories, and managing complex application state transitions.",
-      "learnings": "Designed robust state trees using Redux Toolkit. Built AI workflows that leverage large language models to automate retail logs processing, boosting requirement analysis speed.",
+      "id": "mumcare-platform",
+      "title": "MumCare Platform",
+      "subtitle": "Mother & Baby Milk Care Ecosystem (Expo React Native, React web client & Node.js server)",
+      "role": "Lead Fullstack & Mobile Developer",
+      "businessGoal": "Xây dựng hệ sinh thái mua sắm và theo dõi sức khỏe mẹ & bé toàn diện, tối ưu thời gian xử lý đơn hàng và cung cấp gợi ý dinh dưỡng cá nhân hóa thông qua ứng dụng di động và hệ thống quản trị Web.",
+      "challenges": "Đồng bộ hóa trạng thái giỏ hàng và dữ liệu sức khỏe thai kỳ thời gian thực giữa hai nền tảng (Web & Mobile app) qua Socket.io, và xử lý luồng tải ảnh/video sản phẩm dung lượng lớn thông qua Multer & Cloudinary.",
+      "learnings": "Làm chủ việc điều hướng với Expo Router và quản lý giao diện di động qua NativeWind. Thiết kế cơ sở dữ liệu MongoDB hiệu năng cao sử dụng driver gốc (Native driver) và xây dựng hệ thống gửi mail thông báo tự động bằng NodeMailer.",
       "techStack": [
+        "React Native",
+        "Expo Router",
         "React",
         "TypeScript",
-        "TailwindCSS",
-        "Redux",
         "Node.js",
         "Express",
-        "OpenAI API"
+        "MongoDB",
+        "Socket.io",
+        "TailwindCSS"
       ],
-      "downloadPath": "/projects/storeops-ai/source.rar",
-      "github": "https://github.com/trangiahuy/storeops-ai",
-      "demo": "https://storeops.example.com",
+      "downloadPath": "/projects/sdn-mma-project/SDN-MMA_project.rar",
+      "github": "",
+      "demo": "",
       "gallery": [
         {
-          "type": "dashboard",
-          "title": "Workflow Orchestrator",
-          "description": "Drag-and-drop store tasks pipeline, staff schedules, and real-time operations status."
+          "type": "shop",
+          "image": "/projects/sdn-mma-project/cover.svg",
+          "title": "Interactive Milk Storefront",
+          "description": "Giao diện cửa hàng sữa dinh dưỡng cho mẹ bầu và em bé, giả lập quy trình đặt hàng thông qua hệ thống Socket.io."
         },
         {
-          "type": "reservation",
-          "title": "Customer Requirement Analyzer",
-          "description": "Live parsing of customer logs, sentiment indicators, and automated service ticket generation."
+          "type": "milestones",
+          "image": "/projects/sdn-mma-project/cover.svg",
+          "title": "Mother & Baby Milestones Tracking (Mobile App)",
+          "description": "Giả lập ứng dụng di động React Native + Expo theo dõi tuần thai kỳ, ghi nhận lượng sữa uống hàng ngày và đưa ra lời khuyên y khoa."
         },
         {
-          "type": "analytics",
-          "title": "Business Performance Metrics",
-          "description": "Visualizations showing operating costs reduction, staff work efficiency, and customer satisfaction logs."
+          "type": "server",
+          "image": "/projects/sdn-mma-project/cover.svg",
+          "title": "Node.js Express Server Runtime Log",
+          "description": "Bảng theo dõi luồng API xử lý trên Backend, xác thực Joi Validation, truy vấn cơ sở dữ liệu MongoDB và gửi mail tự động qua NodeMailer."
         }
       ]
     }

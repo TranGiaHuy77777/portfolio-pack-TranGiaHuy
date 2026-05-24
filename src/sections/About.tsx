@@ -25,33 +25,69 @@ export default function About() {
           <div className="w-16 h-1 bg-glow-gradient rounded mt-2" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Panel: Description Copy (5 cols) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Panel: Description Copy (4 cols) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 flex flex-col gap-6 text-left"
+            className="lg:col-span-4 flex flex-col gap-6 text-left"
           >
             <h3 className="text-xl font-bold font-sora text-white">
               Why my background is your unfair advantage.
             </h3>
-            <p className="text-sm text-gray-400 font-sans leading-relaxed">
+            <p className="text-xs text-gray-400 font-sans leading-relaxed">
               Most developers only see the code tree. Having managed direct retail operations and customer relations, I see the whole commercial forest.
             </p>
-            <p className="text-sm text-gray-400 font-sans leading-relaxed">
+            <p className="text-xs text-gray-400 font-sans leading-relaxed">
               I specialize in mapping daily operational friction, customer complaints, and retail workflows into ultra-fluid, clean frontend software. I build systems that staff love to use and business owners count on to cut costs.
             </p>
             <div className="p-4 bg-white/5 border-l-2 border-primary rounded-r-xl">
-              <p className="text-xs italic text-gray-300 font-sans leading-relaxed">
+              <p className="text-[11px] italic text-gray-300 font-sans leading-relaxed">
                 "I do not just build layouts. I translate store operations metrics and customer empathy into high-performance software."
               </p>
             </div>
           </motion.div>
 
-          {/* Right Panel: Interactive Timeline Process (7 cols) */}
-          <div className="lg:col-span-7 flex flex-col gap-6 relative">
+          {/* Middle Panel: Profile Photo Card (3 cols) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-3 flex flex-col gap-4 items-center relative z-10"
+          >
+            <div className="relative group/avatar w-full aspect-[3/4] max-w-[220px] rounded-2xl overflow-hidden border border-white/10 hover:border-primary/45 transition-colors duration-500 shadow-2xl bg-[#121216]">
+              {/* Glowing background ring */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-accent/10 opacity-60 group-hover/avatar:opacity-100 transition-opacity duration-500" />
+              
+              {/* Actual Image */}
+              <img
+                src="/me.jpg"
+                alt="Trần Gia Huy"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover/avatar:scale-105"
+              />
+            </div>
+            
+            {/* Quick Status Tags */}
+            <div className="flex flex-col gap-1.5 w-full max-w-[220px] text-[9px] font-mono">
+              <div className="flex justify-between items-center bg-white/5 border border-white/5 px-2.5 py-1.5 rounded-xl">
+                <span className="text-gray-500">LOCATION</span>
+                <span className="text-white font-bold">HCMC, VN 🇻🇳</span>
+              </div>
+              <div className="flex justify-between items-center bg-white/5 border border-white/5 px-2.5 py-1.5 rounded-xl">
+                <span className="text-gray-500">STATUS</span>
+                <span className="text-green-400 font-bold flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                  ACTIVE
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Panel: Interactive Timeline Process (5 cols) */}
+          <div className="lg:col-span-5 flex flex-col gap-6 relative">
             {/* Middle connecting line */}
             <div className="absolute left-[31px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-primary via-accent to-secondary/30 hidden md:block" />
 
@@ -62,7 +98,7 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="glass-panel glass-panel-hover p-6 rounded-2xl flex flex-col md:flex-row gap-4 items-start relative z-10 text-left"
+                className="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col md:flex-row gap-4 items-start relative z-10 text-left"
               >
                 {/* Node icon indicator */}
                 <div className="w-16 h-16 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center shrink-0">
@@ -73,10 +109,10 @@ export default function About() {
                   <span className="text-[10px] font-bold font-mono tracking-wider text-accent uppercase">
                     {item.period}
                   </span>
-                  <h4 className="text-base font-bold font-sora text-white">
+                  <h4 className="text-sm font-bold font-sora text-white">
                     {item.title}
                   </h4>
-                  <p className="text-xs text-gray-400 font-sans leading-relaxed">
+                  <p className="text-[11px] text-gray-400 font-sans leading-relaxed">
                     {item.description}
                   </p>
                 </div>

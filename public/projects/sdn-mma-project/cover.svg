@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08080A" />
+      <stop offset="100%" stop-color="#0F0F16" />
+    </linearGradient>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6D5DF6" />
+      <stop offset="50%" stop-color="#9E7BFF" />
+      <stop offset="100%" stop-color="#00D9FF" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="20" fill="url(#bg)" />
+  <circle cx="400" cy="230" r="120" fill="none" stroke="url(#neon)" stroke-width="2" opacity="0.3" stroke-dasharray="10 5" />
+  <circle cx="400" cy="230" r="60" fill="none" stroke="#00D9FF" stroke-width="2.5" opacity="0.5" />
+  
+  <line x1="400" y1="230" x2="250" y2="130" stroke="#6D5DF6" stroke-width="2" opacity="0.6" />
+  <line x1="400" y1="230" x2="550" y2="130" stroke="#6D5DF6" stroke-width="2" opacity="0.6" />
+  <line x1="400" y1="230" x2="300" y2="330" stroke="#00D9FF" stroke-width="2" opacity="0.6" />
+  <line x1="400" y1="230" x2="500" y2="330" stroke="#00D9FF" stroke-width="2" opacity="0.6" />
+  
+  <circle cx="250" cy="130" r="10" fill="#6D5DF6" />
+  <circle cx="550" cy="130" r="10" fill="#6D5DF6" />
+  <circle cx="300" cy="330" r="10" fill="#00D9FF" />
+  <circle cx="500" cy="330" r="10" fill="#00D9FF" />
+  <circle cx="400" cy="230" r="18" fill="url(#neon)" />
+  
+  <text x="400" y="420" font-family="'Sora', sans-serif" font-weight="bold" font-size="28" fill="white" text-anchor="middle">SDN-MMA NETWORK HUB</text>
+  <text x="400" y="450" font-family="'Inter', sans-serif" font-size="14" fill="#9E7BFF" text-anchor="middle">SOFTWARE DEFINED NETWORK CONTROLLER</text>
+</svg>
