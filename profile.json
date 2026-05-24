@@ -1,0 +1,50 @@
+{
+  "name":"Tran Gia Huy",
+
+  "role":"Fullstack Developer",
+
+  "focus":"Frontend",
+
+  "tagline":"Building scalable digital products with strong frontend execution and business thinking.",
+
+  "skills":{
+
+    "frontend":[
+      "React",
+      "Redux",
+      "JavaScript",
+      "TypeScript",
+      "TailwindCSS",
+      "Bootstrap",
+      "HTML",
+      "CSS"
+    ],
+
+    "backend":[
+      "Java",
+      "NodeJS"
+    ],
+
+    "tools":[
+      "Github",
+      "Vite",
+      "VSCode",
+      "Postman",
+      "Figma"
+    ],
+
+    "ai":[
+      "Claude",
+      "Antigravity",
+      "Copilot",
+      "Codex"
+    ]
+  },
+
+  "experience":[
+    "Startup",
+    "Store Operations",
+    "Requirement Analysis",
+    "Communication"
+  ]
+}

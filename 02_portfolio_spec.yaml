@@ -1,0 +1,129 @@
+project:
+  type: portfolio
+
+  objective:
+    - impress_recruiters
+    - attract_clients
+    - showcase_product_mindset
+    - showcase_engineering_quality
+
+profile:
+  role: Fullstack Developer
+
+  positioning:
+    Frontend-focused
+
+branding:
+  theme: dark
+
+  mood:
+    - premium
+    - elegant
+    - modern
+
+  inspiration:
+    - apple
+    - stripe
+    - linear
+    - vercel
+
+  colors:
+    background: "#08080A"
+
+    primary: "#6D5DF6"
+
+    secondary: "#9E7BFF"
+
+    accent: "#00D9FF"
+
+layout:
+  columns: 12
+
+  max_width: 1440
+
+tech:
+  frontend:
+    - React
+    - Redux
+    - JavaScript
+    - TypeScript
+    - TailwindCSS
+    - Bootstrap
+
+  backend:
+    - Java
+    - NodeJS
+
+  tools:
+    - Github
+    - Vite
+    - VSCode
+    - Postman
+    - Figma
+
+  ai:
+    - Claude
+    - Antigravity
+    - Copilot
+    - Codex
+
+sections:
+
+  hero:
+    fullscreen: true
+
+    animation:
+      - glow
+      - stagger
+      - parallax
+
+  about:
+    style: storytelling
+
+  skills:
+    mode: interactive
+
+  projects:
+
+    priority: highest
+
+    show:
+      - gallery
+      - architecture
+      - source_download
+      - github
+
+    preview:
+      deploy_required: false
+
+      fallback:
+        - Preview Available
+        - Demo Coming Soon
+
+  experience:
+    emphasize:
+      - startup
+      - business
+      - communication
+
+  workflow:
+    animated: true
+
+  contact:
+    type: form
+
+performance:
+  fps: 60
+
+  responsive: true
+
+  seo: true
+
+  lazy_loading: true
+
+  code_splitting: true
+
+output:
+  - source_code
+  - readme
+  - folder_structure
