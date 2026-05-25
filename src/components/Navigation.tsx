@@ -63,7 +63,7 @@ export default function Navigation() {
         >
           <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 group-hover:border-primary/45 bg-[#121216] shadow-neon-glow group-hover:scale-105 transition-all duration-300 flex items-center justify-center relative">
             <img
-              src="/me.jpg"
+              src="/me.png"
               alt="H"
               className="w-full h-full object-cover"
               onError={(e) => {
