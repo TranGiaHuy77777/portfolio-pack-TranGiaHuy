@@ -35,17 +35,19 @@ export default function About() {
             className="lg:col-span-4 flex flex-col gap-6 text-left"
           >
             <h3 className="text-xl font-bold font-sora text-white">
-              Why my background is your unfair advantage.
+              Tại sao nền tảng của tôi là lợi thế vượt trội của bạn.
             </h3>
             <p className="text-xs text-gray-400 font-sans leading-relaxed">
-              Most developers only see the code tree. Having managed direct retail operations and customer relations, I see the whole commercial forest.
+              Trong khi phần lớn các nhà phát triển chỉ nhìn thấy những dòng code, kinh nghiệm thực chiến trong quản lý bán lẻ và quan hệ khách hàng cho tôi một tầm nhìn toàn diện về bức tranh thương mại.
+
+              Tôi không chỉ lập trình; tôi lắng nghe sâu sắc nhu cầu của khách hàng và các vấn đề vận hành để số hóa chúng thành giao diện phần mềm tối ưu.
             </p>
             <p className="text-xs text-gray-400 font-sans leading-relaxed">
-              I specialize in mapping daily operational friction, customer complaints, and retail workflows into ultra-fluid, clean frontend software. I build systems that staff love to use and business owners count on to cut costs.
+              Kết quả là những hệ thống giúp nhân viên thao tác dễ dàng, tối đa hóa trải nghiệm người dùng và giúp chủ doanh nghiệp cắt giảm chi phí hiệu quả.
             </p>
             <div className="p-4 bg-white/5 border-l-2 border-primary rounded-r-xl">
               <p className="text-[11px] italic text-gray-300 font-sans leading-relaxed">
-                "I do not just build layouts. I translate store operations metrics and customer empathy into high-performance software."
+                "Với tôi, viết code chỉ là bước cuối cùng. Giá trị thực sự nằm ở việc thấu hiểu mong muốn của khách hàng và chuyển hóa nó thành một sản phẩm kinh doanh hiệu quả."
               </p>
             </div>
           </motion.div>
@@ -61,7 +63,7 @@ export default function About() {
             <div className="relative group/avatar w-full aspect-[3/4] max-w-[220px] rounded-2xl overflow-hidden border border-white/10 hover:border-primary/45 transition-colors duration-500 shadow-2xl bg-[#121216]">
               {/* Glowing background ring */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-accent/10 opacity-60 group-hover/avatar:opacity-100 transition-opacity duration-500" />
-              
+
               {/* Actual Image */}
               <img
                 src="/me.jpg"
@@ -69,18 +71,18 @@ export default function About() {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover/avatar:scale-105"
               />
             </div>
-            
+
             {/* Quick Status Tags */}
             <div className="flex flex-col gap-1.5 w-full max-w-[220px] text-[9px] font-mono">
               <div className="flex justify-between items-center bg-white/5 border border-white/5 px-2.5 py-1.5 rounded-xl">
-                <span className="text-gray-500">LOCATION</span>
-                <span className="text-white font-bold">HCMC, VN 🇻🇳</span>
+                <span className="text-gray-500">Location</span>
+                <span className="text-white font-bold">TP.HCM, VN 🇻🇳</span>
               </div>
               <div className="flex justify-between items-center bg-white/5 border border-white/5 px-2.5 py-1.5 rounded-xl">
-                <span className="text-gray-500">STATUS</span>
+                <span className="text-gray-500">Status</span>
                 <span className="text-green-400 font-bold flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  ACTIVE
+                  HOẠT ĐỘNG
                 </span>
               </div>
             </div>

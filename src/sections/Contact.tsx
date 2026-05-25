@@ -192,13 +192,13 @@ export default function Contact() {
             className="lg:col-span-5 flex flex-col gap-6 text-left"
           >
             <h3 className="text-xl font-bold font-sora text-white">
-              Ready to automate your store workflows?
+              Sẵn sàng tự động hóa quy trình cửa hàng của bạn?
             </h3>
             <p className="text-sm text-gray-400 font-sans leading-relaxed">
-              If you have a digital product requirement, need custom fullstack pipelines, or want to audit your store operations overhead, send a request.
+              Nếu bạn có yêu cầu về sản phẩm kỹ thuật số, cần xây dựng các đường dẫn fullstack tùy chỉnh hoặc muốn kiểm toán chi phí vận hành cửa hàng, hãy gửi yêu cầu.
             </p>
             <p className="text-sm text-gray-400 font-sans leading-relaxed">
-              Recruiters are welcome to request specific code showcases or download specific project RAR sources directly.
+              Các nhà tuyển dụng có thể yêu cầu xem các đoạn mã nguồn cụ thể hoặc tải trực tiếp mã nguồn nén (.RAR) của dự án.
             </p>
 
             {/* Social badges links */}
@@ -242,10 +242,10 @@ export default function Contact() {
                   <Check size={28} />
                 </div>
                 <h3 className="text-xl font-bold font-sora text-white">
-                  Message Sent Successfully!
+                  Gửi tin nhắn thành công!
                 </h3>
                 <p className="text-sm text-gray-400 max-w-sm">
-                  Thank you for reaching out. I have received your requirements log and will reply back as soon as operations permit.
+                  Cảm ơn bạn đã liên hệ. Tôi đã nhận được bản ghi yêu cầu của bạn và sẽ phản hồi sớm nhất có thể.
                 </p>
                 <button
                   onClick={() => {
@@ -258,58 +258,58 @@ export default function Contact() {
                   }}
                   className="mt-4 px-4 py-2 border border-white/10 hover:border-gray-500 rounded-lg text-xs text-gray-300 hover:text-white font-medium transition-colors"
                 >
-                  Send Another Message
+                  Gửi tin nhắn khác
                 </button>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4 font-sans text-xs">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-gray-400 font-medium">FULL NAME</label>
+                    <label className="text-gray-400 font-medium">HỌ VÀ TÊN</label>
                     <input
                       type="text"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      placeholder="e.g. Recruiter Lead"
+                      placeholder="Ví dụ: Nhà tuyển dụng"
                       className="bg-black/20 border border-white/5 rounded-xl p-3 text-white focus:outline-none focus:border-primary text-xs"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-gray-400 font-medium">EMAIL ADDRESS</label>
+                    <label className="text-gray-400 font-medium">ĐỊA CHỈ EMAIL</label>
                     <input
                       type="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="e.g. recruiter@company.com"
+                      placeholder="Ví dụ: nhansuviet@congty.com"
                       className="bg-black/20 border border-white/5 rounded-xl p-3 text-white focus:outline-none focus:border-primary text-xs"
                     />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-gray-400 font-medium">PROJECT REQUIREMENT TYPE</label>
+                  <label className="text-gray-400 font-medium">PHÂN LOẠI YÊU CẦU DỰ ÁN</label>
                   <select
                     value={projectType}
                     onChange={(e) => setProjectType(e.target.value)}
                     className="bg-black/20 border border-white/5 rounded-xl p-3 text-white focus:outline-none focus:border-primary text-xs"
                   >
-                    <option value="Fullstack Development" className="bg-[#121216]">Fullstack React + Java/Node Webapp</option>
-                    <option value="Frontend Engineering" className="bg-[#121216]">Elite React / TypeScript Layout</option>
-                    <option value="Operations Optimization" className="bg-[#121216]">Store Workflow Analysis & Scripting</option>
-                    <option value="General Conversation" className="bg-[#121216]">Saying Hello / Tech Interview</option>
+                    <option value="Fullstack Development" className="bg-[#121216]">Ứng dụng Web Fullstack React + Java/Node</option>
+                    <option value="Frontend Engineering" className="bg-[#121216]">Giao diện React / TypeScript tối ưu cao</option>
+                    <option value="Operations Optimization" className="bg-[#121216]">Phân tích quy trình bán lẻ & Viết mã tự động</option>
+                    <option value="General Conversation" className="bg-[#121216]">Chào hỏi xã giao / Hẹn phỏng vấn kỹ thuật</option>
                   </select>
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-gray-400 font-medium">MESSAGE LOG DETAILS</label>
+                  <label className="text-gray-400 font-medium">NỘI DUNG CHI TIẾT TIN NHẮN</label>
                   <textarea
                     required
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows={4}
-                    placeholder="Briefly explain your business objective or job opening requirements..."
+                    placeholder="Mô tả ngắn gọn mục tiêu doanh nghiệp hoặc yêu cầu công việc tuyển dụng của bạn..."
                     className="bg-black/20 border border-white/5 rounded-xl p-3 text-white focus:outline-none focus:border-primary text-xs resize-none"
                   />
                 </div>
@@ -319,10 +319,10 @@ export default function Contact() {
                   <div className="flex justify-between items-center text-[10px]">
                     <span className="text-gray-500 font-medium flex items-center gap-1">
                       <ShieldCheck size={11} className="text-accent" />
-                      ANTI-SPAM GATEWAY
+                      CỔNG XÁC MINH CHỐNG SPAM
                     </span>
                     <span className={`font-mono font-bold ${isVerified ? 'text-green-400' : 'text-gray-500'}`}>
-                      {isVerified ? 'SECURED' : 'LOCKED'}
+                      {isVerified ? 'ĐÃ BẢO MẬT' : 'ĐANG KHÓA'}
                     </span>
                   </div>
 
@@ -340,7 +340,7 @@ export default function Contact() {
                     <span className={`text-[10px] pointer-events-none z-10 transition-colors duration-300 font-sora font-semibold ${
                       isVerified ? 'text-green-400 font-bold' : 'text-gray-400'
                     }`}>
-                      {isVerified ? 'VERIFICATION COMPLETED' : 'SLIDE RIGHT TO UNLOCK'}
+                      {isVerified ? 'XÁC MINH HOÀN TẤT' : 'KÉO SANG PHẢI ĐỂ MỞ KHÓA'}
                     </span>
 
                     {/* Floating Handle */}
@@ -374,12 +374,12 @@ export default function Contact() {
                   {submitting ? (
                     <>
                       <span className="w-4 h-4 rounded-full border-2 border-black border-t-transparent animate-spin" />
-                      TRANSMITTING LOGS...
+                      ĐANG TRUYỀN DỮ LIỆU...
                     </>
                   ) : (
                     <>
                       <Send size={14} />
-                      TRANSMIT MESSAGE
+                      GỬI TIN NHẮN LIÊN HỆ
                     </>
                   )}
                 </button>

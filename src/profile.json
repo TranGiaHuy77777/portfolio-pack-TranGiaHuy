@@ -114,19 +114,14 @@
   },
   "timeline": [
     {
-      "period": "Giai đoạn 1: Vận hành",
-      "title": "Vận hành Cửa hàng & Giao tiếp",
-      "description": "Trực tiếp quản lý vận hành cửa hàng, giao tiếp trực tiếp với khách hàng. Phân tích các điểm nghẽn trong quy trình bán lẻ hàng ngày, mô hình mua sắm của khách và ghi chép yêu cầu hệ thống."
+      "period": "Giai đoạn 1: Giao tiếp",
+      "title": "Nghiên cứu Vận hành & Trải nghiệm Thực tế",
+      "description": "Chủ động tìm tòi, học hỏi và quan sát thực tế quy trình vận hành cửa hàng cũng như hành vi mua sắm của khách hàng. Từ đó, dễ dàng nắm bắt các điểm nghẽn (pain points) trong mô hình bán lẻ, thấu hiểu tư duy kinh doanh để chuyển hóa chính xác thành các yêu cầu hệ thống."
     },
     {
       "period": "Giai đoạn 2: Chiến lược Sản phẩm",
-      "title": "Phân tích Yêu cầu Nghiệp vụ",
-      "description": "Chuyển đổi kinh nghiệm vận hành thực tế thành các đặc tả kỹ thuật số. Dẫn dắt xây dựng user story, chiến lược thiết kế sản phẩm và bản vẽ kiến trúc hệ thống cho các công cụ tự động hóa cửa hàng."
-    },
-    {
-      "period": "Giai đoạn 3: Kỹ thuật Chuyên sâu",
-      "title": "Nhà phát triển tập trung Frontend",
-      "description": "Xây dựng các ứng dụng web tối ưu hóa hiệu năng cao. Tập trung vào quản lý trạng thái mượt mà, chuyển động tăng tốc phần cứng GPU, trải nghiệm người dùng trơn tru và API REST mạnh mẽ."
+      "title": "Kiến trúc Giải pháp & Tối ưu Nghiệp vụ",
+      "description": "Đóng vai trò cầu nối chiến lược, chuyển hóa các nỗi đau (pain points) của mô hình kinh doanh thành kiến trúc phần mềm tối tân. Định hình lộ trình phát triển sản phẩm thông qua User Story chặt chẽ, tối ưu hóa quy trình tự động hóa cửa hàng để mang lại giá trị thương mại cao nhất."
     }
   ],
   "experience": [
@@ -159,9 +154,9 @@
       "subject": "SWP, WDP",
       "cover": "/projects/parking-building-management/13.png",
       "role": "Lead Fullstack Developer",
-      "businessGoal": "Reduce search times for open parking spots by 45%, automate ticketing systems, and optimize slot allocations during peak building hours to increase operations efficiency.",
-      "challenges": "Handling highly concurrent spot reservation requests from hundreds of users simultaneously without race conditions (double bookings), and displaying live, fluid slot status grids in the client browser.",
-      "learnings": "Mastered database pessimistic locks and Redis caching for high-speed transaction handling. Gained deep experience in real-time WebSockets communication and fluid rendering of responsive SVG grids in React.",
+      "businessGoal": "Giảm 45% thời gian tìm kiếm chỗ đỗ xe trống, tự động hóa hệ thống bán vé và tối ưu hóa việc phân bổ chỗ đỗ xe trong giờ cao điểm để nâng cao hiệu suất vận hành tòa nhà.",
+      "challenges": "Xử lý các yêu cầu đặt chỗ đồng thời với mật độ cực kỳ cao từ hàng trăm người dùng mà không xảy ra xung đột dữ liệu (đặt trùng lặp), và hiển thị trực quan sơ đồ trạng thái chỗ đỗ xe thời gian thực trên trình duyệt.",
+      "learnings": "Làm chủ việc sử dụng khóa bi quan (pessimistic locking) trong cơ sở dữ liệu và bộ nhớ đệm Redis để xử lý các giao dịch tốc độ cao. Có kinh nghiệm sâu sắc về giao tiếp thời gian thực WebSockets và vẽ các sơ đồ SVG phản hồi nhạy bén trong React.",
       "techStack": [
         "React",
         "TypeScript",
@@ -180,31 +175,31 @@
           "type": "landing",
           "image": "/projects/parking-building-management/gallery/1.png",
           "title": "Smart Parking Gateway",
-          "description": "High-impact entry portal showcasing occupancy overviews, live status trackers, and building entry diagnostics."
+          "description": "Cổng ra vào có tác động thị giác cao hiển thị tổng quan số lượng chỗ trống, bộ theo dõi trạng thái trực tiếp và chẩn đoán xe vào tòa nhà."
         },
         {
           "type": "dashboard",
           "image": "/projects/parking-building-management/gallery/2.png",
           "title": "Real-time Spot Management",
-          "description": "Interactive building occupancy grid, occupied vs vacant ratios, and live status click-to-toggle console."
+          "description": "Sơ đồ trạng thái đỗ xe trực quan trong tòa nhà, tỷ lệ vị trí trống/đã đỗ và bảng điều khiển bật/tắt trạng thái trực tiếp."
         },
         {
           "type": "reservation",
           "image": "/projects/parking-building-management/gallery/3.png",
           "title": "Resident & Visitor Portal",
-          "description": "Dynamic slot reservation interface with license plate matching simulation and instant secure QR pass generation."
+          "description": "Giao diện đặt chỗ đỗ xe linh hoạt cho cư dân và khách hàng, tích hợp mô phỏng nhận diện biển số xe và tạo mã QR ra vào bảo mật tức thì."
         },
         {
           "type": "subscriptions",
           "image": "/projects/parking-building-management/gallery/4.png",
           "title": "RFID Subscriptions Console",
-          "description": "Manage long-term resident parking passes, billing logs, subscription tiers, and quick renewals."
+          "description": "Quản lý thẻ đỗ xe dài hạn của cư dân, nhật ký thanh toán, các gói thuê bao và quy trình gia hạn nhanh chóng."
         },
         {
           "type": "analytics",
           "image": "/projects/parking-building-management/gallery/10.png",
           "title": "Flow & Financial Analytics",
-          "description": "Visualize peak-hour load trends, average parking durations, hourly revenue targets, and predictive occupancy forecasting."
+          "description": "Trực quan hóa xu hướng tải giờ cao điểm, thời gian đỗ xe trung bình, doanh thu mục tiêu theo giờ và dự báo tỷ lệ lấp đầy thông minh."
         },
         {
           "type": "logs",

@@ -5,39 +5,39 @@ export default function Workflow() {
   const steps = [
     {
       num: '01',
-      title: 'Research',
+      title: 'Nghiên cứu',
       icon: <Search size={20} />,
-      desc: 'Understand business landscape, study operational store pain points, gather end-user feedback.',
+      desc: 'Tìm hiểu tổng quan nghiệp vụ, nghiên cứu các điểm nghẽn vận hành của cửa hàng, thu thập phản hồi của người dùng cuối.',
     },
     {
       num: '02',
-      title: 'Analysis',
+      title: 'Phân tích',
       icon: <FileSearch size={20} />,
-      desc: 'Map workflows, detail tech constraints, design DB models, formulate clean architecture specs.',
+      desc: 'Vẽ sơ đồ quy trình công việc, chi tiết hóa các ràng buộc kỹ thuật, thiết kế mô hình CSDL, xây dựng đặc tả kiến trúc sạch.',
     },
     {
       num: '03',
-      title: 'Design',
+      title: 'Thiết kế',
       icon: <Palette size={20} />,
-      desc: 'Prototype glassmorphic layouts, draft design systems tokens, orchestrate smooth motion lines.',
+      desc: 'Thiết kế giao diện mẫu dạng kính mờ (glassmorphic), xây dựng token hệ thống thiết kế, đồng bộ hóa các đường nét chuyển động mượt mà.',
     },
     {
       num: '04',
-      title: 'Development',
+      title: 'Phát triển',
       icon: <Code size={20} />,
-      desc: 'Write robust React / TS pages, build Spring Boot API nodes, manage complex application state.',
+      desc: 'Lập trình các trang React / TS mạnh mẽ, xây dựng các nút API Spring Boot, quản lý trạng thái ứng dụng phức tạp.',
     },
     {
       num: '05',
-      title: 'Optimization',
+      title: 'Tối ưu hóa',
       icon: <Gauge size={20} />,
-      desc: 'Audit asset sizes, tune rendering pipeline to desktop 60 FPS, secure robust anti-spam gateways.',
+      desc: 'Kiểm tra dung lượng tài nguyên, tinh chỉnh luồng dựng hình đạt 60 FPS trên máy tính, bảo mật cổng chống spam mạnh mẽ.',
     },
     {
       num: '06',
-      title: 'Delivery',
+      title: 'Bàn giao',
       icon: <CheckSquare size={20} />,
-      desc: 'Package production bundles, trigger seamless Vercel/Netlify staging deployments.',
+      desc: 'Đóng gói các gói sản phẩm phân phối, kích hoạt triển khai staging tự động trên Vercel/Netlify.',
     },
   ];
 
