@@ -24,6 +24,7 @@ interface Project {
   demo: string;
   gallery: { type: string; image?: string; title: string; description: string }[];
   subject?: string;
+  cover?: string;
 }
 
 interface ProjectDetailsModalProps {

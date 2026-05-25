@@ -13,6 +13,7 @@ interface Project {
   githubBE?: string;
   demo: string;
   subject?: string;
+  cover?: string;
 }
 
 interface ProjectCardProps {
@@ -41,7 +42,7 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
     <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      className="group relative bg-[#121216]/60 backdrop-blur-md border border-white/5 hover:border-primary/20 rounded-2xl p-6 flex flex-col justify-between h-[360px] overflow-hidden transition-colors duration-300"
+      className="group relative bg-[#121216]/60 backdrop-blur-md border border-white/5 hover:border-primary/20 rounded-2xl p-6 flex flex-col justify-between h-[490px] overflow-hidden transition-colors duration-300"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -62,6 +63,19 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
       />
 
       <div className="z-10 relative">
+        {/* Cover Image */}
+        {project.cover && (
+          <div className="w-full h-32 rounded-xl overflow-hidden mb-4 border border-white/5 relative bg-black/40">
+            <img
+              src={project.cover}
+              alt={project.title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            {/* Ambient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#121216] via-transparent to-transparent opacity-80" />
+          </div>
+        )}
+
         <div className="flex justify-between items-center mb-3 gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
             <span className="text-[10px] bg-primary/10 border border-primary/20 px-2 py-0.5 rounded text-primary font-bold font-mono">
@@ -83,15 +97,15 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
           </span>
         </div>
 
-        <h3 className="text-xl font-bold font-sora text-white mb-1 group-hover:text-primary transition-colors">
+        <h3 className="text-lg font-bold font-sora text-white mb-1 group-hover:text-primary transition-colors line-clamp-1">
           {project.title}
         </h3>
-        <p className="text-xs text-gray-400 font-sans leading-relaxed mb-4">
+        <p className="text-[11px] text-gray-400 font-sans leading-relaxed mb-3 line-clamp-2 h-[34px]">
           {project.subtitle}
         </p>
 
         {/* Tech Stack items */}
-        <div className="flex flex-wrap gap-1 mb-6">
+        <div className="flex flex-wrap gap-1 mb-2">
           {project.techStack.slice(0, 4).map(tech => (
             <span
               key={tech}

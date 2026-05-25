@@ -114,40 +114,40 @@
   },
   "timeline": [
     {
-      "period": "Phase 1: Operations",
-      "title": "Store Operations & Communication",
-      "description": "Managed direct store operations, interface directly with customers. Analyzed pain points in day-to-day retail workflows, customer purchasing patterns, and requirement logs."
+      "period": "Giai đoạn 1: Vận hành",
+      "title": "Vận hành Cửa hàng & Giao tiếp",
+      "description": "Trực tiếp quản lý vận hành cửa hàng, giao tiếp trực tiếp với khách hàng. Phân tích các điểm nghẽn trong quy trình bán lẻ hàng ngày, mô hình mua sắm của khách và ghi chép yêu cầu hệ thống."
     },
     {
-      "period": "Phase 2: Product Strategy",
-      "title": "Business Requirement Analyst",
-      "description": "Translated hands-on operational experience into digital specifications. Spearheaded user stories, product design strategies, and system blueprints for custom store automation tools."
+      "period": "Giai đoạn 2: Chiến lược Sản phẩm",
+      "title": "Phân tích Yêu cầu Nghiệp vụ",
+      "description": "Chuyển đổi kinh nghiệm vận hành thực tế thành các đặc tả kỹ thuật số. Dẫn dắt xây dựng user story, chiến lược thiết kế sản phẩm và bản vẽ kiến trúc hệ thống cho các công cụ tự động hóa cửa hàng."
     },
     {
-      "period": "Phase 3: Elite Engineering",
-      "title": "Frontend-Focused Developer",
-      "description": "Engineered highly optimized web applications. Focused on seamless state management, GPU-friendly animations, fluid user experience, and robust REST APIs."
+      "period": "Giai đoạn 3: Kỹ thuật Chuyên sâu",
+      "title": "Nhà phát triển tập trung Frontend",
+      "description": "Xây dựng các ứng dụng web tối ưu hóa hiệu năng cao. Tập trung vào quản lý trạng thái mượt mà, chuyển động tăng tốc phần cứng GPU, trải nghiệm người dùng trơn tru và API REST mạnh mẽ."
     }
   ],
   "experience": [
     {
-      "company": "Startup Operations & Automation",
-      "role": "Operations Lead & Integrator",
-      "period": "2024 - Present",
+      "company": "Vận hành & Tự động hóa Startup",
+      "role": "Trưởng nhóm Vận hành & Tích hợp",
+      "period": "2024 - Hiện tại",
       "highlights": [
-        "Managed physical store operational pipelines, gathering real-world user feedback.",
-        "Designed operational optimization strategies that reduced communication bottlenecks.",
-        "Built custom scripts and local applications to speed up invoice analysis."
+        "Quản lý các luồng vận hành thực tế tại cửa hàng, thu thập phản hồi thực tế từ người dùng.",
+        "Thiết kế các chiến lược tối ưu hóa vận hành giúp giảm thiểu nghẽn giao tiếp nội bộ.",
+        "Xây dựng các đoạn mã tự động và ứng dụng nội bộ để tăng tốc độ phân tích hóa đơn bán hàng."
       ]
     },
     {
-      "company": "Software Development",
-      "role": "Fullstack Developer",
-      "period": "2025 - Present",
+      "company": "Phát triển Phần mềm",
+      "role": "Nhà phát triển Fullstack",
+      "period": "2025 - Hiện tại",
       "highlights": [
-        "Architected scalable React applications using TypeScript and Tailwind CSS.",
-        "Built robust Java and Node.js REST endpoints with clean architecture principles.",
-        "Implemented GPU-accelerated interactive flows using Framer Motion."
+        "Thiết kế kiến trúc các ứng dụng React mở rộng sử dụng TypeScript và Tailwind CSS.",
+        "Xây dựng các REST API mạnh mẽ bằng Java Spring Boot và Node.js theo nguyên lý kiến trúc sạch (Clean Architecture).",
+        "Triển khai các luồng tương tác tăng tốc phần cứng GPU sử dụng thư viện Framer Motion."
       ]
     }
   ],
@@ -157,6 +157,7 @@
       "title": "Smart Parking & Building Hub",
       "subtitle": "Real-time Slot Allocation & Analytics",
       "subject": "SWP, WDP",
+      "cover": "/projects/parking-building-management/13.png",
       "role": "Lead Fullstack Developer",
       "businessGoal": "Reduce search times for open parking spots by 45%, automate ticketing systems, and optimize slot allocations during peak building hours to increase operations efficiency.",
       "challenges": "Handling highly concurrent spot reservation requests from hundreds of users simultaneously without race conditions (double bookings), and displaying live, fluid slot status grids in the client browser.",
@@ -218,6 +219,7 @@
       "title": "MumCare Platform",
       "subtitle": "Mother & Baby Milk Care Ecosystem (Expo React Native, React web client & Node.js server)",
       "subject": "SDN, MMA",
+      "cover": "/projects/sdn-mma-project/20.png",
       "role": "Lead Fullstack & Mobile Developer",
       "businessGoal": "Xây dựng hệ sinh thái mua sắm và theo dõi sức khỏe mẹ & bé toàn diện, tối ưu thời gian xử lý đơn hàng và cung cấp gợi ý dinh dưỡng cá nhân hóa thông qua ứng dụng di động và hệ thống quản trị Web.",
       "challenges": "Đồng bộ hóa trạng thái giỏ hàng và dữ liệu sức khỏe thai kỳ thời gian thực giữa hai nền tảng (Web & Mobile app) qua Socket.io, và xử lý luồng tải ảnh/video sản phẩm dung lượng lớn thông qua Multer & Cloudinary.",
@@ -239,21 +241,27 @@
       "gallery": [
         {
           "type": "shop",
-          "image": "/projects/sdn-mma-project/cover.svg",
+          "image": "/projects/sdn-mma-project/20.png",
           "title": "Interactive Milk Storefront",
-          "description": "Giao diện cửa hàng sữa dinh dưỡng cho mẹ bầu và em bé, giả lập quy trình đặt hàng thông qua hệ thống Socket.io."
+          "description": "Giao diện cửa hàng sữa dinh dưỡng cho mẹ bầu và em bé bầu, giả lập quy trình đặt hàng thông qua hệ thống Socket.io."
         },
         {
           "type": "milestones",
-          "image": "/projects/sdn-mma-project/cover.svg",
+          "image": "/projects/sdn-mma-project/21.png",
           "title": "Mother & Baby Milestones Tracking (Mobile App)",
           "description": "Giả lập ứng dụng di động React Native + Expo theo dõi tuần thai kỳ, ghi nhận lượng sữa uống hàng ngày và đưa ra lời khuyên y khoa."
         },
         {
           "type": "server",
-          "image": "/projects/sdn-mma-project/cover.svg",
+          "image": "/projects/sdn-mma-project/23.png",
           "title": "Node.js Express Server Runtime Log",
           "description": "Bảng theo dõi luồng API xử lý trên Backend, xác thực Joi Validation, truy vấn cơ sở dữ liệu MongoDB và gửi mail tự động qua NodeMailer."
+        },
+        {
+          "type": "database",
+          "image": "/projects/sdn-mma-project/24.png",
+          "title": "MongoDB Database & Admin Console",
+          "description": "Quản lý cơ sở dữ liệu MongoDB hiệu năng cao, tối ưu hóa truy vấn dữ liệu thô và cấu trúc lưu trữ phi quan hệ."
         }
       ]
     }
