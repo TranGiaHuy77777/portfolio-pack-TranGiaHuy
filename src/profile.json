@@ -7,19 +7,19 @@
   "positioning": "Frontend-focused Fullstack Developer",
   "stats": [
     {
-      "value": "15+",
-      "label": "Projects Completed",
-      "description": "Successfully designed, built, and deployed high-impact digital systems."
+      "value": "ĐH FPT",
+      "label": "Sinh viên Đại học",
+      "description": "Chuyên ngành Kỹ thuật Phần mềm (Software Engineering)."
     },
     {
-      "value": "100%",
-      "label": "Product Mindset",
-      "description": "Converting business requirements into scalable digital architectures."
+      "value": "7.0 / 10",
+      "label": "Điểm GPA tích lũy",
+      "description": "Đánh giá năng lực tích lũy qua các môn chuyên ngành."
     },
     {
-      "value": "60 FPS",
-      "label": "Motion Target",
-      "description": "Superfluid, GPU-friendly interfaces without compromises."
+      "value": "Kì 8 / 9",
+      "label": "Hành trình đào tạo",
+      "description": "Đang thực hiện học kỳ chuyên sâu và chuẩn bị tốt nghiệp."
     }
   ],
   "skills": {
@@ -156,6 +156,7 @@
       "id": "parking-building-management",
       "title": "Smart Parking & Building Hub",
       "subtitle": "Real-time Slot Allocation & Analytics",
+      "subject": "SWP, WDP",
       "role": "Lead Fullstack Developer",
       "businessGoal": "Reduce search times for open parking spots by 45%, automate ticketing systems, and optimize slot allocations during peak building hours to increase operations efficiency.",
       "challenges": "Handling highly concurrent spot reservation requests from hundreds of users simultaneously without race conditions (double bookings), and displaying live, fluid slot status grids in the client browser.",
@@ -176,31 +177,31 @@
       "gallery": [
         {
           "type": "landing",
-          "image": "/projects/parking-building-management/gallery/landing.png",
+          "image": "/projects/parking-building-management/gallery/1.png",
           "title": "Smart Parking Gateway",
           "description": "High-impact entry portal showcasing occupancy overviews, live status trackers, and building entry diagnostics."
         },
         {
           "type": "dashboard",
-          "image": "/projects/parking-building-management/gallery/dashboard.png",
+          "image": "/projects/parking-building-management/gallery/2.png",
           "title": "Real-time Spot Management",
           "description": "Interactive building occupancy grid, occupied vs vacant ratios, and live status click-to-toggle console."
         },
         {
           "type": "reservation",
-          "image": "/projects/parking-building-management/gallery/reservation.png",
+          "image": "/projects/parking-building-management/gallery/3.png",
           "title": "Resident & Visitor Portal",
           "description": "Dynamic slot reservation interface with license plate matching simulation and instant secure QR pass generation."
         },
         {
           "type": "subscriptions",
-          "image": "/projects/parking-building-management/gallery/subscriptions.png",
+          "image": "/projects/parking-building-management/gallery/4.png",
           "title": "RFID Subscriptions Console",
           "description": "Manage long-term resident parking passes, billing logs, subscription tiers, and quick renewals."
         },
         {
           "type": "analytics",
-          "image": "/projects/parking-building-management/gallery/analytics.png",
+          "image": "/projects/parking-building-management/gallery/10.png",
           "title": "Flow & Financial Analytics",
           "description": "Visualize peak-hour load trends, average parking durations, hourly revenue targets, and predictive occupancy forecasting."
         },
@@ -216,6 +217,7 @@
       "id": "mumcare-platform",
       "title": "MumCare Platform",
       "subtitle": "Mother & Baby Milk Care Ecosystem (Expo React Native, React web client & Node.js server)",
+      "subject": "SDN, MMA",
       "role": "Lead Fullstack & Mobile Developer",
       "businessGoal": "Xây dựng hệ sinh thái mua sắm và theo dõi sức khỏe mẹ & bé toàn diện, tối ưu thời gian xử lý đơn hàng và cung cấp gợi ý dinh dưỡng cá nhân hóa thông qua ứng dụng di động và hệ thống quản trị Web.",
       "challenges": "Đồng bộ hóa trạng thái giỏ hàng và dữ liệu sức khỏe thai kỳ thời gian thực giữa hai nền tảng (Web & Mobile app) qua Socket.io, và xử lý luồng tải ảnh/video sản phẩm dung lượng lớn thông qua Multer & Cloudinary.",

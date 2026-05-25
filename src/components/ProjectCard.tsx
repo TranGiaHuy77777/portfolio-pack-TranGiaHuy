@@ -12,6 +12,7 @@ interface Project {
   github: string;
   githubBE?: string;
   demo: string;
+  subject?: string;
 }
 
 interface ProjectCardProps {
@@ -69,6 +70,11 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
             {project.id === 'mumcare-platform' && (
               <span className="text-[8px] bg-accent/20 border border-accent/30 px-1.5 py-0.5 rounded text-accent font-bold font-sora tracking-wide">
                 📱 MOBILE + 💻 WEB
+              </span>
+            )}
+            {project.subject && (
+              <span className="text-[8px] bg-purple-950/40 border border-purple-500/20 px-1.5 py-0.5 rounded text-purple-400 font-bold font-mono tracking-wider">
+                📚 MÔN: {project.subject}
               </span>
             )}
           </div>

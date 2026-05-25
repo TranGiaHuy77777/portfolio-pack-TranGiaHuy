@@ -56,7 +56,7 @@ const ARCHIVE_PROJECTS = [
 function ArchiveCabinet() {
   const [activeIndex, setActiveIndex] = useState(0);
   const cardRef = useRef<HTMLDivElement>(null);
-  
+
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -65,7 +65,7 @@ function ArchiveCabinet() {
     const { left, top } = cardRef.current.getBoundingClientRect();
     const x = e.clientX - left;
     const y = e.clientY - top;
-    
+
     mouseX.set(x);
     mouseY.set(y);
   };
@@ -155,11 +155,10 @@ function ArchiveCabinet() {
           <button
             key={proj.title}
             onClick={() => setActiveIndex(idx)}
-            className={`w-full p-2.5 rounded-xl border text-left font-sans flex items-center justify-between transition-all duration-300 cursor-pointer ${
-              activeIndex === idx
-                ? 'bg-primary/15 border-primary/45 text-white shadow-neon-glow'
-                : 'bg-[#181820]/30 border-white/5 text-gray-400 hover:bg-white/5 hover:border-white/10'
-            }`}
+            className={`w-full p-2.5 rounded-xl border text-left font-sans flex items-center justify-between transition-all duration-300 cursor-pointer ${activeIndex === idx
+              ? 'bg-primary/15 border-primary/45 text-white shadow-neon-glow'
+              : 'bg-[#181820]/30 border-white/5 text-gray-400 hover:bg-white/5 hover:border-white/10'
+              }`}
           >
             <div className="flex flex-col gap-0.5 truncate pr-2">
               <span className={`text-[10px] font-bold ${activeIndex === idx ? 'text-[#00D9FF]' : 'text-white'}`}>
@@ -167,7 +166,7 @@ function ArchiveCabinet() {
               </span>
               <span className="text-[8px] text-gray-500 font-mono truncate">{proj.role}</span>
             </div>
-            
+
             <div className="flex-shrink-0 flex items-center justify-center">
               {activeIndex === idx ? (
                 <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -196,7 +195,7 @@ export default function Projects() {
             PRODUCT EXHIBIT
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold font-sora text-white">
-            Engineering Projects as Products
+            Engineering projects are the product of WDP SWP SDN & MMA courses
           </h2>
           <p className="text-xs text-gray-400 font-sans max-w-xl mt-1 leading-relaxed">
             Every project below is presented with a deep breakdown of business goals, technical architecture challenges, and lessons learned. Click "View Interactive Demo" to simulate live workflows.

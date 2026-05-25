@@ -61,9 +61,23 @@ export default function Navigation() {
           onClick={(e) => handleLinkClick(e, '#hero')}
           className="text-xl font-bold font-sora tracking-wider text-white flex items-center gap-2 group"
         >
-          <span className="w-8 h-8 rounded-lg bg-glow-gradient flex items-center justify-center text-xs font-bold text-black font-sora shadow-neon-glow group-hover:scale-105 transition-transform duration-300">
-            H
-          </span>
+          <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 group-hover:border-primary/45 bg-[#121216] shadow-neon-glow group-hover:scale-105 transition-all duration-300 flex items-center justify-center relative">
+            <img
+              src="/me.jpg"
+              alt="H"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = 'none';
+                const parent = (e.target as HTMLElement).parentElement;
+                if (parent) {
+                  const fallback = document.createElement('span');
+                  fallback.className = "w-full h-full flex items-center justify-center text-xs font-bold text-black bg-glow-gradient font-sora";
+                  fallback.innerText = "H";
+                  parent.appendChild(fallback);
+                }
+              }}
+            />
+          </div>
           <span className="group-hover:text-primary transition-colors duration-300">
             {profileData.name.toUpperCase()}
           </span>

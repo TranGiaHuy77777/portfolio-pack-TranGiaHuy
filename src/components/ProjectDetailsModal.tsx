@@ -23,6 +23,7 @@ interface Project {
   github: string;
   demo: string;
   gallery: { type: string; image?: string; title: string; description: string }[];
+  subject?: string;
 }
 
 interface ProjectDetailsModalProps {
@@ -1024,6 +1025,11 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                   {project.id === 'mumcare-platform' && (
                     <span className="text-[9px] bg-accent/20 border border-accent/30 px-2 py-0.5 rounded-full text-accent font-bold font-sora tracking-wide">
                       📱 MOBILE APP (EXPO) + 💻 WEB SYSTEM
+                    </span>
+                  )}
+                  {project.subject && (
+                    <span className="text-[9px] bg-purple-950/40 border border-purple-500/20 px-2.5 py-0.5 rounded-full text-purple-400 font-bold font-mono tracking-wider">
+                      📚 MÔN HỌC: {project.subject}
                     </span>
                   )}
                 </div>

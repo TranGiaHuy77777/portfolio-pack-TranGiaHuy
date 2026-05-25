@@ -10,11 +10,10 @@ const GithubIcon = ({ size = 18 }: { size?: number }) => (
   </svg>
 );
 
-const LinkedinIcon = ({ size = 18 }: { size?: number }) => (
+const ZaloIcon = ({ size = 18 }: { size?: number }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    <path d="M10 8.5h4L10 15h4" strokeWidth="2.5" />
   </svg>
 );
 
@@ -76,13 +75,58 @@ export default function Contact() {
     };
   }, [isDragging, isVerified]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isVerified) return;
 
     setSubmitting(true);
-    // Simulate API upload
-    setTimeout(() => {
+
+    // CẤU HÌNH DỊCH VỤ NHẬN TIN NHẮN (BẠN CHỌN 1 TRONG CÁC CÁCH DƯỚI ĐÂY):
+    // ---------------------------------------------------------------------------------
+    // Cách 1: Sử dụng Discord Webhook (Nhận thông báo ngay trên Discord) - MIỄN PHÍ & NHANH NHẤT
+    // Bạn chỉ cần tạo Webhook trên Discord, rồi dán URL vào biến dưới đây.
+    const DISCORD_WEBHOOK_URL = ""; 
+
+    // Cách 2: Sử dụng Formspree (Nhận email trực tiếp về Gmail) - MIỄN PHÍ & DỄ DÀNG
+    // Đăng ký tài khoản free tại formspree.io, tạo form mới và dán ID form vào đây.
+    const FORMSPREE_FORM_ID = "mzdwajay";
+    // ---------------------------------------------------------------------------------
+
+    try {
+      if (DISCORD_WEBHOOK_URL) {
+        // Gửi tin nhắn dạng Rich Embed sang Discord
+        await fetch(DISCORD_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: "Portfolio Notification Bot",
+            avatar_url: "https://i.imgur.com/4M344ox.png",
+            embeds: [{
+              title: "📩 Tin Nhắn Mới Từ Portfolio!",
+              color: 3380223, // Neon Blue color
+              fields: [
+                { name: "👤 Người gửi", value: name || "Ẩn danh", inline: true },
+                { name: "✉️ Email", value: email || "Không có", inline: true },
+                { name: "🛠️ Loại dự án yêu cầu", value: projectType, inline: false },
+                { name: "📝 Nội dung chi tiết", value: message || "Không có nội dung.", inline: false }
+              ],
+              timestamp: new Date().toISOString(),
+              footer: { text: "Trần Gia Huy Portfolio" }
+            }]
+          })
+        });
+      } else if (FORMSPREE_FORM_ID) {
+        // Gửi tin nhắn qua Formspree để forward về Gmail
+        await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, projectType, message })
+        });
+      } else {
+        // Chế độ Mặc định/Giả lập: Nếu chưa cấu hình gì, hệ thống sẽ tự chạy Demo hiệu ứng trong 1.5 giây
+        await new Promise(resolve => setTimeout(resolve, 1500));
+      }
+
       setSubmitting(false);
       setSubmitted(true);
       
@@ -111,7 +155,15 @@ export default function Contact() {
         }
       };
       frame();
-    }, 1500);
+
+    } catch (error) {
+      console.error("Gửi tin nhắn thất bại:", error);
+      alert("Đã xảy ra lỗi khi kết nối máy chủ gửi tin nhắn. Hệ thống sẽ kích hoạt giao diện Demo để đảm bảo trải nghiệm!");
+      
+      // Fallback sang demo hiệu ứng
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -161,13 +213,13 @@ export default function Contact() {
                 <GithubIcon size={18} />
               </a>
               <a
-                href="https://linkedin.com/in/trangiahuy"
+                href="https://zalo.me/0938987703"
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 hover:border-gray-500 text-gray-400 hover:text-white flex items-center justify-center transition-all"
-                title="LinkedIn Connections"
+                title="Zalo Chat"
               >
-                <LinkedinIcon size={18} />
+                <ZaloIcon size={18} />
               </a>
             </div>
           </motion.div>

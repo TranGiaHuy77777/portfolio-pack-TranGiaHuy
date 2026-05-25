@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Code, Cpu } from 'lucide-react';
+import { ArrowRight, Sparkles, GraduationCap, Award, BookOpen } from 'lucide-react';
 import Scene3D from '../components/Scene3D';
 import MagneticButton from '../components/MagneticButton';
 import profileData from '../profile.json';
@@ -104,11 +104,11 @@ export default function Hero() {
                   {stat.value}
                 </span>
                 {idx === 0 ? (
-                  <Code size={18} className="text-primary" />
+                  <GraduationCap size={18} className="text-primary" />
                 ) : idx === 1 ? (
-                  <Sparkles size={18} className="text-accent" />
+                  <Award size={18} className="text-accent" />
                 ) : (
-                  <Cpu size={18} className="text-secondary" />
+                  <BookOpen size={18} className="text-secondary" />
                 )}
               </div>
               <div>
