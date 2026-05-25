@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Check, ShieldCheck } from 'lucide-react';
+import { Send, Check, ShieldCheck, ChevronDown } from 'lucide-react';
 import canvasConfetti from 'canvas-confetti';
 
 const GithubIcon = ({ size = 18 }: { size?: number }) => (
@@ -17,11 +17,35 @@ const ZaloIcon = ({ size = 18 }: { size?: number }) => (
   </svg>
 );
 
+const projectOptions = [
+  { value: "Fullstack Development", label: "Ứng dụng Web Fullstack React + Java/Node" },
+  { value: "Frontend Engineering", label: "Giao diện React / TypeScript tối ưu cao" },
+  { value: "Operations Optimization", label: "Phân tích quy trình bán lẻ & Viết mã tự động" },
+  { value: "General Conversation", label: "Chào hỏi xã giao / Hẹn phỏng vấn kỹ thuật" },
+];
+
 export default function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [projectType, setProjectType] = useState('Fullstack Development');
   const [message, setMessage] = useState('');
+
+  // Custom Dropdown State & Ref
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Slide to Verify states
   const [sliderPosition, setSliderPosition] = useState(0);
@@ -224,13 +248,13 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Right panel: Glassmorphic form (7 cols) */}
+          {/* Right panel: Premium Ultra-Bright Glassmorphic Form (7 cols) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-7 bg-[#121216]/60 backdrop-blur-md border border-white/5 p-6 md:p-8 rounded-2xl w-full text-left"
+            className="lg:col-span-7 bg-white/80 backdrop-blur-3xl border border-white/50 p-6 md:p-8 rounded-2xl w-full text-left shadow-2xl shadow-black/20 hover:bg-white/85 transition-all duration-500"
           >
             {submitted ? (
               <motion.div
@@ -238,13 +262,13 @@ export default function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="py-12 flex flex-col items-center justify-center text-center gap-3 font-sans"
               >
-                <div className="w-14 h-14 rounded-full bg-green-500/20 border border-green-500 flex items-center justify-center text-green-400 mb-2">
+                <div className="w-14 h-14 rounded-full bg-green-100 border border-green-200 flex items-center justify-center text-green-600 mb-2">
                   <Check size={28} />
                 </div>
-                <h3 className="text-xl font-bold font-sora text-white">
+                <h3 className="text-xl font-bold font-sora text-black">
                   Gửi tin nhắn thành công!
                 </h3>
-                <p className="text-sm text-gray-400 max-w-sm">
+                <p className="text-sm text-black/80 max-w-sm">
                   Cảm ơn bạn đã liên hệ. Tôi đã nhận được bản ghi yêu cầu của bạn và sẽ phản hồi sớm nhất có thể.
                 </p>
                 <button
@@ -256,7 +280,7 @@ export default function Contact() {
                     setIsVerified(false);
                     setSliderPosition(0);
                   }}
-                  className="mt-4 px-4 py-2 border border-white/10 hover:border-gray-500 rounded-lg text-xs text-gray-300 hover:text-white font-medium transition-colors"
+                  className="mt-4 px-4 py-2 border border-slate-300 hover:border-black rounded-lg text-xs text-black font-semibold transition-colors bg-white hover:bg-slate-50"
                 >
                   Gửi tin nhắn khác
                 </button>
@@ -265,70 +289,106 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-4 font-sans text-xs">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-gray-400 font-medium">HỌ VÀ TÊN</label>
+                    <label className="text-black font-bold tracking-wider font-sora text-[10px]">HỌ VÀ TÊN</label>
                     <input
                       type="text"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Ví dụ: Nhà tuyển dụng"
-                      className="bg-black/20 border border-white/5 rounded-xl p-3 text-white focus:outline-none focus:border-primary text-xs"
+                      className="bg-white/80 border border-slate-200/80 rounded-xl p-3 text-black placeholder:text-black/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 hover:bg-white/90 text-xs transition-all duration-300"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-gray-400 font-medium">ĐỊA CHỈ EMAIL</label>
+                    <label className="text-black font-bold tracking-wider font-sora text-[10px]">ĐỊA CHỈ EMAIL</label>
                     <input
                       type="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Ví dụ: nhansuviet@congty.com"
-                      className="bg-black/20 border border-white/5 rounded-xl p-3 text-white focus:outline-none focus:border-primary text-xs"
+                      className="bg-white/80 border border-slate-200/80 rounded-xl p-3 text-black placeholder:text-black/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 hover:bg-white/90 text-xs transition-all duration-300"
                     />
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-gray-400 font-medium">PHÂN LOẠI YÊU CẦU DỰ ÁN</label>
-                  <select
-                    value={projectType}
-                    onChange={(e) => setProjectType(e.target.value)}
-                    className="bg-black/20 border border-white/5 rounded-xl p-3 text-white focus:outline-none focus:border-primary text-xs"
+                <div className="flex flex-col gap-1.5 relative" ref={dropdownRef}>
+                  <label className="text-black font-bold tracking-wider font-sora text-[10px]">PHÂN LOẠI YÊU CẦU DỰ ÁN</label>
+
+                  {/* Dropdown Button */}
+                  <button
+                    type="button"
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    className="w-full flex items-center justify-between bg-white/80 border border-slate-200/80 rounded-xl p-3 text-black text-xs hover:bg-white/95 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 transition-all duration-300 text-left font-sans cursor-pointer"
                   >
-                    <option value="Fullstack Development" className="bg-[#121216]">Ứng dụng Web Fullstack React + Java/Node</option>
-                    <option value="Frontend Engineering" className="bg-[#121216]">Giao diện React / TypeScript tối ưu cao</option>
-                    <option value="Operations Optimization" className="bg-[#121216]">Phân tích quy trình bán lẻ & Viết mã tự động</option>
-                    <option value="General Conversation" className="bg-[#121216]">Chào hỏi xã giao / Hẹn phỏng vấn kỹ thuật</option>
-                  </select>
+                    <span>
+                      {projectOptions.find(opt => opt.value === projectType)?.label}
+                    </span>
+                    <ChevronDown
+                      size={14}
+                      className={`text-black/60 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-primary' : ''}`}
+                    />
+                  </button>
+
+                  {/* Dropdown Options Menu */}
+                  {isDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -8, scale: 0.98 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute left-0 right-0 top-[102%] z-50 bg-white/95 backdrop-blur-xl border border-slate-200/60 rounded-xl shadow-2xl p-1.5 flex flex-col gap-0.5 overflow-hidden"
+                    >
+                      {projectOptions.map((option) => {
+                        const isSelected = projectType === option.value;
+                        return (
+                          <button
+                            key={option.value}
+                            type="button"
+                            onClick={() => {
+                              setProjectType(option.value);
+                              setIsDropdownOpen(false);
+                            }}
+                            className={`w-full text-left p-2.5 rounded-lg text-xs transition-all duration-200 font-sans flex items-center justify-between cursor-pointer ${isSelected
+                              ? 'bg-primary/10 text-primary font-semibold'
+                              : 'text-slate-800 hover:bg-slate-100 hover:text-black'
+                              }`}
+                          >
+                            <span>{option.label}</span>
+                            {isSelected && <Check size={12} className="text-primary font-bold" />}
+                          </button>
+                        );
+                      })}
+                    </motion.div>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-gray-400 font-medium">NỘI DUNG CHI TIẾT TIN NHẮN</label>
+                  <label className="text-black font-bold tracking-wider font-sora text-[10px]">NỘI DUNG CHI TIẾT TIN NHẮN</label>
                   <textarea
                     required
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows={4}
                     placeholder="Mô tả ngắn gọn mục tiêu doanh nghiệp hoặc yêu cầu công việc tuyển dụng của bạn..."
-                    className="bg-black/20 border border-white/5 rounded-xl p-3 text-white focus:outline-none focus:border-primary text-xs resize-none"
+                    className="bg-white/80 border border-slate-200/80 rounded-xl p-3 text-black placeholder:text-black/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 hover:bg-white/90 text-xs resize-none transition-all duration-300"
                   />
                 </div>
 
                 {/* Secure Anti-Spam Slide to Verify widget */}
                 <div className="flex flex-col gap-2 mt-2">
                   <div className="flex justify-between items-center text-[10px]">
-                    <span className="text-gray-500 font-medium flex items-center gap-1">
-                      <ShieldCheck size={11} className="text-accent" />
+                    <span className="text-black/70 font-bold flex items-center gap-1">
+                      <ShieldCheck size={11} className="text-primary" />
                       CỔNG XÁC MINH CHỐNG SPAM
                     </span>
-                    <span className={`font-mono font-bold ${isVerified ? 'text-green-400' : 'text-gray-500'}`}>
+                    <span className={`font-mono font-bold ${isVerified ? 'text-green-600' : 'text-black/55'}`}>
                       {isVerified ? 'ĐÃ BẢO MẬT' : 'ĐANG KHÓA'}
                     </span>
                   </div>
 
                   <div
                     ref={sliderRef}
-                    className="relative h-11 bg-black/40 border border-white/5 rounded-xl overflow-hidden flex items-center justify-center select-none"
+                    className="relative h-11 bg-slate-100/80 border border-slate-200/60 rounded-xl overflow-hidden flex items-center justify-center select-none"
                   >
                     {/* Glowing background indication */}
                     <div
@@ -337,7 +397,7 @@ export default function Contact() {
                     />
 
                     {/* Locked/Unlocked Text label */}
-                    <span className={`text-[10px] pointer-events-none z-10 transition-colors duration-300 font-sora font-semibold ${isVerified ? 'text-green-400 font-bold' : 'text-gray-400'
+                    <span className={`text-[10px] pointer-events-none z-10 transition-colors duration-300 font-sora font-semibold ${isVerified ? 'text-green-700 font-bold' : 'text-black/80'
                       }`}>
                       {isVerified ? 'XÁC MINH HOÀN TẤT' : 'KÉO SANG PHẢI ĐỂ MỞ KHÓA'}
                     </span>
@@ -345,8 +405,8 @@ export default function Contact() {
                     {/* Floating Handle */}
                     <motion.div
                       className={`absolute left-0.5 top-0.5 bottom-0.5 w-10 rounded-lg flex items-center justify-center cursor-pointer shadow-md z-20 ${isVerified
-                        ? 'bg-green-500 text-black'
-                        : 'bg-white text-black hover:bg-accent'
+                        ? 'bg-green-600 text-white'
+                        : 'bg-white text-black hover:bg-primary hover:text-white border border-slate-200 shadow-md'
                         }`}
                       style={{ x: sliderPosition }}
                       onMouseDown={() => {
@@ -365,7 +425,7 @@ export default function Contact() {
                   disabled={!isVerified || submitting}
                   className={`w-full py-3 rounded-xl font-sora font-bold text-xs flex items-center justify-center gap-2 mt-4 transition-all duration-300 ${isVerified && !submitting
                     ? 'bg-glow-gradient text-black hover:scale-[1.02] active:scale-95 shadow-neon-glow'
-                    : 'bg-gray-800 text-gray-500 cursor-not-allowed'
+                    : 'bg-slate-200/60 text-slate-400 border border-slate-200/60 cursor-not-allowed'
                     }`}
                 >
                   {submitting ? (
@@ -376,7 +436,7 @@ export default function Contact() {
                   ) : (
                     <>
                       <Send size={14} />
-                      GỬI TIN NHẮN LIÊN HỆ
+                      Submit Contact
                     </>
                   )}
                 </button>
