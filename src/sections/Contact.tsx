@@ -40,7 +40,7 @@ export default function Contact() {
     const maxDistance = width - handleWidth - 4; // margin padding boundary
     const relativeX = e.clientX - left - handleWidth / 2;
     const boundedX = Math.max(0, Math.min(relativeX, maxDistance));
-    
+
     setSliderPosition(boundedX);
 
     // If reached end boundary, unlock!
@@ -85,7 +85,7 @@ export default function Contact() {
     // ---------------------------------------------------------------------------------
     // Cách 1: Sử dụng Discord Webhook (Nhận thông báo ngay trên Discord) - MIỄN PHÍ & NHANH NHẤT
     // Bạn chỉ cần tạo Webhook trên Discord, rồi dán URL vào biến dưới đây.
-    const DISCORD_WEBHOOK_URL = ""; 
+    const DISCORD_WEBHOOK_URL = "";
 
     // Cách 2: Sử dụng Formspree (Nhận email trực tiếp về Gmail) - MIỄN PHÍ & DỄ DÀNG
     // Đăng ký tài khoản free tại formspree.io, tạo form mới và dán ID form vào đây.
@@ -129,7 +129,7 @@ export default function Contact() {
 
       setSubmitting(false);
       setSubmitted(true);
-      
+
       // Giant multi-directional confetti splash!
       const duration = 2.5 * 1000;
       const end = Date.now() + duration;
@@ -159,7 +159,7 @@ export default function Contact() {
     } catch (error) {
       console.error("Gửi tin nhắn thất bại:", error);
       alert("Đã xảy ra lỗi khi kết nối máy chủ gửi tin nhắn. Hệ thống sẽ kích hoạt giao diện Demo để đảm bảo trải nghiệm!");
-      
+
       // Fallback sang demo hiệu ứng
       setSubmitting(false);
       setSubmitted(true);
@@ -192,7 +192,7 @@ export default function Contact() {
             className="lg:col-span-5 flex flex-col gap-6 text-left"
           >
             <h3 className="text-xl font-bold font-sora text-white">
-              Sẵn sàng tự động hóa quy trình cửa hàng của bạn?
+              Is your process automation shop ready?
             </h3>
             <p className="text-sm text-gray-400 font-sans leading-relaxed">
               Nếu bạn có yêu cầu về sản phẩm kỹ thuật số, cần xây dựng các đường dẫn fullstack tùy chỉnh hoặc muốn kiểm toán chi phí vận hành cửa hàng, hãy gửi yêu cầu.
@@ -337,19 +337,17 @@ export default function Contact() {
                     />
 
                     {/* Locked/Unlocked Text label */}
-                    <span className={`text-[10px] pointer-events-none z-10 transition-colors duration-300 font-sora font-semibold ${
-                      isVerified ? 'text-green-400 font-bold' : 'text-gray-400'
-                    }`}>
+                    <span className={`text-[10px] pointer-events-none z-10 transition-colors duration-300 font-sora font-semibold ${isVerified ? 'text-green-400 font-bold' : 'text-gray-400'
+                      }`}>
                       {isVerified ? 'XÁC MINH HOÀN TẤT' : 'KÉO SANG PHẢI ĐỂ MỞ KHÓA'}
                     </span>
 
                     {/* Floating Handle */}
                     <motion.div
-                      className={`absolute left-0.5 top-0.5 bottom-0.5 w-10 rounded-lg flex items-center justify-center cursor-pointer shadow-md z-20 ${
-                        isVerified
-                          ? 'bg-green-500 text-black'
-                          : 'bg-white text-black hover:bg-accent'
-                      }`}
+                      className={`absolute left-0.5 top-0.5 bottom-0.5 w-10 rounded-lg flex items-center justify-center cursor-pointer shadow-md z-20 ${isVerified
+                        ? 'bg-green-500 text-black'
+                        : 'bg-white text-black hover:bg-accent'
+                        }`}
                       style={{ x: sliderPosition }}
                       onMouseDown={() => {
                         if (!isVerified) setIsDragging(true);
@@ -365,11 +363,10 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={!isVerified || submitting}
-                  className={`w-full py-3 rounded-xl font-sora font-bold text-xs flex items-center justify-center gap-2 mt-4 transition-all duration-300 ${
-                    isVerified && !submitting
-                      ? 'bg-glow-gradient text-black hover:scale-[1.02] active:scale-95 shadow-neon-glow'
-                      : 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                  }`}
+                  className={`w-full py-3 rounded-xl font-sora font-bold text-xs flex items-center justify-center gap-2 mt-4 transition-all duration-300 ${isVerified && !submitting
+                    ? 'bg-glow-gradient text-black hover:scale-[1.02] active:scale-95 shadow-neon-glow'
+                    : 'bg-gray-800 text-gray-500 cursor-not-allowed'
+                    }`}
                 >
                   {submitting ? (
                     <>
