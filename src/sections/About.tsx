@@ -82,7 +82,7 @@ export default function About() {
                 <span className="text-gray-500">Status</span>
                 <span className="text-green-400 font-bold flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  HOẠT ĐỘNG
+                  Active
                 </span>
               </div>
             </div>
