@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
-import { ExternalLink, Layers, Download, Lock, Crown } from 'lucide-react';
+import { ExternalLink, Layers, Download, Lock, Crown, Sparkles } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -39,16 +39,42 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
   };
 
   const isStockAi = project.id === 'stock-ai';
+  const isParking = project.id === 'parking-building-management';
+  const isMumCare = project.id === 'mumcare-platform';
+
+  const getCardBorderClass = () => {
+    if (isStockAi) return 'border-yellow-500/45 hover:border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.06)] hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] scale-[1.01] hover:scale-[1.02]';
+    if (isParking) return 'border-cyan-500/45 hover:border-cyan-400 shadow-[0_0_25px_rgba(6,182,212,0.06)] hover:shadow-[0_0_35px_rgba(6,182,212,0.25)] scale-[1.01] hover:scale-[1.02]';
+    if (isMumCare) return 'border-pink-500/45 hover:border-pink-400 shadow-[0_0_25px_rgba(236,72,153,0.06)] hover:shadow-[0_0_35px_rgba(236,72,153,0.25)] scale-[1.01] hover:scale-[1.02]';
+    return 'border-white/5 hover:border-primary/20 shadow-none';
+  };
+
+  const getRadialGlowColor = () => {
+    if (isStockAi) return 'rgba(234, 179, 8, 0.16)';
+    if (isParking) return 'rgba(6, 182, 212, 0.16)';
+    if (isMumCare) return 'rgba(236, 72, 153, 0.16)';
+    return 'rgba(109, 93, 246, 0.12)';
+  };
+
+  const getTitleHoverClass = () => {
+    if (isStockAi) return 'group-hover:text-yellow-400';
+    if (isParking) return 'group-hover:text-cyan-400';
+    if (isMumCare) return 'group-hover:text-pink-400';
+    return 'group-hover:text-primary';
+  };
+
+  const getRoleBadgeClass = () => {
+    if (isStockAi) return 'bg-yellow-500/10 border-yellow-500/35 text-yellow-400 shadow-[0_0_10px_rgba(234,179,8,0.08)]';
+    if (isParking) return 'bg-cyan-500/10 border-cyan-500/35 text-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.08)]';
+    if (isMumCare) return 'bg-pink-500/10 border-pink-500/35 text-pink-400 shadow-[0_0_10px_rgba(236,72,153,0.08)]';
+    return 'bg-primary/10 border-primary/20 text-primary';
+  };
 
   return (
     <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      className={`group relative bg-[#121216]/60 backdrop-blur-md rounded-2xl p-6 flex flex-col justify-between h-[490px] overflow-hidden transition-all duration-500 border ${
-        isStockAi
-          ? 'border-yellow-500/45 hover:border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.06)] hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] scale-[1.01] hover:scale-[1.02]'
-          : 'border-white/5 hover:border-primary/20 shadow-none'
-      }`}
+      className={`group relative bg-[#121216]/60 backdrop-blur-md rounded-2xl p-6 flex flex-col justify-between h-[490px] overflow-hidden transition-all duration-500 border ${getCardBorderClass()}`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -61,7 +87,7 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
           background: useMotionTemplate`
             radial-gradient(
               300px circle at ${mouseX}px ${mouseY}px,
-              ${isStockAi ? 'rgba(234, 179, 8, 0.16)' : 'rgba(109, 93, 246, 0.12)'},
+              ${getRadialGlowColor()},
               transparent 80%
             )
           `
@@ -72,7 +98,7 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
         {/* Cover Image */}
         {project.cover && (
           <div className={`w-full h-32 rounded-xl overflow-hidden mb-4 border relative bg-black/40 ${
-            isStockAi ? 'border-yellow-500/25' : 'border-white/5'
+            isStockAi ? 'border-yellow-500/25' : isParking ? 'border-cyan-500/25' : isMumCare ? 'border-pink-500/25' : 'border-white/5'
           }`}>
             <img
               src={project.cover}
@@ -89,16 +115,28 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
                 <span>PREMIER</span>
               </div>
             )}
+
+            {/* Twinkling Cyan Sparkles for Smart Parking */}
+            {isParking && (
+              <div className="absolute top-2 right-2 z-20 bg-black/75 backdrop-blur-md border border-cyan-500/40 rounded-lg px-2 py-0.5 text-cyan-400 shadow-[0_0_12px_rgba(6,182,212,0.4)] flex items-center gap-1.5 text-[8px] font-bold font-sora uppercase tracking-wider animate-pulse">
+                <Sparkles size={10} className="fill-cyan-400 text-cyan-400" />
+                <span>SMART</span>
+              </div>
+            )}
+
+            {/* Twinkling Pink Sparkles for MumCare */}
+            {isMumCare && (
+              <div className="absolute top-2 right-2 z-20 bg-black/75 backdrop-blur-md border border-pink-500/40 rounded-lg px-2 py-0.5 text-pink-400 shadow-[0_0_12px_rgba(236,72,153,0.4)] flex items-center gap-1.5 text-[8px] font-bold font-sora uppercase tracking-wider animate-pulse">
+                <Sparkles size={10} className="fill-pink-400 text-pink-400" />
+                <span>PLATFORM</span>
+              </div>
+            )}
           </div>
         )}
 
         <div className="flex justify-between items-center mb-3 gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
-            <span className={`text-[10px] px-2 py-0.5 rounded font-bold font-mono border ${
-              isStockAi 
-                ? 'bg-yellow-500/10 border-yellow-500/35 text-yellow-400 shadow-[0_0_10px_rgba(234,179,8,0.08)]' 
-                : 'bg-primary/10 border-primary/20 text-primary'
-            }`}>
+            <span className={`text-[10px] px-2 py-0.5 rounded font-bold font-mono border ${getRoleBadgeClass()}`}>
               {project.role}
             </span>
             {project.id === 'mumcare-platform' && (
@@ -117,15 +155,13 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
             )}
           </div>
           <span className={`text-[10px] font-mono flex-shrink-0 ${
-            isStockAi ? 'text-yellow-500/60 font-bold' : 'text-gray-500'
+            isStockAi ? 'text-yellow-500/60 font-bold' : isParking ? 'text-cyan-500/60 font-bold' : isMumCare ? 'text-pink-500/60 font-bold' : 'text-gray-500'
           }`}>
             ID: {project.id.toUpperCase()}
           </span>
         </div>
 
-        <h3 className={`text-lg font-bold font-sora text-white mb-1 transition-colors flex items-center gap-1.5 line-clamp-1 ${
-          isStockAi ? 'group-hover:text-yellow-400' : 'group-hover:text-primary'
-        }`}>
+        <h3 className={`text-lg font-bold font-sora text-white mb-1 transition-colors flex items-center gap-1.5 line-clamp-1 ${getTitleHoverClass()}`}>
           <span>{project.title}</span>
           {isStockAi && (
             <span className="text-[7px] px-1.5 py-0.5 bg-yellow-500/10 border border-yellow-500/35 text-yellow-400 font-bold rounded-md tracking-wider uppercase font-sora flex-shrink-0 shadow-[0_0_8px_rgba(234,179,8,0.15)]">
