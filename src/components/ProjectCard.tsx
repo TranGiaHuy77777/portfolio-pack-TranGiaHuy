@@ -94,6 +94,45 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
         }}
       />
 
+      {/* Twinkling Falling Glitter Particle Rain effect (Activates on Hover) */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        {[...Array(15)].map((_, i) => {
+          // Dynamic particle properties
+          const size = Math.random() * 3.5 + 1.5; // 1.5px to 5px
+          const left = Math.random() * 95; // 0% to 95%
+          const duration = Math.random() * 3.5 + 2.5; // 2.5s to 6s
+          const delay = Math.random() * -6; // Negative delay so they start pre-raining instantly on hover
+          
+          let color = 'rgba(255,255,255,0.7)';
+          if (isStockAi) {
+            color = `rgba(${234 + Math.round(Math.random() * 20)}, ${179 + Math.round(Math.random() * 20)}, 8, ${Math.random() * 0.4 + 0.6})`;
+          } else if (isParking) {
+            color = `rgba(6, 182, 212, ${Math.random() * 0.5 + 0.5})`;
+          } else if (isMumCare) {
+            color = `rgba(236, 72, 153, ${Math.random() * 0.5 + 0.5})`;
+          }
+
+          return (
+            <div
+              key={i}
+              className="glitter-particle"
+              style={{
+                left: `${left}%`,
+                width: `${size}px`,
+                height: `${size}px`,
+                color: color,
+                backgroundColor: color,
+                animationName: 'glitter-fall',
+                animationDuration: `${duration}s`,
+                animationDelay: `${delay}s`,
+                animationTimingFunction: 'linear',
+                animationIterationCount: 'infinite',
+              }}
+            />
+          );
+        })}
+      </div>
+
       <div className="z-10 relative">
         {/* Cover Image */}
         {project.cover && (

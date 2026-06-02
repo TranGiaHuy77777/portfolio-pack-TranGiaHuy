@@ -102,4 +102,32 @@
   animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+/* Twinkling Falling Glitter Particle Rain Animation */
+@keyframes glitter-fall {
+  0% {
+    transform: translateY(-30px) translateX(0) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(520px) translateX(35px) rotate(360deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.glitter-particle {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 1;
+  filter: drop-shadow(0 0 4px currentColor);
+  animation: glitter-fall infinite linear;
+}
+
 
