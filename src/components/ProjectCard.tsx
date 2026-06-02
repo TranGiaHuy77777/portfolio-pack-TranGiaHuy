@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
-import { ExternalLink, Layers, Download } from 'lucide-react';
+import { ExternalLink, Layers, Download, Lock } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -88,7 +88,7 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
             )}
             {project.subject && (
               <span className="text-[8px] bg-purple-950/40 border border-purple-500/20 px-1.5 py-0.5 rounded text-purple-400 font-bold font-mono tracking-wider">
-                📚 MÔN: {project.subject}
+                {project.id === 'stock-ai' ? '🔬 NGHIÊN CỨU: ' : '📚 MÔN: '}{project.subject}
               </span>
             )}
           </div>
@@ -123,16 +123,17 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
       </div>
 
       <div className="z-10 relative flex flex-col gap-2">
-        {/* Custom Actions */}
+        {/* Buttons Grid */}
         <button
           onClick={onOpenDetails}
-          className="w-full py-2.5 px-4 bg-glow-gradient text-black font-sora font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-transform duration-300 group-hover:scale-[1.02] shadow-neon-glow"
+          className="w-full py-2 bg-glow-gradient text-black font-sora font-extrabold text-[10px] rounded-lg flex items-center justify-center gap-1.5 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer shadow-neon-glow"
         >
           <Layers size={14} />
           VIEW INTERACTIVE DEMO
         </button>
 
-        <div className={`grid ${project.github ? (project.githubBE ? 'grid-cols-3' : 'grid-cols-2') : 'grid-cols-1'} gap-1.5 mt-1`}>
+        {/* Buttons Grid */}
+        <div className={`grid ${project.github && project.github !== 'private' ? (project.githubBE ? 'grid-cols-3' : 'grid-cols-2') : 'grid-cols-1'} gap-1.5 mt-1`}>
           <a
             href={project.downloadPath}
             download
@@ -142,7 +143,7 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
             <Download size={10} />
             SOURCE (.RAR)
           </a>
-          {project.github && (
+          {project.github && project.github !== 'private' && (
             <a
               href={project.github}
               target="_blank"
@@ -167,6 +168,13 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
             </a>
           )}
         </div>
+
+        {project.github === 'private' && (
+          <p className="text-[8px] text-gray-500 font-sans italic text-center mt-2.5 flex items-center justify-center gap-1">
+            <Lock size={8} className="text-gray-600 flex-shrink-0" />
+            Mã nguồn riêng tư. Để xem, vui lòng liên hệ qua Zalo hoặc Form contact bên dưới.
+          </p>
+        )}
       </div>
     </motion.div>
   );

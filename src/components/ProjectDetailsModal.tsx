@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Download, Check, Sparkles, Layers } from 'lucide-react';
+import { X, Download, Check, Sparkles, Layers, Lock } from 'lucide-react';
 import canvasConfetti from 'canvas-confetti';
 
 const GithubIcon = ({ size = 14 }: { size?: number }) => (
@@ -948,7 +948,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className="relative bg-[#0C0C0F] border border-white/5 rounded-2xl w-full max-w-5xl overflow-hidden shadow-2xl z-10 grid grid-cols-1 md:grid-cols-12 max-h-[90vh] md:max-h-[85vh]"
+          className="relative bg-[#0C0C0F] border border-white/5 rounded-2xl w-full max-w-5xl overflow-hidden shadow-2xl z-10 grid grid-cols-1 md:grid-cols-12 h-[90vh] md:h-[80vh] max-h-[90vh] md:max-h-[85vh]"
         >
           {/* Close button */}
           <button
@@ -959,7 +959,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
           </button>
 
           {/* Left panel: Media & Interactive Mockup (6 cols) */}
-          <div className="col-span-1 md:col-span-6 bg-black/40 p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/5 flex flex-col justify-between max-h-[45vh] md:max-h-full overflow-y-auto">
+          <div className="col-span-1 md:col-span-6 bg-black/40 p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/5 flex flex-col justify-between h-[45vh] md:h-full overflow-y-auto">
              <div>
               <div className="flex justify-between items-center mb-4">
                 {project.gallery[activeSlide].image ? (
@@ -1016,7 +1016,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
           </div>
 
           {/* Right panel: Details & Spec Copy (6 cols) */}
-          <div className="col-span-1 md:col-span-6 p-6 md:p-8 flex flex-col justify-between overflow-y-auto max-h-[45vh] md:max-h-full">
+          <div className="col-span-1 md:col-span-6 p-6 md:p-8 flex flex-col justify-between overflow-y-auto h-[45vh] md:h-full">
             <div className="flex flex-col gap-4">
               <div className="text-left">
                 <div className="flex flex-wrap items-center gap-2 mb-1.5">
@@ -1030,7 +1030,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                   )}
                   {project.subject && (
                     <span className="text-[9px] bg-purple-950/40 border border-purple-500/20 px-2.5 py-0.5 rounded-full text-purple-400 font-bold font-mono tracking-wider">
-                      📚 MÔN HỌC: {project.subject}
+                      {project.id === 'stock-ai' ? '🔬 DỰ ÁN TỰ NGHIÊN CỨU: ' : '📚 MÔN HỌC: '}{project.subject}
                     </span>
                   )}
                 </div>
@@ -1048,21 +1048,21 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                   <h4 className="text-[#00D9FF] font-sora font-bold text-[10px] tracking-wider uppercase mb-1">
                     🎯 BUSINESS GOAL & IMPACT
                   </h4>
-                  <p className="text-gray-400">{project.businessGoal}</p>
+                  <p className="text-gray-400 whitespace-pre-line">{project.businessGoal}</p>
                 </div>
 
                 <div className="border-t border-white/5 pt-3">
                   <h4 className="text-[#00D9FF] font-sora font-bold text-[10px] tracking-wider uppercase mb-1">
                     🔥 KEY CHALLENGES
                   </h4>
-                  <p className="text-gray-400">{project.challenges}</p>
+                  <p className="text-gray-400 whitespace-pre-line">{project.challenges}</p>
                 </div>
 
                 <div className="border-t border-white/5 pt-3">
                   <h4 className="text-[#00D9FF] font-sora font-bold text-[10px] tracking-wider uppercase mb-1">
                     📖 LEARNINGS & ARCHITECTURE
                   </h4>
-                  <p className="text-gray-400">{project.learnings}</p>
+                  <p className="text-gray-400 whitespace-pre-line">{project.learnings}</p>
                 </div>
               </div>
 
@@ -1080,7 +1080,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
             </div>
 
             {/* CTAs */}
-            <div className={`grid grid-cols-1 ${project.github ? 'sm:grid-cols-2' : ''} gap-3 mt-6 border-t border-white/5 pt-4`}>
+            <div className={`grid grid-cols-1 ${project.github && project.github !== 'private' ? 'sm:grid-cols-2' : ''} gap-3 mt-6 border-t border-white/5 pt-4`}>
               <a
                 href={project.downloadPath}
                 download
@@ -1090,7 +1090,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                 DOWNLOAD SOURCE (.RAR)
               </a>
 
-              {project.github && (
+              {project.github && project.github !== 'private' && (
                 <a
                   href={project.github}
                   target="_blank"
@@ -1102,6 +1102,13 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                 </a>
               )}
             </div>
+
+            {project.github === 'private' && (
+              <p className="text-[10px] text-gray-500 font-sans italic text-center mt-3 flex items-center justify-center gap-1.5">
+                <Lock size={10} className="text-gray-600 flex-shrink-0" />
+                Mã nguồn của dự án này được bảo mật riêng tư. Nếu muốn xem, vui lòng liên hệ riêng qua Zalo hoặc Form liên hệ ở cuối trang.
+              </p>
+            )}
           </div>
         </motion.div>
       </div>

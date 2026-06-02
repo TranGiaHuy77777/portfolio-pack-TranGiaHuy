@@ -7,19 +7,19 @@
   "positioning": "Frontend-focused Fullstack Developer",
   "stats": [
     {
-      "value": "ĐH FPT",
-      "label": "Sinh viên Đại học",
-      "description": "Chuyên ngành Kỹ thuật Phần mềm (Software Engineering)."
+      "value": "FPT University",
+      "label": "Undergraduate Student",
+      "description": "Majoring in Software Engineering."
     },
     {
-      "value": "7.0 / 10",
-      "label": "Điểm GPA tích lũy",
-      "description": "Đánh giá năng lực tích lũy qua các môn chuyên ngành."
+      "value": "7.1 / 10",
+      "label": "Cumulative GPA",
+      "description": "Academic capability score across specialization courses."
     },
     {
-      "value": "Kì 8 / 9",
-      "label": "Hành trình đào tạo",
-      "description": "Đang thực hiện học kỳ chuyên sâu và chuẩn bị tốt nghiệp."
+      "value": "Term 8 / 9",
+      "label": "Academic Track",
+      "description": "Currently undergoing advanced specialized semesters preparing for graduation."
     }
   ],
   "skills": {
@@ -114,35 +114,39 @@
   },
   "timeline": [
     {
-      "period": "Giai đoạn 1: Giao tiếp",
-      "title": "Nghiên cứu Vận hành & Trải nghiệm Thực tế",
-      "description": "Chủ động tìm tòi, học hỏi và quan sát thực tế quy trình vận hành cửa hàng cũng như hành vi mua sắm của khách hàng. Từ đó, dễ dàng nắm bắt các điểm nghẽn (pain points) trong mô hình bán lẻ, thấu hiểu tư duy kinh doanh để chuyển hóa chính xác thành các yêu cầu hệ thống."
+      "period": "Phase 1: Communication",
+      "title": "Operations Research & Practical Experience",
+      "description": "Proactively studied and observed real-world retail store operations and consumer shopping behavior. Discovered retail bottlenecks to accurately translate business constraints into technical system requirements."
     },
     {
-      "period": "Giai đoạn 2: Chiến lược Sản phẩm",
-      "title": "Kiến trúc Giải pháp & Tối ưu Nghiệp vụ",
-      "description": "Đóng vai trò cầu nối chiến lược, chuyển hóa các nỗi đau (pain points) của mô hình kinh doanh thành kiến trúc phần mềm tối tân. Định hình lộ trình phát triển sản phẩm thông qua User Story chặt chẽ, tối ưu hóa quy trình tự động hóa cửa hàng để mang lại giá trị thương mại cao nhất."
+      "period": "Phase 2: Product Strategy",
+      "title": "Solution Architecture & Business Optimization",
+      "description": "Acted as a strategic bridge to transform business pain points into cutting-edge software architectures. Shaped product roadmaps with comprehensive User Stories and automated operations to maximize commercial value."
     }
   ],
   "experience": [
     {
-      "company": "Vận hành & Tự động hóa Startup",
-      "role": "Trưởng nhóm Vận hành & Tích hợp",
-      "period": "2024 - Hiện tại",
+      "company": "Motorcycle Parts & Accessories Store (Retail & E-commerce)",
+      "role": "Founder & Business Operator",
+      "period": "2024 - Present",
       "highlights": [
-        "Quản lý các luồng vận hành thực tế tại cửa hàng, thu thập phản hồi thực tế từ người dùng.",
-        "Thiết kế các chiến lược tối ưu hóa vận hành giúp giảm thiểu nghẽn giao tiếp nội bộ.",
-        "Xây dựng các đoạn mã tự động và ứng dụng nội bộ để tăng tốc độ phân tích hóa đơn bán hàng."
+        "Built and scaled a retail business from online storefronts to a physical motorcycle parts shop.",
+        "Managed day-to-day operations, hiring, procurement, inventory control, and customer success.",
+        "Designed and executed sales and marketing strategies to drive revenue growth.",
+        "Gained hands-on experience in team management and operations across multiple business domains.",
+        "Combined AI tools and programming to automate processes and maximize operational efficiency."
       ]
     },
     {
-      "company": "Phát triển Phần mềm",
-      "role": "Nhà phát triển Fullstack",
-      "period": "2025 - Hiện tại",
+      "company": "Software Engineering & AI Solutions",
+      "role": "Software Engineer & AI Builder",
+      "period": "2025 - Present",
       "highlights": [
-        "Thiết kế kiến trúc các ứng dụng React mở rộng sử dụng TypeScript và Tailwind CSS.",
-        "Xây dựng các REST API mạnh mẽ bằng Java Spring Boot và Node.js theo nguyên lý kiến trúc sạch (Clean Architecture).",
-        "Triển khai các luồng tương tác tăng tốc phần cứng GPU sử dụng thư viện Framer Motion."
+        "Built web applications and internal tools to solve real-world business and user needs.",
+        "Developed full-stack systems using React, TypeScript, Node.js, and modern AI integrations.",
+        "Designed automation workflows to streamline operational tasks and reduce manual labor.",
+        "Deployed, maintained, and optimized digital products in production environments.",
+        "Researched and integrated emerging technologies to turn business concepts into scalable software."
       ]
     }
   ],
@@ -154,9 +158,9 @@
       "subject": "SWP, WDP",
       "cover": "/projects/parking-building-management/13.png",
       "role": "Lead Fullstack Developer",
-      "businessGoal": "Giảm 45% thời gian tìm kiếm chỗ đỗ xe trống, tự động hóa hệ thống bán vé và tối ưu hóa việc phân bổ chỗ đỗ xe trong giờ cao điểm để nâng cao hiệu suất vận hành tòa nhà.",
-      "challenges": "Xử lý các yêu cầu đặt chỗ đồng thời với mật độ cực kỳ cao từ hàng trăm người dùng mà không xảy ra xung đột dữ liệu (đặt trùng lặp), và hiển thị trực quan sơ đồ trạng thái chỗ đỗ xe thời gian thực trên trình duyệt.",
-      "learnings": "Làm chủ việc sử dụng khóa bi quan (pessimistic locking) trong cơ sở dữ liệu và bộ nhớ đệm Redis để xử lý các giao dịch tốc độ cao. Có kinh nghiệm sâu sắc về giao tiếp thời gian thực WebSockets và vẽ các sơ đồ SVG phản hồi nhạy bén trong React.",
+      "businessGoal": "Reduce park-spot searching time by 45%, automate ticketing processes, and optimize spot allocation during peak hours to maximize building operational efficiency.",
+      "challenges": "Handling high-concurrency reservation requests from hundreds of simultaneous users without transactional conflicts or race conditions, while rendering real-time interactive SVG slot layouts.",
+      "learnings": "Mastered pessimistic database locking and Redis caching to handle high-frequency transactions. Gained deep expertise in real-time WebSockets and responsive SVG rendering in React.",
       "techStack": [
         "React",
         "TypeScript",
@@ -175,37 +179,37 @@
           "type": "landing",
           "image": "/projects/parking-building-management/gallery/1.png",
           "title": "Smart Parking Gateway",
-          "description": "Cổng ra vào có tác động thị giác cao hiển thị tổng quan số lượng chỗ trống, bộ theo dõi trạng thái trực tiếp và chẩn đoán xe vào tòa nhà."
+          "description": "High-impact landing interface displaying slot availability, live tracking, and vehicle diagnostics."
         },
         {
           "type": "dashboard",
           "image": "/projects/parking-building-management/gallery/2.png",
           "title": "Real-time Spot Management",
-          "description": "Sơ đồ trạng thái đỗ xe trực quan trong tòa nhà, tỷ lệ vị trí trống/đã đỗ và bảng điều khiển bật/tắt trạng thái trực tiếp."
+          "description": "Interactive visual parking layouts, occupancy metrics, and status controls."
         },
         {
           "type": "reservation",
           "image": "/projects/parking-building-management/gallery/3.png",
           "title": "Resident & Visitor Portal",
-          "description": "Giao diện đặt chỗ đỗ xe linh hoạt cho cư dân và khách hàng, tích hợp mô phỏng nhận diện biển số xe và tạo mã QR ra vào bảo mật tức thì."
+          "description": "Flexible reservation interface supporting ANPR license plate recognition simulation and instant secure QR code generation."
         },
         {
           "type": "subscriptions",
           "image": "/projects/parking-building-management/gallery/4.png",
           "title": "RFID Subscriptions Console",
-          "description": "Quản lý thẻ đỗ xe dài hạn của cư dân, nhật ký thanh toán, các gói thuê bao và quy trình gia hạn nhanh chóng."
+          "description": "Long-term resident parking passes management, billing logs, and swift renewals."
         },
         {
           "type": "analytics",
           "image": "/projects/parking-building-management/gallery/10.png",
           "title": "Flow & Financial Analytics",
-          "description": "Trực quan hóa xu hướng tải giờ cao điểm, thời gian đỗ xe trung bình, doanh thu mục tiêu theo giờ và dự báo tỷ lệ lấp đầy thông minh."
+          "description": "Visualizing peak load patterns, average duration, target revenue metrics, and smart occupancy predictions."
         },
         {
           "type": "logs",
           "image": "/projects/parking-building-management/gallery/13.png",
-          "title": "System Activity Log & Vehicles List",
-          "description": "Nhật ký lịch sử xe ra vào bãi đỗ, tự động nhận dạng biển số ANPR, đối chiếu hình ảnh camera an ninh."
+          "title": "System Activity Log",
+          "description": "Historical database of vehicle check-ins, automated ANPR matching, and security camera logs."
         }
       ]
     },
@@ -216,9 +220,9 @@
       "subject": "SDN, MMA",
       "cover": "/projects/sdn-mma-project/20.png",
       "role": "Lead Fullstack & Mobile Developer",
-      "businessGoal": "Xây dựng hệ sinh thái mua sắm và theo dõi sức khỏe mẹ & bé toàn diện, tối ưu thời gian xử lý đơn hàng và cung cấp gợi ý dinh dưỡng cá nhân hóa thông qua ứng dụng di động và hệ thống quản trị Web.",
-      "challenges": "Đồng bộ hóa trạng thái giỏ hàng và dữ liệu sức khỏe thai kỳ thời gian thực giữa hai nền tảng (Web & Mobile app) qua Socket.io, và xử lý luồng tải ảnh/video sản phẩm dung lượng lớn thông qua Multer & Cloudinary.",
-      "learnings": "Làm chủ việc điều hướng với Expo Router và quản lý giao diện di động qua NativeWind. Thiết kế cơ sở dữ liệu MongoDB hiệu năng cao sử dụng driver gốc (Native driver) và xây dựng hệ thống gửi mail thông báo tự động bằng NodeMailer.",
+      "businessGoal": "Build a comprehensive maternity and infant care ecosystem, optimize order fulfillment times, and deliver personalized nutrition guidelines via cross-platform mobile apps and admin dashboards.",
+      "challenges": "Synchronizing shopping cart states and pregnancy health data in real time between Web and Mobile clients using Socket.io, and managing high-volume media uploads through Multer & Cloudinary.",
+      "learnings": "Mastered cross-platform navigation using Expo Router and NativeWind styling. Designed high-performance MongoDB schemas using native drivers and built robust automated email alerts via NodeMailer.",
       "techStack": [
         "React Native",
         "Expo Router",
@@ -238,25 +242,68 @@
           "type": "shop",
           "image": "/projects/sdn-mma-project/20.png",
           "title": "Interactive Milk Storefront",
-          "description": "Giao diện cửa hàng sữa dinh dưỡng cho mẹ bầu và em bé bầu, giả lập quy trình đặt hàng thông qua hệ thống Socket.io."
+          "description": "E-commerce storefront for mothers and infants, simulating real-time order processing through Socket.io."
         },
         {
           "type": "milestones",
           "image": "/projects/sdn-mma-project/21.png",
-          "title": "Mother & Baby Milestones Tracking (Mobile App)",
-          "description": "Giả lập ứng dụng di động React Native + Expo theo dõi tuần thai kỳ, ghi nhận lượng sữa uống hàng ngày và đưa ra lời khuyên y khoa."
+          "title": "Maternity Milestone Tracker",
+          "description": "React Native + Expo mobile application mockup for pregnancy tracking, daily milk intake logs, and clinical guidelines."
         },
         {
           "type": "server",
           "image": "/projects/sdn-mma-project/23.png",
-          "title": "Node.js Express Server Runtime Log",
-          "description": "Bảng theo dõi luồng API xử lý trên Backend, xác thực Joi Validation, truy vấn cơ sở dữ liệu MongoDB và gửi mail tự động qua NodeMailer."
+          "title": "Express Server Runtime Console",
+          "description": "Backend API stream monitoring, Joi schema validation, MongoDB queries, and automatic mailing via NodeMailer."
         },
         {
           "type": "database",
           "image": "/projects/sdn-mma-project/24.png",
-          "title": "MongoDB Database & Admin Console",
-          "description": "Quản lý cơ sở dữ liệu MongoDB hiệu năng cao, tối ưu hóa truy vấn dữ liệu thô và cấu trúc lưu trữ phi quan hệ."
+          "title": "MongoDB Database Administration",
+          "description": "Managing high-performance non-relational database queries and optimal document-based indexing."
+        }
+      ]
+    },
+    {
+      "id": "stock-ai",
+      "title": "Stock AI",
+      "subtitle": "A comprehensive platform for stock analysis and personalized investment strategies in the Vietnamese stock market, integrated with Gemini AI to simulate expert analytical thinking.",
+      "subject": "Python, PySide6, AI",
+      "cover": "/projects/stock-ai/cover.png",
+      "role": "Lead Python Developer & AI Architect",
+      "businessGoal": "Developed based on real-world research and active trading in the Vietnamese stock market to translate qualitative investment thinking into a systematic, rule-based decision support system.\n\nEnables personalization of screening criteria and stock evaluations matching individual investment styles, while combining technical analysis, cash flow tracking, and macroeconomic trends to identify high-probability opportunities.\n\nActively utilized by retail investors and stockbrokers as a daily research, screening, and decision-support tool.",
+      "challenges": "The primary challenge was codifying qualitative, multi-dimensional investment knowledge into systematic, programmable rules.\n\nBeyond processing large-scale historical market data, the system simulates complex analysis including cash flow behavior, fundamental enterprise health, market cycles, and macroeconomic variables.\n\nDesigned not merely to aggregate news, but to enable the AI to analyze underlying causes of market shifts and project potential impacts on related sectors and equities.",
+      "learnings": "Architected as a high-performance Python desktop application using PySide6 and Google Gemini AI, leveraging multi-threading (QThread) to handle heavy analytics without blocking the UI.\n\nBuilt a highly flexible framework allowing users to extend and refine AI guidelines based on personal trading preferences, aligning the AI closer to the user's decision-making style.\n\nAcquired deep cross-functional expertise bridging financial research, software systems engineering, and generative AI application design.",
+      "techStack": [
+        "Python",
+        "PySide6",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Gemini AI",
+        "PyInstaller"
+      ],
+      "downloadPath": "/projects/stock-ai/StockAI.exe.zip",
+      "github": "private",
+      "demo": "",
+      "gallery": [
+        {
+          "type": "screener",
+          "image": "/projects/stock-ai/gallery/1.png",
+          "title": "Stock AI Conversational Assistant (Home)",
+          "description": "Main application dashboard featuring a personalized adaptive AI assistant, interactive prompts, and a live financial news feed."
+        },
+        {
+          "type": "profile",
+          "image": "/projects/stock-ai/gallery/2.png",
+          "title": "Investment Profile & AI Training Console",
+          "description": "Control panel to configure risk tolerance, holding periods, and input proprietary trading rules to train the custom AI screener."
+        },
+        {
+          "type": "knowledge",
+          "image": "/projects/stock-ai/gallery/3.png",
+          "title": "Multi-Tiered Value Chain & Ecosystem Designer",
+          "description": "Advanced feature mapping sector value chains, material dependencies, macro/micro impacts on equities, and license management (TuHuyBusiness)."
         }
       ]
     }
