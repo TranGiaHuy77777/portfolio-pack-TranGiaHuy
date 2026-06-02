@@ -38,11 +38,17 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
     mouseY.set(y);
   };
 
+  const isStockAi = project.id === 'stock-ai';
+
   return (
     <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      className="group relative bg-[#121216]/60 backdrop-blur-md border border-white/5 hover:border-primary/20 rounded-2xl p-6 flex flex-col justify-between h-[490px] overflow-hidden transition-colors duration-300"
+      className={`group relative bg-[#121216]/60 backdrop-blur-md rounded-2xl p-6 flex flex-col justify-between h-[490px] overflow-hidden transition-all duration-500 border ${
+        isStockAi
+          ? 'border-yellow-500/30 hover:border-yellow-400/60 shadow-[0_0_20px_rgba(234,179,8,0.04)] hover:shadow-[0_0_30px_rgba(234,179,8,0.18)]'
+          : 'border-white/5 hover:border-primary/20 shadow-none'
+      }`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -55,7 +61,7 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
           background: useMotionTemplate`
             radial-gradient(
               300px circle at ${mouseX}px ${mouseY}px,
-              rgba(109, 93, 246, 0.12),
+              ${isStockAi ? 'rgba(234, 179, 8, 0.16)' : 'rgba(109, 93, 246, 0.12)'},
               transparent 80%
             )
           `
@@ -65,7 +71,9 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
       <div className="z-10 relative">
         {/* Cover Image */}
         {project.cover && (
-          <div className="w-full h-32 rounded-xl overflow-hidden mb-4 border border-white/5 relative bg-black/40">
+          <div className={`w-full h-32 rounded-xl overflow-hidden mb-4 border relative bg-black/40 ${
+            isStockAi ? 'border-yellow-500/25' : 'border-white/5'
+          }`}>
             <img
               src={project.cover}
               alt={project.title}
@@ -78,7 +86,11 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
 
         <div className="flex justify-between items-center mb-3 gap-2">
           <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-[10px] bg-primary/10 border border-primary/20 px-2 py-0.5 rounded text-primary font-bold font-mono">
+            <span className={`text-[10px] px-2 py-0.5 rounded font-bold font-mono border ${
+              isStockAi 
+                ? 'bg-yellow-500/10 border-yellow-500/35 text-yellow-400 shadow-[0_0_10px_rgba(234,179,8,0.08)]' 
+                : 'bg-primary/10 border-primary/20 text-primary'
+            }`}>
               {project.role}
             </span>
             {project.id === 'mumcare-platform' && (
@@ -87,17 +99,25 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
               </span>
             )}
             {project.subject && (
-              <span className="text-[8px] bg-purple-950/40 border border-purple-500/20 px-1.5 py-0.5 rounded text-purple-400 font-bold font-mono tracking-wider">
+              <span className={`text-[8px] px-1.5 py-0.5 rounded font-bold font-mono tracking-wider border ${
+                isStockAi
+                  ? 'bg-amber-950/40 border-amber-500/30 text-amber-300'
+                  : 'bg-purple-950/40 border-purple-500/20 text-purple-400'
+              }`}>
                 {project.id === 'stock-ai' ? '🔬 RESEARCH: ' : '📚 COURSE: '}{project.subject}
               </span>
             )}
           </div>
-          <span className="text-[10px] text-gray-500 font-mono flex-shrink-0">
+          <span className={`text-[10px] font-mono flex-shrink-0 ${
+            isStockAi ? 'text-yellow-500/60 font-bold' : 'text-gray-500'
+          }`}>
             ID: {project.id.toUpperCase()}
           </span>
         </div>
 
-        <h3 className="text-lg font-bold font-sora text-white mb-1 group-hover:text-primary transition-colors line-clamp-1">
+        <h3 className={`text-lg font-bold font-sora text-white mb-1 transition-colors line-clamp-1 ${
+          isStockAi ? 'group-hover:text-yellow-400' : 'group-hover:text-primary'
+        }`}>
           {project.title}
         </h3>
         <p className="text-[11px] text-gray-400 font-sans leading-relaxed mb-3 line-clamp-2 h-[34px]">
@@ -126,7 +146,11 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
         {/* Buttons Grid */}
         <button
           onClick={onOpenDetails}
-          className="w-full py-2 bg-glow-gradient text-black font-sora font-extrabold text-[10px] rounded-lg flex items-center justify-center gap-1.5 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer shadow-neon-glow"
+          className={`w-full py-2 font-sora font-extrabold text-[10px] rounded-lg flex items-center justify-center gap-1.5 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer ${
+            isStockAi
+              ? 'bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-500 text-black shadow-[0_0_15px_rgba(234,179,8,0.35)] hover:shadow-[0_0_20px_rgba(234,179,8,0.5)] font-black'
+              : 'bg-glow-gradient text-black shadow-neon-glow'
+          }`}
         >
           <Layers size={14} />
           VIEW INTERACTIVE DEMO

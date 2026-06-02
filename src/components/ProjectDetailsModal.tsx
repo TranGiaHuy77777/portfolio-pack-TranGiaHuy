@@ -938,6 +938,8 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
     }
   };
 
+  const isStockAi = project.id === 'stock-ai';
+
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4 md:p-8">
@@ -948,7 +950,11 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className="relative bg-[#0C0C0F] border border-white/5 rounded-2xl w-full max-w-5xl overflow-hidden shadow-2xl z-10 grid grid-cols-1 md:grid-cols-12 h-[90vh] md:h-[80vh] max-h-[90vh] md:max-h-[85vh]"
+          className={`relative bg-[#0C0C0F] rounded-2xl w-full max-w-5xl overflow-hidden shadow-2xl z-10 grid grid-cols-1 md:grid-cols-12 h-[90vh] md:h-[80vh] max-h-[90vh] md:max-h-[85vh] border ${
+            isStockAi
+              ? 'border-yellow-500/30 shadow-[0_0_50px_rgba(234,179,8,0.1)]'
+              : 'border-white/5'
+          }`}
         >
           {/* Close button */}
           <button
@@ -965,7 +971,11 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                 {project.gallery[activeSlide].image ? (
                   <button
                     onClick={() => setShowSimulator(!showSimulator)}
-                    className="flex items-center gap-1.5 px-3 py-1 bg-primary/20 border border-primary/30 rounded-full text-[9px] font-bold text-[#00D9FF] hover:bg-primary/35 transition-all shadow-neon-glow cursor-pointer"
+                    className={`flex items-center gap-1.5 px-3 py-1 border rounded-full text-[9px] font-bold hover:scale-[1.02] transition-all cursor-pointer ${
+                      isStockAi
+                        ? 'bg-yellow-500/20 border-yellow-500/30 text-yellow-400 shadow-[0_0_10px_rgba(234,179,8,0.2)] hover:bg-yellow-500/30'
+                        : 'bg-primary/20 border-primary/30 text-[#00D9FF] hover:bg-primary/35 shadow-neon-glow'
+                    }`}
                   >
                     <Sparkles size={10} className="animate-pulse" />
                     {showSimulator ? "VIEW REAL SCREENSHOT" : "ACTIVATE LIVE SIMULATOR"}
@@ -1008,7 +1018,9 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                   key={idx}
                   onClick={() => setActiveSlide(idx)}
                   className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    activeSlide === idx ? 'w-6 bg-primary' : 'w-2 bg-gray-700 hover:bg-gray-500'
+                    activeSlide === idx 
+                      ? (isStockAi ? 'w-6 bg-yellow-400 shadow-[0_0_8px_rgba(234,179,8,0.5)]' : 'w-6 bg-primary') 
+                      : 'w-2 bg-gray-700 hover:bg-gray-500'
                   }`}
                 />
               ))}
@@ -1020,7 +1032,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
             <div className="flex flex-col gap-4">
               <div className="text-left">
                 <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                  <span className="text-xs font-semibold text-primary">
+                  <span className={`text-xs font-semibold ${isStockAi ? 'text-yellow-400' : 'text-primary'}`}>
                     {project.role}
                   </span>
                   {project.id === 'mumcare-platform' && (
@@ -1029,7 +1041,11 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                     </span>
                   )}
                   {project.subject && (
-                    <span className="text-[9px] bg-purple-950/40 border border-purple-500/20 px-2.5 py-0.5 rounded-full text-purple-400 font-bold font-mono tracking-wider">
+                    <span className={`text-[9px] px-2.5 py-0.5 rounded-full font-bold font-mono tracking-wider border ${
+                      isStockAi
+                        ? 'bg-amber-950/40 border-amber-500/30 text-amber-300'
+                        : 'bg-purple-950/40 border-purple-500/20 text-purple-400'
+                    }`}>
                       {project.id === 'stock-ai' ? '🔬 INDEPENDENT RESEARCH: ' : '📚 ACADEMIC COURSE: '}{project.subject}
                     </span>
                   )}
@@ -1045,21 +1061,21 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
               {/* Details sections */}
               <div className="flex flex-col gap-3 text-xs leading-relaxed font-sans text-left">
                 <div>
-                  <h4 className="text-[#00D9FF] font-sora font-bold text-[10px] tracking-wider uppercase mb-1">
+                  <h4 className={`${isStockAi ? 'text-yellow-400' : 'text-[#00D9FF]'} font-sora font-bold text-[10px] tracking-wider uppercase mb-1`}>
                     🎯 BUSINESS GOAL & IMPACT
                   </h4>
                   <p className="text-gray-400 whitespace-pre-line">{project.businessGoal}</p>
                 </div>
 
                 <div className="border-t border-white/5 pt-3">
-                  <h4 className="text-[#00D9FF] font-sora font-bold text-[10px] tracking-wider uppercase mb-1">
+                  <h4 className={`${isStockAi ? 'text-yellow-400' : 'text-[#00D9FF]'} font-sora font-bold text-[10px] tracking-wider uppercase mb-1`}>
                     🔥 KEY CHALLENGES
                   </h4>
                   <p className="text-gray-400 whitespace-pre-line">{project.challenges}</p>
                 </div>
 
                 <div className="border-t border-white/5 pt-3">
-                  <h4 className="text-[#00D9FF] font-sora font-bold text-[10px] tracking-wider uppercase mb-1">
+                  <h4 className={`${isStockAi ? 'text-yellow-400' : 'text-[#00D9FF]'} font-sora font-bold text-[10px] tracking-wider uppercase mb-1`}>
                     📖 LEARNINGS & ARCHITECTURE
                   </h4>
                   <p className="text-gray-400 whitespace-pre-line">{project.learnings}</p>
@@ -1086,7 +1102,11 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                 download={!project.downloadPath.startsWith('http')}
                 target={project.downloadPath.startsWith('http') ? '_blank' : undefined}
                 rel={project.downloadPath.startsWith('http') ? 'noreferrer' : undefined}
-                className="py-2.5 px-4 bg-glow-gradient text-black font-sora font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 hover:scale-[1.02] active:scale-95 transition-all duration-200 shadow-neon-glow"
+                className={`py-2.5 px-4 font-sora font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 hover:scale-[1.02] active:scale-[0.95] transition-all duration-200 ${
+                  isStockAi
+                    ? 'bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-500 text-black shadow-[0_0_20px_rgba(234,179,8,0.4)] font-black hover:scale-[1.03]'
+                    : 'bg-glow-gradient text-black shadow-neon-glow'
+                }`}
               >
                 <Download size={14} />
                 DOWNLOAD SOURCE {project.id === 'stock-ai' ? '(.EXE)' : '(.RAR)'}
