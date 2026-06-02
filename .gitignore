@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Prevent committing large executable and compressed files
+public/projects/stock-ai/StockAI.exe.zip
+*.exe

@@ -1083,11 +1083,13 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
             <div className={`grid grid-cols-1 ${project.github && project.github !== 'private' ? 'sm:grid-cols-2' : ''} gap-3 mt-6 border-t border-white/5 pt-4`}>
               <a
                 href={project.downloadPath}
-                download
+                download={!project.downloadPath.startsWith('http')}
+                target={project.downloadPath.startsWith('http') ? '_blank' : undefined}
+                rel={project.downloadPath.startsWith('http') ? 'noreferrer' : undefined}
                 className="py-2.5 px-4 bg-glow-gradient text-black font-sora font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 hover:scale-[1.02] active:scale-95 transition-all duration-200 shadow-neon-glow"
               >
                 <Download size={14} />
-                DOWNLOAD SOURCE {project.downloadPath.toLowerCase().endsWith('.zip') ? '(.EXE)' : '(.RAR)'}
+                DOWNLOAD SOURCE {project.id === 'stock-ai' ? '(.EXE)' : '(.RAR)'}
               </a>
 
               {project.github && project.github !== 'private' && (

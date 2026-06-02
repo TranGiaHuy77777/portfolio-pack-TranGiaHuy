@@ -136,12 +136,14 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
         <div className={`grid ${project.github && project.github !== 'private' ? (project.githubBE ? 'grid-cols-3' : 'grid-cols-2') : 'grid-cols-1'} gap-1.5 mt-1`}>
           <a
             href={project.downloadPath}
-            download
+            download={!project.downloadPath.startsWith('http')}
+            target={project.downloadPath.startsWith('http') ? '_blank' : undefined}
+            rel={project.downloadPath.startsWith('http') ? 'noreferrer' : undefined}
             onClick={(e) => e.stopPropagation()}
             className="py-2 bg-[#181820] hover:bg-[#20202a] border border-white/5 text-gray-300 font-sora font-semibold text-[9px] rounded-lg flex items-center justify-center gap-1 transition-colors"
           >
             <Download size={10} />
-            SOURCE {project.downloadPath.toLowerCase().endsWith('.zip') ? '(.EXE)' : '(.RAR)'}
+            SOURCE {project.id === 'stock-ai' ? '(.EXE)' : '(.RAR)'}
           </a>
           {project.github && project.github !== 'private' && (
             <a
