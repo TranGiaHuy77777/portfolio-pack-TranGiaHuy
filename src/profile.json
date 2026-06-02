@@ -266,7 +266,7 @@
     },
     {
       "id": "stock-ai",
-      "title": "Stock AI",
+      "title": "Stock AI - Tran Gia Huy",
       "subtitle": "A comprehensive platform for stock analysis and personalized investment strategies in the Vietnamese stock market, integrated with Gemini AI to simulate expert analytical thinking.",
       "subject": "Python, PySide6, AI",
       "cover": "/projects/stock-ai/cover.png",

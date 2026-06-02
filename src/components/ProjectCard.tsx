@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
-import { ExternalLink, Layers, Download, Lock } from 'lucide-react';
+import { ExternalLink, Layers, Download, Lock, Crown } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -46,7 +46,7 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
       onMouseMove={handleMouseMove}
       className={`group relative bg-[#121216]/60 backdrop-blur-md rounded-2xl p-6 flex flex-col justify-between h-[490px] overflow-hidden transition-all duration-500 border ${
         isStockAi
-          ? 'border-yellow-500/30 hover:border-yellow-400/60 shadow-[0_0_20px_rgba(234,179,8,0.04)] hover:shadow-[0_0_30px_rgba(234,179,8,0.18)]'
+          ? 'border-yellow-500/45 hover:border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.06)] hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] scale-[1.01] hover:scale-[1.02]'
           : 'border-white/5 hover:border-primary/20 shadow-none'
       }`}
       initial={{ opacity: 0, y: 30 }}
@@ -81,6 +81,14 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
             />
             {/* Ambient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#121216] via-transparent to-transparent opacity-80" />
+
+            {/* Glowing Golden Crown Badge */}
+            {isStockAi && (
+              <div className="absolute top-2 right-2 z-20 bg-black/75 backdrop-blur-md border border-yellow-500/40 rounded-lg px-2 py-0.5 text-yellow-400 shadow-[0_0_12px_rgba(234,179,8,0.4)] flex items-center gap-1 text-[8px] font-bold font-sora uppercase tracking-wider animate-pulse">
+                <Crown size={10} className="fill-yellow-400" />
+                <span>PREMIER</span>
+              </div>
+            )}
           </div>
         )}
 
@@ -115,10 +123,15 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
           </span>
         </div>
 
-        <h3 className={`text-lg font-bold font-sora text-white mb-1 transition-colors line-clamp-1 ${
+        <h3 className={`text-lg font-bold font-sora text-white mb-1 transition-colors flex items-center gap-1.5 line-clamp-1 ${
           isStockAi ? 'group-hover:text-yellow-400' : 'group-hover:text-primary'
         }`}>
-          {project.title}
+          <span>{project.title}</span>
+          {isStockAi && (
+            <span className="text-[7px] px-1.5 py-0.5 bg-yellow-500/10 border border-yellow-500/35 text-yellow-400 font-bold rounded-md tracking-wider uppercase font-sora flex-shrink-0 shadow-[0_0_8px_rgba(234,179,8,0.15)]">
+              BUSINESS
+            </span>
+          )}
         </h3>
         <p className="text-[11px] text-gray-400 font-sans leading-relaxed mb-3 line-clamp-2 h-[34px]">
           {project.subtitle}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Download, Check, Sparkles, Layers, Lock } from 'lucide-react';
+import { X, Download, Check, Sparkles, Layers, Lock, Crown } from 'lucide-react';
 import canvasConfetti from 'canvas-confetti';
 
 const GithubIcon = ({ size = 14 }: { size?: number }) => (
@@ -1050,8 +1050,16 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                     </span>
                   )}
                 </div>
-                <h2 className="text-2xl font-bold text-white font-sora">
-                  {project.title}
+                <h2 className="text-2xl font-bold text-white font-sora flex flex-wrap items-center gap-2">
+                  <span>{project.title}</span>
+                  {isStockAi && (
+                    <div className="flex items-center gap-1.5 flex-shrink-0">
+                      <span className="text-[9px] px-2 py-0.5 bg-gradient-to-r from-yellow-500 to-amber-500 text-black font-black rounded-full tracking-wider uppercase font-sora shadow-[0_0_12px_rgba(234,179,8,0.3)]">
+                        BUSINESS
+                      </span>
+                      <Crown size={16} className="text-yellow-400 fill-yellow-400 animate-pulse" />
+                    </div>
+                  )}
                 </h2>
                 <p className="text-xs text-gray-500 font-mono mt-0.5">
                   {project.subtitle}
