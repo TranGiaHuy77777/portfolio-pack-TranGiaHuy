@@ -39,9 +39,11 @@ export default function Projects() {
             <h2 className="text-3xl md:text-4xl font-extrabold font-sora text-white max-w-3xl leading-tight">
               Independent Research & Practical Products
             </h2>
-            <p className="text-xs text-gray-400 font-sans max-w-2xl mt-2 leading-relaxed">
-              Self-directed software solutions focused on optimizing investment strategies and delivering practical value to retail investors (F0, F1) and newly entered stockbrokers in the Vietnamese market.
-            </p>
+            <div className="bg-yellow-500/[0.03] border border-yellow-500/20 backdrop-blur-md rounded-2xl p-4 max-w-2xl mx-auto mt-4 text-center shadow-[0_0_15px_rgba(234,179,8,0.02)] hover:border-yellow-500/35 transition-all duration-300">
+              <p className="text-xs text-gray-300 font-sans leading-relaxed">
+                🚀 <span className="text-yellow-400 font-bold">Self-directed software solutions</span> focused on <span className="text-yellow-400 font-semibold">optimizing investment strategies</span> and delivering practical value to <span className="text-white font-bold underline decoration-yellow-500/40 decoration-2">retail investors (F0, F1)</span> and <span className="text-white font-bold underline decoration-yellow-500/40 decoration-2">newly entered stockbrokers</span> in the Vietnamese market.
+              </p>
+            </div>
             <div className="w-16 h-1 bg-glow-gradient rounded mt-2" />
           </div>
 
