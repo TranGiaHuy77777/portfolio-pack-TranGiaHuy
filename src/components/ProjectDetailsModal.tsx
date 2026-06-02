@@ -47,10 +47,10 @@ function ParkingLandingMockup({ onNavigate }: { onNavigate?: () => void }) {
       <div className="flex-1 flex flex-col justify-center gap-3 py-2">
         <div>
           <h3 className="text-white font-sora font-bold text-xs tracking-tight leading-snug">
-            Nền Tảng Kiểm Soát Bãi Đỗ Xe Thông Minh
+            Smart Parking & Building Control Hub
           </h3>
           <p className="text-[9px] text-gray-400 mt-1 leading-relaxed font-sans">
-            Hệ thống quản lý bãi gửi xe thông minh cho tòa nhà, nhận diện biển số xe tự động và đặt chỗ thời gian thực.
+            Intelligent facility management and automated parking allocation platform with instant ANPR and real-time reservation logic.
           </p>
         </div>
 
@@ -418,7 +418,7 @@ function StoreOpsDashboardMockup() {
 }
 
 function StoreOpsReservationMockup() {
-  const [inputText, setInputText] = useState('Chúng tôi mua 50 cái ghế nhưng cửa hàng giao nhầm màu xanh và trầy xước.');
+  const [inputText, setInputText] = useState('We bought 50 chairs but the store delivered the wrong color (blue) and some are scratched.');
   const [analysis, setAnalysis] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
@@ -430,11 +430,11 @@ function StoreOpsReservationMockup() {
       let sentiment = 'Neutral';
       let severity = 'Low';
       
-      if (lower.includes('nhầm') || lower.includes('trầy') || lower.includes('lỗi')) {
+      if (lower.includes('wrong') || lower.includes('scratch') || lower.includes('defect') || lower.includes('error') || lower.includes('faulty')) {
         category = 'Delivery / Faulty Product';
         sentiment = 'Negative / Angry';
         severity = 'High';
-      } else if (lower.includes('giá') || lower.includes('mua') || lower.includes('hỏi')) {
+      } else if (lower.includes('price') || lower.includes('buy') || lower.includes('inquiry') || lower.includes('ask') || lower.includes('cost')) {
         category = 'Sales Inquiry';
         sentiment = 'Inquisitive';
         severity = 'Medium';
@@ -599,9 +599,9 @@ function MumCareShopMockup() {
           <div className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500 flex items-center justify-center text-green-400 mb-2">
             <Check size={16} />
           </div>
-          <div className="text-white font-bold font-sora text-[11px] mb-1">ĐẶT HÀNG THÀNH CÔNG!</div>
+          <div className="text-white font-bold font-sora text-[11px] mb-1">ORDER PLACED SUCCESSFULLY!</div>
           <div className="text-gray-400 text-[8px] leading-relaxed">
-            Hệ thống đã gửi mail xác nhận đơn hàng qua **Nodemailer** và lưu trữ dữ liệu vào **MongoDB**.
+            The system successfully sent a confirmation email via **Nodemailer** and persisted order records to **MongoDB**.
           </div>
         </div>
       ) : (
@@ -695,8 +695,8 @@ function MumCareMilestonesMockup() {
             <div className="w-full h-full rounded-full bg-black/60 flex items-center justify-center text-[10px] text-white font-bold">🤰</div>
           </div>
           <div className="flex-1 min-w-0">
-            <div className="text-white font-bold font-sora text-[10px] truncate">Mẹ bầu: Trần Gia Huy (Tuần 24)</div>
-            <div className="text-gray-400 text-[8px] font-sans">Kích thước bé: Quả dưa lưới (~600g)</div>
+            <div className="text-white font-bold font-sora text-[10px] truncate">Mother: Tran Gia Huy (Week 24)</div>
+            <div className="text-gray-400 text-[8px] font-sans">Baby Size: Cantaloupe (~600g)</div>
           </div>
         </div>
 
@@ -724,13 +724,13 @@ function MumCareMilestonesMockup() {
         {/* Medical Advisory Box */}
         <div className="bg-[#181820]/40 border border-white/5 p-2 rounded text-[7.5px] leading-relaxed text-gray-400 font-sans">
           {percent >= 100 ? (
-            <span className="text-green-400 font-bold block">✔ CHỈ SỐ HOÀN HẢO!</span>
+            <span className="text-green-400 font-bold block">✔ PERFECT INTAKE RECORD!</span>
           ) : (
-            <span className="text-yellow-400 font-semibold block">💡 GỢI Ý DINH DƯỠNG:</span>
+            <span className="text-yellow-400 font-semibold block">💡 NUTRITIONAL RECOMMENDATION:</span>
           )}
           {percent >= 100
-            ? "Mẹ đã bổ sung đủ lượng canxi cần thiết cho xương và răng của bé hôm nay. Tiếp tục phát huy nhé!"
-            : "Thai nhi 24 tuần tuổi đang phát triển xương nhanh chóng. Mẹ nên bổ sung thêm 150ml sữa bầu organic."}
+            ? "You have successfully supplied the ideal calcium amount required for the baby's bone and tooth growth today. Keep it up!"
+            : "The 24-week fetus is developing bones rapidly. It is recommended to log another 150ml of organic prenatal milk."}
         </div>
       </div>
 
@@ -1030,7 +1030,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                   )}
                   {project.subject && (
                     <span className="text-[9px] bg-purple-950/40 border border-purple-500/20 px-2.5 py-0.5 rounded-full text-purple-400 font-bold font-mono tracking-wider">
-                      {project.id === 'stock-ai' ? '🔬 DỰ ÁN TỰ NGHIÊN CỨU: ' : '📚 MÔN HỌC: '}{project.subject}
+                      {project.id === 'stock-ai' ? '🔬 INDEPENDENT RESEARCH: ' : '📚 ACADEMIC COURSE: '}{project.subject}
                     </span>
                   )}
                 </div>
@@ -1087,7 +1087,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                 className="py-2.5 px-4 bg-glow-gradient text-black font-sora font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 hover:scale-[1.02] active:scale-95 transition-all duration-200 shadow-neon-glow"
               >
                 <Download size={14} />
-                DOWNLOAD SOURCE (.RAR)
+                DOWNLOAD SOURCE {project.downloadPath.toLowerCase().endsWith('.zip') ? '(.EXE)' : '(.RAR)'}
               </a>
 
               {project.github && project.github !== 'private' && (
@@ -1104,9 +1104,9 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
             </div>
 
             {project.github === 'private' && (
-              <p className="text-[10px] text-gray-500 font-sans italic text-center mt-3 flex items-center justify-center gap-1.5">
-                <Lock size={10} className="text-gray-600 flex-shrink-0" />
-                Mã nguồn của dự án này được bảo mật riêng tư. Nếu muốn xem, vui lòng liên hệ riêng qua Zalo hoặc Form liên hệ ở cuối trang.
+              <p className="text-[10px] text-red-500 font-bold font-sans italic text-center mt-3 flex items-center justify-center gap-1.5">
+                <Lock size={10} className="text-red-500 flex-shrink-0" />
+                Private repository. To view the source code, please contact me directly via Zalo or the contact form at the bottom of the page.
               </p>
             )}
           </div>

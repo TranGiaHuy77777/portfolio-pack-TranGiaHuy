@@ -5,39 +5,39 @@ export default function Workflow() {
   const steps = [
     {
       num: '01',
-      title: 'Nghiên cứu',
+      title: 'Research',
       icon: <Search size={20} />,
-      desc: 'Tìm hiểu tổng quan nghiệp vụ, nghiên cứu các điểm nghẽn vận hành của cửa hàng, thu thập phản hồi của người dùng cuối.',
+      desc: 'Analyze business domains, research operational bottlenecks, and gather direct feedback from end users.',
     },
     {
       num: '02',
-      title: 'Phân tích',
+      title: 'Analysis',
       icon: <FileSearch size={20} />,
-      desc: 'Vẽ sơ đồ quy trình công việc, chi tiết hóa các ràng buộc kỹ thuật, thiết kế mô hình CSDL, xây dựng đặc tả kiến trúc sạch.',
+      desc: 'Map business workflows, specify technical constraints, design database schemas, and establish clean system architectures.',
     },
     {
       num: '03',
-      title: 'Thiết kế',
+      title: 'Design',
       icon: <Palette size={20} />,
-      desc: 'Thiết kế giao diện mẫu dạng kính mờ (glassmorphic), xây dựng token hệ thống thiết kế, đồng bộ hóa các đường nét chuyển động mượt mà.',
+      desc: 'Design modern glassmorphic layouts, establish system style tokens, and implement fluid micro-animations.',
     },
     {
       num: '04',
-      title: 'Phát triển',
+      title: 'Development',
       icon: <Code size={20} />,
-      desc: 'Lập trình các trang React / TS mạnh mẽ, xây dựng các nút API Spring Boot, quản lý trạng thái ứng dụng phức tạp.',
+      desc: 'Develop robust React/TypeScript interfaces, construct Spring Boot REST endpoints, and implement advanced state management.',
     },
     {
       num: '05',
-      title: 'Tối ưu hóa',
+      title: 'Optimization',
       icon: <Gauge size={20} />,
-      desc: 'Kiểm tra dung lượng tài nguyên, tinh chỉnh luồng dựng hình đạt 60 FPS trên máy tính, bảo mật cổng chống spam mạnh mẽ.',
+      desc: 'Audit bundle sizes, refine render pipelines for 60 FPS performance, and implement robust anti-spam security gateways.',
     },
     {
       num: '06',
-      title: 'Bàn giao',
+      title: 'Deployment',
       icon: <CheckSquare size={20} />,
-      desc: 'Đóng gói các gói sản phẩm phân phối, kích hoạt triển khai staging tự động trên Vercel/Netlify.',
+      desc: 'Package deployment assets, configure CI/CD pipelines, and automate staging deployments to Vercel/Netlify.',
     },
   ];
 

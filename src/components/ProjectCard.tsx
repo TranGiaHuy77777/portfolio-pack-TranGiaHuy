@@ -23,7 +23,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  
+
   // Custom glow coordinates relative to mouse position
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -33,7 +33,7 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
     const { left, top } = cardRef.current.getBoundingClientRect();
     const x = e.clientX - left;
     const y = e.clientY - top;
-    
+
     mouseX.set(x);
     mouseY.set(y);
   };
@@ -88,7 +88,7 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
             )}
             {project.subject && (
               <span className="text-[8px] bg-purple-950/40 border border-purple-500/20 px-1.5 py-0.5 rounded text-purple-400 font-bold font-mono tracking-wider">
-                {project.id === 'stock-ai' ? '🔬 NGHIÊN CỨU: ' : '📚 MÔN: '}{project.subject}
+                {project.id === 'stock-ai' ? '🔬 RESEARCH: ' : '📚 COURSE: '}{project.subject}
               </span>
             )}
           </div>
@@ -141,7 +141,7 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
             className="py-2 bg-[#181820] hover:bg-[#20202a] border border-white/5 text-gray-300 font-sora font-semibold text-[9px] rounded-lg flex items-center justify-center gap-1 transition-colors"
           >
             <Download size={10} />
-            SOURCE (.RAR)
+            SOURCE {project.downloadPath.toLowerCase().endsWith('.zip') ? '(.EXE)' : '(.RAR)'}
           </a>
           {project.github && project.github !== 'private' && (
             <a
@@ -170,9 +170,9 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
         </div>
 
         {project.github === 'private' && (
-          <p className="text-[8px] text-gray-500 font-sans italic text-center mt-2.5 flex items-center justify-center gap-1">
-            <Lock size={8} className="text-gray-600 flex-shrink-0" />
-            Mã nguồn riêng tư. Để xem, vui lòng liên hệ qua Zalo hoặc Form contact bên dưới.
+          <p className="text-[8px] text-red-500 font-bold font-sans italic text-center mt-2.5 flex items-center justify-center gap-1">
+            <Lock size={8} className="text-red-500 flex-shrink-0" />
+            Private repository. To view the source code, please contact me directly via Zalo or the contact form below.
           </p>
         )}
       </div>

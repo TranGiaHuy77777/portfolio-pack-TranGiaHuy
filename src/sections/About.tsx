@@ -35,19 +35,19 @@ export default function About() {
             className="lg:col-span-4 flex flex-col gap-6 text-left"
           >
             <h3 className="text-xl font-bold font-sora text-white">
-              Tại sao nền tảng của tôi là lợi thế vượt trội của bạn.
+              Why my execution is your competitive advantage.
             </h3>
             <p className="text-xs text-gray-400 font-sans leading-relaxed">
-              Trong khi phần lớn các nhà phát triển chỉ nhìn thấy những dòng code, kinh nghiệm thực chiến trong quản lý bán lẻ và quan hệ khách hàng cho tôi một tầm nhìn toàn diện về bức tranh thương mại.
+              While most developers focus solely on code, my hands-on background in retail operations and business workflows gives me a commercial vantage point.
 
-              Tôi không chỉ lập trình; tôi lắng nghe sâu sắc nhu cầu của khách hàng và các vấn đề vận hành để số hóa chúng thành giao diện phần mềm tối ưu.
+              I don't just write code; I actively listen to user pain points and operation bottlenecks to translate them into clean, optimized software architectures.
             </p>
             <p className="text-xs text-gray-400 font-sans leading-relaxed">
-              Kết quả là những hệ thống giúp nhân viên thao tác dễ dàng, tối đa hóa trải nghiệm người dùng và giúp chủ doanh nghiệp cắt giảm chi phí hiệu quả.
+              The result is software that makes day-to-day operations seamless, maximizes end-user productivity, and drives measurable cost efficiency.
             </p>
             <div className="p-4 bg-white/5 border-l-2 border-primary rounded-r-xl">
               <p className="text-[11px] italic text-gray-300 font-sans leading-relaxed">
-                "Với tôi, viết code chỉ là bước cuối cùng. Giá trị thực sự nằm ở việc thấu hiểu mong muốn của khách hàng và chuyển hóa nó thành một sản phẩm kinh doanh hiệu quả."
+                "To me, writing code is simply the final execution step. The true value lies in dissecting customer needs and engineering a solution that drives business performance."
               </p>
             </div>
           </motion.div>
@@ -67,7 +67,7 @@ export default function About() {
               {/* Actual Image */}
               <img
                 src="/me.jpg"
-                alt="Trần Gia Huy"
+                alt="Tran Gia Huy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover/avatar:scale-105"
               />
             </div>
@@ -76,7 +76,7 @@ export default function About() {
             <div className="flex flex-col gap-1.5 w-full max-w-[220px] text-[9px] font-mono">
               <div className="flex justify-between items-center bg-white/5 border border-white/5 px-2.5 py-1.5 rounded-xl">
                 <span className="text-gray-500">Location</span>
-                <span className="text-white font-bold">TP.HCM, VN 🇻🇳</span>
+                <span className="text-white font-bold">HCMC, Vietnam 🇻🇳</span>
               </div>
               <div className="flex justify-between items-center bg-white/5 border border-white/5 px-2.5 py-1.5 rounded-xl">
                 <span className="text-gray-500">Status</span>

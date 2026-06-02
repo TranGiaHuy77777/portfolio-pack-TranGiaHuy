@@ -18,10 +18,10 @@ const ZaloIcon = ({ size = 18 }: { size?: number }) => (
 );
 
 const projectOptions = [
-  { value: "Fullstack Development", label: "Ứng dụng Web Fullstack React + Java/Node" },
-  { value: "Frontend Engineering", label: "Giao diện React / TypeScript tối ưu cao" },
-  { value: "Operations Optimization", label: "Phân tích quy trình bán lẻ & Viết mã tự động" },
-  { value: "General Conversation", label: "Chào hỏi xã giao / Hẹn phỏng vấn kỹ thuật" },
+  { value: "Fullstack Development", label: "Fullstack Web App React + Java/Node" },
+  { value: "Frontend Engineering", label: "High-Performance React/TypeScript UI" },
+  { value: "Operations Optimization", label: "Retail Workflow Analysis & Automation" },
+  { value: "General Conversation", label: "General Inquiries / Technical Interview" },
 ];
 
 export default function Contact() {
@@ -105,20 +105,20 @@ export default function Contact() {
 
     setSubmitting(true);
 
-    // CẤU HÌNH DỊCH VỤ NHẬN TIN NHẮN (BẠN CHỌN 1 TRONG CÁC CÁCH DƯỚI ĐÂY):
+    // MESSAGE SERVICE CONFIGURATION:
     // ---------------------------------------------------------------------------------
-    // Cách 1: Sử dụng Discord Webhook (Nhận thông báo ngay trên Discord) - MIỄN PHÍ & NHANH NHẤT
-    // Bạn chỉ cần tạo Webhook trên Discord, rồi dán URL vào biến dưới đây.
+    // Option 1: Discord Webhook (Instant notifications directly on Discord) - FREE & FASTEST
+    // Simply create a Webhook on Discord and paste your URL below.
     const DISCORD_WEBHOOK_URL = "";
 
-    // Cách 2: Sử dụng Formspree (Nhận email trực tiếp về Gmail) - MIỄN PHÍ & DỄ DÀNG
-    // Đăng ký tài khoản free tại formspree.io, tạo form mới và dán ID form vào đây.
+    // Option 2: Formspree (Forward emails directly to Gmail) - FREE & EASY
+    // Register a free account at formspree.io, create a new form, and paste your form ID below.
     const FORMSPREE_FORM_ID = "mzdwajay";
     // ---------------------------------------------------------------------------------
 
     try {
       if (DISCORD_WEBHOOK_URL) {
-        // Gửi tin nhắn dạng Rich Embed sang Discord
+        // Send Rich Embed message to Discord
         await fetch(DISCORD_WEBHOOK_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -126,28 +126,28 @@ export default function Contact() {
             username: "Portfolio Notification Bot",
             avatar_url: "https://i.imgur.com/4M344ox.png",
             embeds: [{
-              title: "📩 Tin Nhắn Mới Từ Portfolio!",
+              title: "📩 New Message From Portfolio!",
               color: 3380223, // Neon Blue color
               fields: [
-                { name: "👤 Người gửi", value: name || "Ẩn danh", inline: true },
-                { name: "✉️ Email", value: email || "Không có", inline: true },
-                { name: "🛠️ Loại dự án yêu cầu", value: projectType, inline: false },
-                { name: "📝 Nội dung chi tiết", value: message || "Không có nội dung.", inline: false }
+                { name: "👤 Sender", value: name || "Anonymous", inline: true },
+                { name: "✉️ Email", value: email || "None", inline: true },
+                { name: "🛠️ Requested Project Category", value: projectType, inline: false },
+                { name: "📝 Message Details", value: message || "No content.", inline: false }
               ],
               timestamp: new Date().toISOString(),
-              footer: { text: "Trần Gia Huy Portfolio" }
+              footer: { text: "Tran Gia Huy Portfolio" }
             }]
           })
         });
       } else if (FORMSPREE_FORM_ID) {
-        // Gửi tin nhắn qua Formspree để forward về Gmail
+        // Send message via Formspree to forward to Gmail
         await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
           method: 'POST',
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email, projectType, message })
         });
       } else {
-        // Chế độ Mặc định/Giả lập: Nếu chưa cấu hình gì, hệ thống sẽ tự chạy Demo hiệu ứng trong 1.5 giây
+        // Default/Demo Mode: If nothing configured, run a 1.5s simulated submit animation
         await new Promise(resolve => setTimeout(resolve, 1500));
       }
 
@@ -181,10 +181,10 @@ export default function Contact() {
       frame();
 
     } catch (error) {
-      console.error("Gửi tin nhắn thất bại:", error);
-      alert("Đã xảy ra lỗi khi kết nối máy chủ gửi tin nhắn. Hệ thống sẽ kích hoạt giao diện Demo để đảm bảo trải nghiệm!");
+      console.error("Message delivery failed:", error);
+      alert("An error occurred while connecting to the messaging server. The demo interface will be activated to ensure a seamless experience!");
 
-      // Fallback sang demo hiệu ứng
+      // Fallback to simulated success
       setSubmitting(false);
       setSubmitted(true);
     }
@@ -219,10 +219,10 @@ export default function Contact() {
               Is your process automation shop ready?
             </h3>
             <p className="text-sm text-gray-400 font-sans leading-relaxed">
-              Nếu bạn có yêu cầu về sản phẩm kỹ thuật số, cần xây dựng các đường dẫn fullstack tùy chỉnh hoặc muốn kiểm toán chi phí vận hành cửa hàng, hãy gửi yêu cầu.
+              If you have custom digital product requirements, need full-stack software development, or want to audit retail operations cost efficiency, feel free to send a request.
             </p>
             <p className="text-sm text-gray-400 font-sans leading-relaxed">
-              Các nhà tuyển dụng có thể yêu cầu xem các đoạn mã nguồn cụ thể hoặc tải trực tiếp mã nguồn nén (.RAR) của dự án.
+              Recruiters are welcome to request custom source code walk-throughs or directly download compiled executable (.EXE / .ZIP) archives.
             </p>
 
             {/* Social badges links */}
@@ -266,10 +266,10 @@ export default function Contact() {
                   <Check size={28} />
                 </div>
                 <h3 className="text-xl font-bold font-sora text-black">
-                  Gửi tin nhắn thành công!
+                  Message sent successfully!
                 </h3>
                 <p className="text-sm text-black/80 max-w-sm">
-                  Cảm ơn bạn đã liên hệ. Tôi đã nhận được bản ghi yêu cầu của bạn và sẽ phản hồi sớm nhất có thể.
+                  Thank you for reaching out. I have received your request and will get back to you as soon as possible.
                 </p>
                 <button
                   onClick={() => {
@@ -282,38 +282,38 @@ export default function Contact() {
                   }}
                   className="mt-4 px-4 py-2 border border-slate-300 hover:border-black rounded-lg text-xs text-black font-semibold transition-colors bg-white hover:bg-slate-50"
                 >
-                  Gửi tin nhắn khác
+                  Send another message
                 </button>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4 font-sans text-xs">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-black font-bold tracking-wider font-sora text-[10px]">HỌ VÀ TÊN</label>
+                    <label className="text-black font-bold tracking-wider font-sora text-[10px]">FULL NAME</label>
                     <input
                       type="text"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      placeholder="Ví dụ: Nhà tuyển dụng"
+                      placeholder="e.g. Hiring Manager"
                       className="bg-white/80 border border-slate-200/80 rounded-xl p-3 text-black placeholder:text-black/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 hover:bg-white/90 text-xs transition-all duration-300"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-black font-bold tracking-wider font-sora text-[10px]">ĐỊA CHỈ EMAIL</label>
+                    <label className="text-black font-bold tracking-wider font-sora text-[10px]">EMAIL ADDRESS</label>
                     <input
                       type="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Ví dụ: nhansuviet@congty.com"
+                      placeholder="recruiter@company.com"
                       className="bg-white/80 border border-slate-200/80 rounded-xl p-3 text-black placeholder:text-black/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 hover:bg-white/90 text-xs transition-all duration-300"
                     />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-1.5 relative" ref={dropdownRef}>
-                  <label className="text-black font-bold tracking-wider font-sora text-[10px]">PHÂN LOẠI YÊU CẦU DỰ ÁN</label>
+                  <label className="text-black font-bold tracking-wider font-sora text-[10px]">PROJECT CATEGORY REQUEST</label>
 
                   {/* Dropdown Button */}
                   <button
@@ -363,13 +363,13 @@ export default function Contact() {
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-black font-bold tracking-wider font-sora text-[10px]">NỘI DUNG CHI TIẾT TIN NHẮN</label>
+                  <label className="text-black font-bold tracking-wider font-sora text-[10px]">DETAILED MESSAGE CONTENT</label>
                   <textarea
                     required
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows={4}
-                    placeholder="Mô tả ngắn gọn mục tiêu doanh nghiệp hoặc yêu cầu công việc tuyển dụng của bạn..."
+                    placeholder="Briefly describe your business goals or recruitment requirements..."
                     className="bg-white/80 border border-slate-200/80 rounded-xl p-3 text-black placeholder:text-black/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 hover:bg-white/90 text-xs resize-none transition-all duration-300"
                   />
                 </div>
@@ -379,10 +379,10 @@ export default function Contact() {
                   <div className="flex justify-between items-center text-[10px]">
                     <span className="text-black/70 font-bold flex items-center gap-1">
                       <ShieldCheck size={11} className="text-primary" />
-                      CỔNG XÁC MINH CHỐNG SPAM
+                      ANTI-SPAM SECURITY VERIFICATION
                     </span>
                     <span className={`font-mono font-bold ${isVerified ? 'text-green-600' : 'text-black/55'}`}>
-                      {isVerified ? 'ĐÃ BẢO MẬT' : 'ĐANG KHÓA'}
+                      {isVerified ? 'SECURED' : 'LOCKED'}
                     </span>
                   </div>
 
@@ -399,7 +399,7 @@ export default function Contact() {
                     {/* Locked/Unlocked Text label */}
                     <span className={`text-[10px] pointer-events-none z-10 transition-colors duration-300 font-sora font-semibold ${isVerified ? 'text-green-700 font-bold' : 'text-black/80'
                       }`}>
-                      {isVerified ? 'XÁC MINH HOÀN TẤT' : 'KÉO SANG PHẢI ĐỂ MỞ KHÓA'}
+                      {isVerified ? 'VERIFICATION COMPLETE' : 'SLIDE TO UNLOCK'}
                     </span>
 
                     {/* Floating Handle */}
@@ -431,7 +431,7 @@ export default function Contact() {
                   {submitting ? (
                     <>
                       <span className="w-4 h-4 rounded-full border-2 border-black border-t-transparent animate-spin" />
-                      ĐANG TRUYỀN DỮ LIỆU...
+                      TRANSMITTING DATA...
                     </>
                   ) : (
                     <>
