@@ -200,12 +200,17 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
           </span>
         </div>
 
-        <h3 className={`text-lg font-bold font-sora text-white mb-1 transition-colors flex items-center gap-1.5 line-clamp-1 ${getTitleHoverClass()}`}>
+        <h3 className={`text-lg font-bold font-sora text-white mb-1 transition-colors flex flex-wrap items-center gap-1.5 line-clamp-1 ${getTitleHoverClass()}`}>
           <span>{project.title}</span>
           {isStockAi && (
-            <span className="text-[7px] px-1.5 py-0.5 bg-yellow-500/10 border border-yellow-500/35 text-yellow-400 font-bold rounded-md tracking-wider uppercase font-sora flex-shrink-0 shadow-[0_0_8px_rgba(234,179,8,0.15)]">
-              BUSINESS
-            </span>
+            <>
+              <span className="text-[7px] px-1.5 py-0.5 bg-yellow-500/10 border border-yellow-500/35 text-yellow-400 font-bold rounded-md tracking-wider uppercase font-sora flex-shrink-0 shadow-[0_0_8px_rgba(234,179,8,0.15)]">
+                BUSINESS
+              </span>
+              <span className="text-[7px] px-1.5 py-0.5 bg-amber-500/20 border border-amber-500/35 text-amber-300 font-bold rounded-md tracking-wider uppercase font-sora flex-shrink-0 shadow-[0_0_8px_rgba(245,158,11,0.15)] animate-pulse">
+                7-DAY TRIAL
+              </span>
+            </>
           )}
         </h3>
         <p className="text-[11px] text-gray-400 font-sans leading-relaxed mb-3 line-clamp-2 h-[34px]">
