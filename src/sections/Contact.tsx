@@ -81,6 +81,31 @@ export default function Contact() {
     }
   };
 
+  const handleTouchMove = (e: TouchEvent) => {
+    if (!isDragging || isVerified || !sliderRef.current) return;
+    // Prevent screen scroll while dragging the verification handle
+    e.preventDefault();
+    const { left, width } = sliderRef.current.getBoundingClientRect();
+    const handleWidth = 40;
+    const maxDistance = width - handleWidth - 4;
+    const clientX = e.touches[0].clientX;
+    const relativeX = clientX - left - handleWidth / 2;
+    const boundedX = Math.max(0, Math.min(relativeX, maxDistance));
+
+    setSliderPosition(boundedX);
+
+    if (boundedX >= maxDistance - 2) {
+      setIsVerified(true);
+      setIsDragging(false);
+      canvasConfetti({
+        particleCount: 30,
+        spread: 40,
+        origin: { y: 0.8 },
+        colors: ['#00D9FF', '#6D5DF6'],
+      });
+    }
+  };
+
   const handleMouseUp = () => {
     if (isVerified) return;
     setIsDragging(false);
@@ -92,10 +117,14 @@ export default function Contact() {
     if (isDragging) {
       window.addEventListener('mousemove', handleMouseMove);
       window.addEventListener('mouseup', handleMouseUp);
+      window.addEventListener('touchmove', handleTouchMove, { passive: false });
+      window.addEventListener('touchend', handleMouseUp);
     }
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleMouseUp);
     };
   }, [isDragging, isVerified]);
 
@@ -409,6 +438,9 @@ export default function Contact() {
                         }`}
                       style={{ x: sliderPosition }}
                       onMouseDown={() => {
+                        if (!isVerified) setIsDragging(true);
+                      }}
+                      onTouchStart={() => {
                         if (!isVerified) setIsDragging(true);
                       }}
                       animate={isVerified ? { scale: [1, 1.05, 1] } : {}}
