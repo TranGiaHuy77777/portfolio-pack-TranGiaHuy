@@ -101,7 +101,7 @@ export default function Contact() {
         particleCount: 30,
         spread: 40,
         origin: { y: 0.8 },
-        colors: ['#00D9FF', '#6D5DF6'],
+        colors: ['#C5A880', '#E07A5F'],
       });
     }
   };
