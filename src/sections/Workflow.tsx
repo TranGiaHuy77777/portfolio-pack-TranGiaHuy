@@ -42,19 +42,19 @@ export default function Workflow() {
   ];
 
   return (
-    <section id="workflow" className="py-24 relative overflow-hidden bg-[#0C0C0F]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(158,123,255,0.03),transparent_70%)] pointer-events-none" />
+    <section id="workflow" className="py-32 relative overflow-hidden bg-background">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197,168,128,0.015),transparent_70%)] pointer-events-none" />
 
       <div className="max-width-1440 mx-auto px-6 md:px-12 w-full">
         {/* Section Header */}
-        <div className="flex flex-col items-center gap-2 mb-12 text-center">
-          <span className="text-xs font-bold font-sora tracking-widest text-primary uppercase">
+        <div className="flex flex-col items-start gap-2 mb-16 text-left">
+          <span className="text-[10px] font-bold font-sora tracking-[0.25em] text-primary uppercase">
             METHODOLOGY
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold font-sora text-white">
-            Structured Development Workflow
+          <h2 className="text-3xl md:text-5xl font-sora text-white leading-tight font-extrabold tracking-tight mt-2">
+            Structured Development <span className="font-serif italic font-normal text-primary">Workflow</span>
           </h2>
-          <div className="w-16 h-1 bg-glow-gradient rounded mt-2" />
+          <div className="w-16 h-[1px] bg-primary mt-4" />
         </div>
 
         {/* Workflow steps grid */}
@@ -66,7 +66,7 @@ export default function Workflow() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="glass-panel glass-panel-hover p-6 rounded-2xl flex flex-col justify-between h-[180px] relative overflow-hidden"
+              className="glass-panel glass-panel-hover p-6 rounded-sm flex flex-col justify-between h-[180px] relative overflow-hidden"
             >
               {/* Giant background number */}
               <div className="absolute -bottom-4 -right-2 text-7xl font-extrabold text-white/[0.02] font-sora select-none pointer-events-none">
@@ -74,7 +74,7 @@ export default function Workflow() {
               </div>
 
               <div className="flex justify-between items-start z-10 relative">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-primary group-hover:text-accent transition-colors">
+                <div className="w-10 h-10 rounded-sm bg-black/20 border border-white/[0.04] flex items-center justify-center text-primary transition-colors">
                   {step.icon}
                 </div>
                 <span className="text-[10px] font-bold font-mono text-gray-500 tracking-wider">

@@ -50,7 +50,7 @@ export default function Navigation() {
     >
       {/* Scroll Progress Bar */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-[2px] bg-glow-gradient origin-left z-50"
+        className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-primary origin-left z-50"
         style={{ scaleX }}
       />
 
@@ -59,9 +59,9 @@ export default function Navigation() {
         <a
           href="#hero"
           onClick={(e) => handleLinkClick(e, '#hero')}
-          className="text-xl font-bold font-sora tracking-wider text-white flex items-center gap-2 group"
+          className="text-sm font-bold font-sora tracking-widest text-white flex items-center gap-2.5 group"
         >
-          <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 group-hover:border-primary/45 bg-[#121216] shadow-neon-glow group-hover:scale-105 transition-all duration-300 flex items-center justify-center relative">
+          <div className="w-7 h-7 rounded-lg overflow-hidden border border-white/5 group-hover:border-primary/30 bg-[#131315] group-hover:scale-105 transition-all duration-300 flex items-center justify-center relative">
             <img
               src="/me.png"
               alt="H"
@@ -71,7 +71,7 @@ export default function Navigation() {
                 const parent = (e.target as HTMLElement).parentElement;
                 if (parent) {
                   const fallback = document.createElement('span');
-                  fallback.className = "w-full h-full flex items-center justify-center text-xs font-bold text-black bg-glow-gradient font-sora";
+                  fallback.className = "w-full h-full flex items-center justify-center text-[10px] font-bold text-black bg-primary font-sora";
                   fallback.innerText = "H";
                   parent.appendChild(fallback);
                 }
@@ -90,7 +90,7 @@ export default function Navigation() {
               key={link.name}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-300"
+              className="text-[10px] font-medium font-sora tracking-widest uppercase text-gray-400 hover:text-primary transition-colors duration-300"
             >
               {link.name}
             </a>
@@ -111,14 +111,14 @@ export default function Navigation() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute top-full left-0 w-full bg-[#08080Ac0] backdrop-blur-lg border-b border-white/5 py-6 px-6 flex flex-col gap-4 z-40 md:hidden shadow-lg"
+          className="absolute top-full left-0 w-full bg-[#0B0B0Cc0] backdrop-blur-lg border-b border-white/5 py-6 px-6 flex flex-col gap-4 z-40 md:hidden shadow-lg"
         >
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="text-base font-semibold text-gray-300 hover:text-white py-2 border-b border-white/5 transition-colors duration-200"
+              className="text-xs font-semibold font-sora tracking-widest uppercase text-gray-300 hover:text-primary py-2 border-b border-white/5 transition-colors duration-200"
             >
               {link.name}
             </a>

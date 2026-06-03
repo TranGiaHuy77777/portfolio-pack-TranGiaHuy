@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Download, Check, Sparkles, Layers, Lock, Crown } from 'lucide-react';
+import { X, Download, Check, Sparkles, Lock } from 'lucide-react';
 import canvasConfetti from 'canvas-confetti';
 
 const GithubIcon = ({ size = 14 }: { size?: number }) => (
@@ -38,10 +38,10 @@ interface ProjectDetailsModalProps {
 
 function ParkingLandingMockup({ onNavigate }: { onNavigate?: () => void }) {
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
-      <div className="flex justify-between items-center border-b border-white/5 pb-2">
-        <span className="text-[#6D5DF6] font-sora font-semibold tracking-wider">SMART PARKING HUB</span>
-        <span className="text-[9px] text-green-400 bg-green-950/40 border border-green-500/20 px-1.5 py-0.5 rounded">ONLINE</span>
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
+      <div className="flex justify-between items-center border-b border-white/[0.04] pb-2">
+        <span className="text-primary font-sora font-semibold tracking-wider">SMART PARKING HUB</span>
+        <span className="text-[9px] text-primary bg-primary/10 border border-primary/20 px-1.5 py-0.5 rounded-sm">ONLINE</span>
       </div>
 
       <div className="flex-1 flex flex-col justify-center gap-3 py-2">
@@ -55,20 +55,20 @@ function ParkingLandingMockup({ onNavigate }: { onNavigate?: () => void }) {
         </div>
 
         <div className="grid grid-cols-2 gap-2 text-[9px]">
-          <div className="bg-black/20 border border-white/5 p-2 rounded">
+          <div className="bg-black/20 border border-white/[0.04] p-2 rounded-sm">
             <div className="text-gray-500 font-sans">OPERATIONS</div>
             <div className="text-white font-bold">24/7 ACTIVE</div>
           </div>
-          <div className="bg-black/20 border border-white/5 p-2 rounded">
+          <div className="bg-black/20 border border-white/[0.04] p-2 rounded-sm">
             <div className="text-gray-500 font-sans">ANPR MATCH</div>
-            <div className="text-accent font-bold">99.8% ACC</div>
+            <div className="text-primary font-bold">99.8% ACC</div>
           </div>
         </div>
       </div>
 
       <button
         onClick={onNavigate}
-        className="w-full py-2 bg-glow-gradient text-black font-bold font-sora text-[10px] rounded-lg text-center hover:scale-[1.02] active:scale-95 transition-transform cursor-pointer"
+        className="w-full py-2 bg-primary text-black font-semibold font-sora text-[10px] rounded-sm text-center transition-all cursor-pointer btn-editorial"
       >
         CHECK PARKING MAP NOW
       </button>
@@ -92,39 +92,39 @@ function ParkingDashboardMockup() {
   };
 
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
-      <div className="flex justify-between items-center border-b border-white/5 pb-1.5 mb-1.5">
-        <span className="text-[#00D9FF] flex items-center gap-1 font-sora font-semibold">
-          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-ping" />
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
+      <div className="flex justify-between items-center border-b border-white/[0.04] pb-1.5 mb-1.5">
+        <span className="text-primary flex items-center gap-1.5 font-sora font-semibold">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
           PARKING CONTROL HUB
         </span>
         <span className="text-gray-500">ACTIVE</span>
       </div>
       
       <div className="grid grid-cols-3 gap-1.5 mb-2">
-        <div className="bg-[#181820] border border-white/5 p-1 rounded text-center">
+        <div className="bg-[#0B0B0C] border border-white/[0.04] p-1 rounded-sm text-center">
           <div className="text-gray-500 text-[8px] font-sans">TOTAL</div>
           <div className="text-xs text-white font-bold">{slots.length}</div>
         </div>
-        <div className="bg-[#181820] border border-white/5 p-1 rounded text-center">
-          <div className="text-red-500/80 text-[8px] font-sans">OCCUPIED</div>
-          <div className="text-xs font-bold text-red-400">{occupiedCount}</div>
+        <div className="bg-[#0B0B0C] border border-white/[0.04] p-1 rounded-sm text-center">
+          <div className="text-secondary text-[8px] font-sans">OCCUPIED</div>
+          <div className="text-xs font-bold text-secondary">{occupiedCount}</div>
         </div>
-        <div className="bg-[#181820] border border-white/5 p-1 rounded text-center">
-          <div className="text-green-500/80 text-[8px] font-sans">VACANT</div>
-          <div className="text-xs font-bold text-green-400">{vacantCount}</div>
+        <div className="bg-[#0B0B0C] border border-white/[0.04] p-1 rounded-sm text-center">
+          <div className="text-primary text-[8px] font-sans">VACANT</div>
+          <div className="text-xs font-bold text-primary">{vacantCount}</div>
         </div>
       </div>
 
-      <div className="grid grid-cols-5 gap-1 overflow-y-auto max-h-[90px] p-1 bg-black/30 rounded border border-white/5">
+      <div className="grid grid-cols-5 gap-1 overflow-y-auto max-h-[90px] p-1 bg-black/30 rounded-sm border border-white/[0.04]">
         {slots.map(s => (
           <button
             key={s.id}
             onClick={() => toggleSlot(s.id)}
-            className={`py-1 rounded border text-center font-bold text-[9px] transition-all ${
+            className={`py-1 rounded-sm border text-center font-bold text-[9px] transition-all ${
               s.isOccupied
-                ? 'bg-red-950/40 border-red-500/30 text-red-400'
-                : 'bg-green-950/40 border-green-500/30 text-green-400 hover:scale-105 hover:bg-green-900/40'
+                ? 'bg-secondary/10 border-secondary/20 text-secondary'
+                : 'bg-primary/10 border-primary/20 text-primary hover:scale-105 hover:bg-primary/20'
             }`}
           >
             P{s.id}
@@ -146,14 +146,14 @@ function ParkingReservationMockup() {
   const handleReserve = () => {
     if (!selectedSlot) return;
     setResSuccess(true);
-    canvasConfetti({ particleCount: 30, spread: 50, colors: ['#6D5DF6', '#00D9FF'] });
+    canvasConfetti({ particleCount: 30, spread: 50, colors: ['#C5A880', '#E07A5F'] });
     setTimeout(() => setResSuccess(false), 4000);
   };
 
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
-      <div className="border-b border-white/5 pb-2">
-        <span className="text-[#9E7BFF] font-sora font-semibold">RESERVATION TERMINAL</span>
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
+      <div className="border-b border-white/[0.04] pb-2">
+        <span className="text-primary font-sora font-semibold">RESERVATION TERMINAL</span>
       </div>
 
       {resSuccess ? (
@@ -162,12 +162,12 @@ function ParkingReservationMockup() {
           animate={{ opacity: 1, scale: 1 }}
           className="flex-1 flex flex-col items-center justify-center text-center py-2"
         >
-          <div className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500 flex items-center justify-center text-green-400 mb-1.5">
+          <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary flex items-center justify-center text-primary mb-1.5">
             <Check size={16} />
           </div>
           <div className="text-white font-bold font-sora text-xs mb-0.5">RESERVATION CONFIRMED</div>
           <div className="text-gray-400 text-[8px] mb-2">PLATE: {plate} | SLOT: P{selectedSlot}</div>
-          <div className="bg-white p-1 rounded inline-block">
+          <div className="bg-white p-1 rounded-sm inline-block">
             <div className="grid grid-cols-4 gap-0.5 p-0.5 bg-black w-10 h-10 border border-gray-800">
               <div className="bg-white"></div><div className="bg-black"></div><div className="bg-white"></div><div className="bg-white"></div>
               <div className="bg-black"></div><div className="bg-white"></div><div className="bg-black"></div><div className="bg-black"></div>
@@ -184,7 +184,7 @@ function ParkingReservationMockup() {
               type="text"
               value={plate}
               onChange={(e) => setPlate(e.target.value)}
-              className="bg-[#181820] border border-white/5 rounded px-2 py-1 text-white w-full text-center tracking-widest text-xs focus:outline-none focus:border-primary"
+              className="bg-[#0B0B0C] border border-white/[0.04] rounded-sm px-2 py-1 text-white w-full text-center tracking-widest text-xs focus:outline-none focus:border-primary"
             />
           </div>
 
@@ -195,10 +195,10 @@ function ParkingReservationMockup() {
                 <button
                   key={s}
                   onClick={() => setSelectedSlot(s)}
-                  className={`px-2 py-1 rounded border text-[9px] ${
+                  className={`px-2 py-1 rounded-sm border text-[9px] ${
                     selectedSlot === s
-                      ? 'bg-primary border-primary text-white shadow-neon-glow'
-                      : 'bg-[#181820] border-white/5 text-gray-400 hover:border-gray-500'
+                      ? 'bg-primary border-primary text-black font-semibold'
+                      : 'bg-[#0B0B0C] border-white/[0.04] text-gray-400 hover:border-gray-500'
                   }`}
                 >
                   P{s}
@@ -210,9 +210,9 @@ function ParkingReservationMockup() {
           <button
             onClick={handleReserve}
             disabled={!selectedSlot}
-            className={`w-full py-1.5 rounded font-bold font-sora text-[9px] flex items-center justify-center transition-all ${
+            className={`w-full py-1.5 rounded-sm font-semibold font-sora text-[9px] flex items-center justify-center transition-all ${
               selectedSlot
-                ? 'bg-glow-gradient text-black hover:scale-[1.02]'
+                ? 'bg-primary text-black btn-editorial'
                 : 'bg-gray-800 text-gray-500 cursor-not-allowed'
             }`}
           >
@@ -233,19 +233,19 @@ function ParkingSubscriptionsMockup() {
 
   const handleRenew = (plate: string) => {
     setCards(prev => prev.map(c => c.plate === plate ? { ...c, status: 'ACTIVE' } : c));
-    canvasConfetti({ particleCount: 30, spread: 40, colors: ['#6D5DF6', '#00D9FF'] });
+    canvasConfetti({ particleCount: 30, spread: 40, colors: ['#C5A880', '#E07A5F'] });
   };
 
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
-      <div className="border-b border-white/5 pb-1.5 mb-1.5 flex justify-between items-center">
-        <span className="text-[#9E7BFF] font-sora font-semibold">MONTHLY SUBSCRIPTIONS</span>
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
+      <div className="border-b border-white/[0.04] pb-1.5 mb-1.5 flex justify-between items-center">
+        <span className="text-primary font-sora font-semibold">MONTHLY SUBSCRIPTIONS</span>
         <span className="text-[8px] text-gray-500">TOTAL: 3</span>
       </div>
 
       <div className="flex-1 flex flex-col gap-1.5 overflow-y-auto max-h-[90px] p-0.5">
         {cards.map(c => (
-          <div key={c.plate} className="bg-black/20 border border-white/5 p-1.5 rounded flex justify-between items-center gap-1">
+          <div key={c.plate} className="bg-black/20 border border-white/[0.04] p-1.5 rounded-sm flex justify-between items-center gap-1">
             <div className="flex flex-col gap-0.5">
               <div className="text-white font-bold text-[9px]">PLATE: {c.plate} <span className="text-gray-500 font-normal">({c.room})</span></div>
               <div className="text-[8px] text-gray-500">RFID: {c.rfid}</div>
@@ -254,12 +254,12 @@ function ParkingSubscriptionsMockup() {
             {c.status === 'EXPIRED' ? (
               <button
                 onClick={() => handleRenew(c.plate)}
-                className="px-2 py-0.5 bg-red-950/40 hover:bg-red-900/40 border border-red-500/30 text-red-400 hover:text-white rounded text-[8px] font-bold transition-all cursor-pointer animate-pulse"
+                className="px-2 py-0.5 bg-secondary/10 hover:bg-secondary/20 border border-secondary/20 text-secondary hover:text-white rounded-sm text-[8px] font-bold transition-all cursor-pointer"
               >
                 RENEW
               </button>
             ) : (
-              <span className="px-2 py-0.5 bg-green-950/60 border border-green-500/30 text-green-400 rounded text-[8px] font-bold">
+              <span className="px-2 py-0.5 bg-primary/10 border border-primary/20 text-primary rounded-sm text-[8px] font-bold">
                 ACTIVE
               </span>
             )}
@@ -268,7 +268,7 @@ function ParkingSubscriptionsMockup() {
       </div>
 
       <div className="text-[8px] text-gray-500 mt-1 text-center font-sans">
-        *Click 'RENEW' on expired cards to automatically extend monthly billing.
+        *Click 'RENEW' on expired cards to extend monthly billing.
       </div>
     </div>
   );
@@ -276,25 +276,25 @@ function ParkingSubscriptionsMockup() {
 
 function ParkingAnalyticsMockup() {
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
-      <div className="border-b border-white/5 pb-1.5 mb-1.5 flex justify-between items-center">
-        <span className="text-[#00D9FF] font-sora font-semibold">FINANCIAL & FLOW METRICS</span>
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
+      <div className="border-b border-white/[0.04] pb-1.5 mb-1.5 flex justify-between items-center">
+        <span className="text-primary font-sora font-semibold">FINANCIAL & FLOW METRICS</span>
         <span className="text-[8px] text-gray-500">LIVE</span>
       </div>
 
       <div className="flex-1 flex flex-col justify-around gap-1.5">
         <div>
           <div className="text-gray-500 text-[8px]">TOTAL REVENUE</div>
-          <div className="text-sm text-white font-bold font-sora">$1,452.80 <span className="text-[9px] text-green-400 font-mono font-normal">(+14.2%)</span></div>
+          <div className="text-sm text-white font-bold font-sora">$1,452.80 <span className="text-[9px] text-primary font-mono font-normal">(+14.2%)</span></div>
         </div>
 
         <div>
           <div className="text-gray-500 text-[8px] mb-0.5">PEAK HOURLY Timeline</div>
-          <div className="flex items-end justify-between h-[45px] bg-black/20 rounded p-1 border border-white/5">
+          <div className="flex items-end justify-between h-[45px] bg-black/20 rounded-sm p-1 border border-white/[0.04]">
             {[20, 35, 75, 95, 60, 45, 15].map((val, idx) => (
               <div key={idx} className="flex flex-col items-center gap-0.5 w-full">
                 <div
-                  className="w-3 rounded-t bg-gradient-to-t from-primary to-accent transition-all duration-500"
+                  className="w-3 rounded-t-sm bg-gradient-to-t from-primary to-secondary transition-all duration-500"
                   style={{ height: `${val}%` }}
                 />
                 <span className="text-[7px] text-gray-500">{8 + idx * 2}h</span>
@@ -334,20 +334,20 @@ function ParkingSecurityLogsMockup() {
   }, []);
 
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[9px] text-left">
-      <div className="border-b border-white/5 pb-1.5 mb-1.5 flex justify-between items-center">
-        <span className="text-[#00D9FF] font-sora font-semibold text-[9px]">SECURITY SYSTEM LOGS</span>
-        <span className="text-[7px] text-accent animate-pulse font-bold flex items-center gap-0.5">
-          <span className="w-1 h-1 rounded-full bg-accent animate-ping" />
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[9px] text-left">
+      <div className="border-b border-white/[0.04] pb-1.5 mb-1.5 flex justify-between items-center">
+        <span className="text-primary font-sora font-semibold text-[9px]">SECURITY SYSTEM LOGS</span>
+        <span className="text-[7px] text-primary font-bold flex items-center gap-1">
+          <span className="w-1 h-1 rounded-full bg-primary" />
           FEED LIVE
         </span>
       </div>
 
-      <div className="flex-1 bg-black/40 border border-white/5 rounded p-1.5 overflow-y-auto max-h-[85px] flex flex-col gap-1">
+      <div className="flex-1 bg-black/40 border border-white/[0.04] rounded-sm p-1.5 overflow-y-auto max-h-[85px] flex flex-col gap-1">
         {logs.map((log, idx) => (
           <div key={idx} className={`${
-            log.includes('SYSTEM') ? 'text-yellow-400' :
-            log.includes('IN') ? 'text-green-400' : 'text-blue-400'
+            log.includes('SYSTEM') ? 'text-primary font-semibold' :
+            log.includes('IN') ? 'text-primary' : 'text-secondary'
           }`}>
             {log}
           </div>
@@ -379,13 +379,12 @@ function StoreOpsDashboardMockup() {
   };
 
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
-      <div className="flex justify-between items-center border-b border-white/5 pb-1.5 mb-1.5">
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
+      <div className="flex justify-between items-center border-b border-white/[0.04] pb-1.5 mb-1.5">
         <span className="text-primary flex items-center gap-1 font-sora font-semibold">
-          <Sparkles size={11} className="text-accent animate-pulse" />
           WORKFLOW ORCHESTRATOR
         </span>
-        <span className="text-[8px] bg-primary/20 text-secondary border border-primary/30 px-1 py-0.5 rounded">ACTIVE</span>
+        <span className="text-[8px] bg-primary/10 text-primary border border-primary/20 px-1 py-0.5 rounded-sm">ACTIVE</span>
       </div>
 
       <div className="flex-1 flex flex-col gap-1.5 overflow-y-auto max-h-[90px] p-0.5">
@@ -393,15 +392,15 @@ function StoreOpsDashboardMockup() {
           <div
             key={t.id}
             onClick={() => advanceTask(t.id)}
-            className="bg-[#181820] border border-white/5 p-1.5 rounded flex justify-between items-center cursor-pointer hover:border-primary/40 transition-colors"
+            className="bg-[#0B0B0C] border border-white/[0.04] p-1.5 rounded-sm flex justify-between items-center cursor-pointer hover:border-primary/45 transition-colors"
           >
             <div className="flex flex-col gap-0.5 max-w-[70%]">
               <span className="text-white text-[9px] truncate">{t.text}</span>
               <span className="text-[7px] text-gray-500">TAG: {t.category}</span>
             </div>
-            <span className={`px-1.5 py-0.5 rounded text-[7px] font-bold ${
-              t.status === 'done' ? 'bg-green-950/60 border border-green-500/30 text-green-400' :
-              t.status === 'progress' ? 'bg-blue-950/60 border border-blue-500/30 text-blue-400' :
+            <span className={`px-1.5 py-0.5 rounded-sm text-[7px] font-bold ${
+              t.status === 'done' ? 'bg-primary/10 border border-primary/20 text-primary' :
+              t.status === 'progress' ? 'bg-secondary/10 border border-secondary/20 text-secondary' :
               'bg-gray-800 text-gray-400'
             }`}>
               {t.status.toUpperCase()}
@@ -446,9 +445,9 @@ function StoreOpsReservationMockup() {
   };
 
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
-      <div className="border-b border-white/5 pb-1.5 mb-1.5">
-        <span className="text-[#00D9FF] font-sora font-semibold">AI CUSTOMER LOG ANALYZER</span>
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
+      <div className="border-b border-white/[0.04] pb-1.5 mb-1.5">
+        <span className="text-primary font-sora font-semibold">AI CUSTOMER LOG ANALYZER</span>
       </div>
 
       <div className="flex-1 flex flex-col justify-between gap-1.5">
@@ -458,7 +457,7 @@ function StoreOpsReservationMockup() {
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             rows={2}
-            className="bg-[#181820] border border-white/5 rounded p-1.5 text-white w-full text-[9px] focus:outline-none focus:border-primary resize-none font-sans"
+            className="bg-[#0B0B0C] border border-white/[0.04] rounded-sm p-1.5 text-white w-full text-[9px] focus:outline-none focus:border-primary resize-none font-sans"
           />
         </div>
 
@@ -471,14 +470,14 @@ function StoreOpsReservationMockup() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="bg-black/30 rounded border border-white/5 p-1.5 flex flex-col gap-0.5 text-[8px]"
+            className="bg-black/30 rounded-sm border border-white/[0.04] p-1.5 flex flex-col gap-0.5 text-[8px]"
           >
             <div>CATEGORY: <span className="text-white font-bold">{analysis.category}</span></div>
-            <div>SENTIMENT: <span className="text-red-400 font-bold">{analysis.sentiment}</span></div>
-            <div>SEVERITY: <span className="text-yellow-400 font-bold">{analysis.severity}</span></div>
+            <div>SENTIMENT: <span className="text-secondary font-bold">{analysis.sentiment}</span></div>
+            <div>SEVERITY: <span className="text-primary font-bold">{analysis.severity}</span></div>
             <button
               onClick={() => setAnalysis(null)}
-              className="text-right text-[8px] text-primary hover:underline mt-1 block font-sans"
+              className="text-right text-[8px] text-primary hover:underline mt-1 block font-sans cursor-pointer"
             >
               Analyze another text
             </button>
@@ -486,7 +485,7 @@ function StoreOpsReservationMockup() {
         ) : (
           <button
             onClick={handleAnalyze}
-            className="w-full py-1 rounded bg-glow-gradient text-black font-bold font-sora text-[9px] hover:scale-[1.01]"
+            className="w-full py-1 rounded-sm bg-primary text-black font-bold font-sora text-[9px] hover:scale-[1.01] cursor-pointer"
           >
             RUN AI LOG ANALYZER
           </button>
@@ -498,19 +497,19 @@ function StoreOpsReservationMockup() {
 
 function StoreOpsAnalyticsMockup() {
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
-      <div className="border-b border-white/5 pb-1.5 mb-1.5 flex justify-between items-center">
-        <span className="text-[#9E7BFF] font-sora font-semibold">OPERATIONS AUDIT METRICS</span>
-        <span className="text-[8px] text-green-400 font-bold">SAVED</span>
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[10px] text-left">
+      <div className="border-b border-white/[0.04] pb-1.5 mb-1.5 flex justify-between items-center">
+        <span className="text-primary font-sora font-semibold">OPERATIONS AUDIT METRICS</span>
+        <span className="text-[8px] text-primary font-bold">SAVED</span>
       </div>
 
       <div className="flex-1 flex flex-col justify-around gap-1.5">
         <div className="grid grid-cols-2 gap-1.5">
-          <div className="bg-black/20 border border-white/5 p-1.5 rounded">
+          <div className="bg-black/20 border border-white/[0.04] p-1.5 rounded-sm">
             <div className="text-gray-500 text-[8px] font-sans">OVERHEAD</div>
             <div className="text-xs text-white font-bold font-sora">-32.4%</div>
           </div>
-          <div className="bg-black/20 border border-white/5 p-1.5 rounded">
+          <div className="bg-black/20 border border-white/[0.04] p-1.5 rounded-sm">
             <div className="text-gray-500 text-[8px] font-sans">RESOLVE TIME</div>
             <div className="text-xs text-white font-bold font-sora">-4.5h</div>
           </div>
@@ -518,11 +517,11 @@ function StoreOpsAnalyticsMockup() {
 
         <div>
           <div className="text-gray-500 text-[8px] mb-0.5">COST OUTLAY PROJECTION</div>
-          <div className="h-[40px] bg-black/20 rounded p-1 border border-white/5 flex items-end justify-between relative overflow-hidden">
+          <div className="h-[40px] bg-black/20 rounded-sm p-1 border border-white/[0.04] flex items-end justify-between relative overflow-hidden">
             <div className="absolute inset-0 p-1 flex items-center">
               <svg className="w-full h-full" viewBox="0 0 100 40">
-                <path d="M 0,35 Q 25,25 50,15 T 100,5" fill="none" stroke="#00D9FF" strokeWidth="2" />
-                <path d="M 0,35 Q 25,30 50,25 T 100,20" fill="none" stroke="#6D5DF6" strokeWidth="2" strokeDasharray="3" />
+                <path d="M 0,35 Q 25,25 50,15 T 100,5" fill="none" stroke="#C5A880" strokeWidth="2" />
+                <path d="M 0,35 Q 25,30 50,25 T 100,20" fill="none" stroke="#E07A5F" strokeWidth="2" strokeDasharray="3" />
               </svg>
             </div>
             <span className="text-[6px] text-gray-500 absolute bottom-0.5 left-1.5">Q1</span>
@@ -571,7 +570,7 @@ function MumCareShopMockup() {
       setSuccess(true);
       setCart([]);
       setLog('✔ Server: Order #MC-9402 created successfully. Joi schema valid.');
-      canvasConfetti({ particleCount: 30, spread: 45, colors: ['#9E7BFF', '#00D9FF'] });
+      canvasConfetti({ particleCount: 30, spread: 45, colors: ['#C5A880', '#E07A5F'] });
       
       setTimeout(() => {
         setSuccess(false);
@@ -583,20 +582,20 @@ function MumCareShopMockup() {
   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[9px] text-left">
-      <div className="flex justify-between items-center border-b border-white/5 pb-2">
-        <span className="text-[#00D9FF] font-sora font-semibold tracking-wider flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[9px] text-left">
+      <div className="flex justify-between items-center border-b border-white/[0.04] pb-2">
+        <span className="text-primary font-sora font-semibold tracking-wider flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
           MUMCARE MILK STOREFRONT
         </span>
-        <span className="text-[8px] bg-primary/20 text-secondary border border-primary/30 px-1 py-0.5 rounded">
+        <span className="text-[8px] bg-primary/10 text-primary border border-primary/20 px-1 py-0.5 rounded-sm">
           WEB CLIENT
         </span>
       </div>
 
       {success ? (
         <div className="flex-1 flex flex-col items-center justify-center text-center p-4">
-          <div className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500 flex items-center justify-center text-green-400 mb-2">
+          <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary flex items-center justify-center text-primary mb-2">
             <Check size={16} />
           </div>
           <div className="text-white font-bold font-sora text-[11px] mb-1">ORDER PLACED SUCCESSFULLY!</div>
@@ -610,13 +609,13 @@ function MumCareShopMockup() {
           <div className="flex flex-col gap-1">
             <div className="text-gray-500 text-[8px] font-sans">SELECT PREMIUM MILK</div>
             {products.map(p => (
-              <div key={p.name} className="bg-black/20 border border-white/5 px-2 py-1.5 rounded flex justify-between items-center">
+              <div key={p.name} className="bg-black/20 border border-white/[0.04] px-2 py-1.5 rounded-sm flex justify-between items-center">
                 <span className="text-white font-bold">{p.name}</span>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-400">${p.price.toFixed(2)}</span>
                   <button
                     onClick={() => addToCart(p)}
-                    className="px-2 py-0.5 bg-primary/20 border border-primary/30 hover:bg-primary text-white rounded text-[8px] cursor-pointer"
+                    className="px-2 py-0.5 bg-primary/20 border border-primary/30 hover:bg-primary hover:text-black text-white rounded-sm text-[8px] cursor-pointer"
                   >
                     + ADD
                   </button>
@@ -626,7 +625,7 @@ function MumCareShopMockup() {
           </div>
 
           {/* Cart summary */}
-          <div className="bg-black/30 border border-white/5 rounded p-1.5 flex justify-between items-center text-[8px]">
+          <div className="bg-black/30 border border-white/[0.04] rounded-sm p-1.5 flex justify-between items-center text-[8px]">
             <div>
               <span className="text-gray-500 font-sans block">ITEMS IN CART</span>
               <span className="text-white font-bold">
@@ -635,7 +634,7 @@ function MumCareShopMockup() {
             </div>
             <div className="text-right">
               <span className="text-gray-500 font-sans block">TOTAL VALUE</span>
-              <span className="text-accent font-bold">${total.toFixed(2)}</span>
+              <span className="text-primary font-bold">${total.toFixed(2)}</span>
             </div>
           </div>
         </div>
@@ -643,7 +642,7 @@ function MumCareShopMockup() {
 
       {/* Action Footer */}
       <div className="flex flex-col gap-1.5 mt-1">
-        <div className="bg-black/60 border border-white/5 px-2 py-1 rounded text-[7.5px] text-gray-400 truncate">
+        <div className="bg-black/60 border border-white/[0.04] px-2 py-1 rounded-sm text-[7.5px] text-gray-400 truncate">
           {log}
         </div>
         
@@ -651,9 +650,9 @@ function MumCareShopMockup() {
           <button
             onClick={handleOrder}
             disabled={cart.length === 0 || ordering}
-            className={`w-full py-1.5 font-bold font-sora rounded text-center transition-all ${
+            className={`w-full py-1.5 font-bold font-sora rounded-sm text-center transition-all ${
               cart.length > 0 && !ordering
-                ? 'bg-glow-gradient text-black hover:scale-[1.01] cursor-pointer'
+                ? 'bg-primary text-black hover:scale-[1.01] cursor-pointer btn-editorial'
                 : 'bg-gray-800 text-gray-500 cursor-not-allowed'
             }`}
           >
@@ -673,25 +672,25 @@ function MumCareMilestonesMockup() {
   const logWater = () => {
     if (intake >= goal) return;
     setIntake(prev => Math.min(goal, prev + 150));
-    canvasConfetti({ particleCount: 20, spread: 35, colors: ['#9E7BFF', '#00D9FF'] });
+    canvasConfetti({ particleCount: 20, spread: 35, colors: ['#C5A880', '#E07A5F'] });
   };
 
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[9px] text-left relative overflow-hidden">
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[9px] text-left relative overflow-hidden">
       {/* Phone status bar simulation */}
-      <div className="flex justify-between items-center border-b border-white/5 pb-1.5 mb-1.5 text-gray-500 text-[8px] font-sans">
+      <div className="flex justify-between items-center border-b border-white/[0.04] pb-1.5 mb-1.5 text-gray-500 text-[8px] font-sans">
         <span className="font-bold">09:41 AM</span>
-        <span className="text-[#9E7BFF] font-semibold font-sora">MUMCARE ROUTINE</span>
+        <span className="text-primary font-semibold font-sora">MUMCARE ROUTINE</span>
         <div className="flex items-center gap-1">
           <span>5G</span>
-          <span className="border border-gray-600 px-0.5 py-px rounded-[2px] text-[6px]">100%</span>
+          <span className="border border-gray-700 px-0.5 py-px rounded-[2px] text-[6px]">100%</span>
         </div>
       </div>
 
       <div className="flex-1 flex flex-col justify-between py-1 gap-2">
         {/* Profile Info */}
-        <div className="flex items-center gap-2 bg-[#181820]/60 border border-white/5 p-2 rounded-lg">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#9E7BFF] to-[#00D9FF] p-px flex items-center justify-center flex-shrink-0">
+        <div className="flex items-center gap-2 bg-[#0B0B0C] border border-white/[0.04] p-2 rounded-sm">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-secondary p-px flex items-center justify-center flex-shrink-0">
             <div className="w-full h-full rounded-full bg-black/60 flex items-center justify-center text-[10px] text-white font-bold">🤰</div>
           </div>
           <div className="flex-1 min-w-0">
@@ -701,32 +700,32 @@ function MumCareMilestonesMockup() {
         </div>
 
         {/* Progress Tracker */}
-        <div className="bg-black/30 border border-white/5 rounded-lg p-2 flex flex-col gap-2">
+        <div className="bg-black/30 border border-white/[0.04] rounded-sm p-2 flex flex-col gap-2">
           <div className="flex justify-between items-center">
             <span className="text-gray-400">MILK INTAKE GOAL</span>
             <span className="text-white font-bold">{intake}/{goal} ml</span>
           </div>
 
           {/* Progress bar */}
-          <div className="h-2.5 w-full bg-gray-800 rounded-full overflow-hidden p-px border border-white/5 relative">
+          <div className="h-2 w-full bg-gray-800 rounded-sm overflow-hidden p-px border border-white/[0.04] relative">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-primary to-accent transition-all duration-700"
+              className="h-full rounded-sm bg-gradient-to-r from-primary to-secondary transition-all duration-700"
               style={{ width: `${percent}%` }}
             />
           </div>
 
           <div className="flex justify-between items-center text-[8px]">
-            <span className="text-[#00D9FF]">{percent}% COMPLETED</span>
+            <span className="text-primary">{percent}% COMPLETED</span>
             <span className="text-gray-500 font-sans">RECOMMENDED DAILY AMOUNT</span>
           </div>
         </div>
 
         {/* Medical Advisory Box */}
-        <div className="bg-[#181820]/40 border border-white/5 p-2 rounded text-[7.5px] leading-relaxed text-gray-400 font-sans">
+        <div className="bg-[#0B0B0C] border border-white/[0.04] p-2 rounded-sm text-[7.5px] leading-relaxed text-gray-400 font-sans">
           {percent >= 100 ? (
-            <span className="text-green-400 font-bold block">✔ PERFECT INTAKE RECORD!</span>
+            <span className="text-primary font-bold block">✔ PERFECT INTAKE RECORD!</span>
           ) : (
-            <span className="text-yellow-400 font-semibold block">💡 NUTRITIONAL RECOMMENDATION:</span>
+            <span className="text-primary font-semibold block">💡 NUTRITIONAL RECOMMENDATION:</span>
           )}
           {percent >= 100
             ? "You have successfully supplied the ideal calcium amount required for the baby's bone and tooth growth today. Keep it up!"
@@ -738,9 +737,9 @@ function MumCareMilestonesMockup() {
       <button
         onClick={logWater}
         disabled={intake >= goal}
-        className={`w-full mt-2 py-1.5 font-bold font-sora text-center rounded transition-all ${
+        className={`w-full mt-2 py-1.5 font-bold font-sora text-center rounded-sm transition-all ${
           intake < goal
-            ? 'bg-glow-gradient text-black hover:scale-[1.01] cursor-pointer shadow-neon-glow'
+            ? 'bg-primary text-black hover:scale-[1.01] cursor-pointer btn-editorial'
             : 'bg-green-950/40 border border-green-500/20 text-green-400 cursor-not-allowed'
         }`}
       >
@@ -816,16 +815,15 @@ function MumCareServerLogsMockup() {
   }, [activeTab, isLive]);
 
   return (
-    <div className="bg-[#121216] border border-white/5 rounded-xl p-4 w-full h-full flex flex-col justify-between font-mono text-[9px] text-left">
-      <div className="border-b border-white/5 pb-1.5 mb-1.5 flex justify-between items-center">
-        <span className="text-[#9E7BFF] font-sora font-semibold text-[9px] flex items-center gap-1">
-          <Layers size={11} className="text-accent animate-pulse" />
+    <div className="bg-[#131315] border border-white/[0.04] rounded-sm p-4 w-full h-full flex flex-col justify-between font-mono text-[9px] text-left">
+      <div className="border-b border-white/[0.04] pb-1.5 mb-1.5 flex justify-between items-center">
+        <span className="text-primary font-sora font-semibold text-[9px] flex items-center gap-1.5">
           MUMCARE SERVER MONITOR
         </span>
         <button
           onClick={() => setIsLive(!isLive)}
-          className={`px-1.5 py-0.5 rounded text-[7px] font-bold transition-all ${
-            isLive ? 'text-accent bg-accent/10 border border-accent/20 animate-pulse' : 'text-gray-400 bg-gray-800'
+          className={`px-1.5 py-0.5 rounded-sm text-[7px] font-bold transition-all cursor-pointer ${
+            isLive ? 'text-primary bg-primary/10 border border-primary/20' : 'text-gray-400 bg-gray-800'
           }`}
         >
           {isLive ? '● LIVE LOGS' : '|| PAUSED'}
@@ -835,44 +833,44 @@ function MumCareServerLogsMockup() {
       <div className="grid grid-cols-3 gap-1 mb-2 font-sans">
         <button
           onClick={() => setActiveTab('express')}
-          className={`py-1 rounded border text-[8px] font-semibold transition-all ${
+          className={`py-1 rounded-sm border text-[8px] font-semibold transition-all cursor-pointer ${
             activeTab === 'express'
-              ? 'bg-primary/20 border-primary text-[#00d9ff]'
-              : 'bg-black/20 border-white/5 text-gray-400 hover:border-gray-500'
+              ? 'bg-primary border-primary text-black font-bold'
+              : 'bg-black/20 border-white/[0.04] text-gray-400 hover:border-gray-500'
           }`}
         >
           Express / API
         </button>
         <button
           onClick={() => setActiveTab('mongo')}
-          className={`py-1 rounded border text-[8px] font-semibold transition-all ${
+          className={`py-1 rounded-sm border text-[8px] font-semibold transition-all cursor-pointer ${
             activeTab === 'mongo'
-              ? 'bg-primary/20 border-primary text-[#00d9ff]'
-              : 'bg-black/20 border-white/5 text-gray-400 hover:border-gray-500'
+              ? 'bg-primary border-primary text-black font-bold'
+              : 'bg-black/20 border-white/[0.04] text-gray-400 hover:border-gray-500'
           }`}
         >
           MongoDB
         </button>
         <button
           onClick={() => setActiveTab('mailer')}
-          className={`py-1 rounded border text-[8px] font-semibold transition-all ${
+          className={`py-1 rounded-sm border text-[8px] font-semibold transition-all cursor-pointer ${
             activeTab === 'mailer'
-              ? 'bg-primary/20 border-primary text-[#00d9ff]'
-              : 'bg-black/20 border-white/5 text-gray-400 hover:border-gray-500'
+              ? 'bg-primary border-primary text-black font-bold'
+              : 'bg-black/20 border-white/[0.04] text-gray-400 hover:border-gray-500'
           }`}
         >
           NodeMailer
         </button>
       </div>
 
-      <div className="flex-1 bg-black/40 border border-white/5 rounded p-1.5 overflow-y-auto max-h-[85px] flex flex-col gap-1.5">
+      <div className="flex-1 bg-black/40 border border-white/[0.04] rounded-sm p-1.5 overflow-y-auto max-h-[85px] flex flex-col gap-1.5">
         {logs.map((log, idx) => (
           <div
             key={idx}
             className={`${
-              log.includes('POST') || log.includes('Injected') ? 'text-[#00D9FF] font-bold' :
-              log.includes('Sent') || log.includes('success') || log.includes('OK') ? 'text-green-400' :
-              log.includes('User') || log.includes('TTL') ? 'text-[#9E7BFF]' : 'text-gray-300'
+              log.includes('POST') || log.includes('Injected') ? 'text-primary font-bold' :
+              log.includes('Sent') || log.includes('success') || log.includes('OK') ? 'text-primary' :
+              log.includes('User') || log.includes('TTL') ? 'text-secondary' : 'text-gray-300'
             }`}
           >
             {log}
@@ -950,55 +948,51 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className={`relative bg-[#0C0C0F] rounded-2xl w-full max-w-5xl overflow-hidden shadow-2xl z-10 grid grid-cols-1 md:grid-cols-12 h-[90vh] md:h-[80vh] max-h-[90vh] md:max-h-[85vh] border ${
+          className={`relative bg-[#0B0B0C] rounded-sm w-full max-w-5xl overflow-hidden shadow-2xl z-10 grid grid-cols-1 md:grid-cols-12 h-[90vh] md:h-[80vh] max-h-[90vh] md:max-h-[85vh] border ${
             isStockAi
-              ? 'border-yellow-500/30 shadow-[0_0_50px_rgba(234,179,8,0.1)]'
-              : 'border-white/5'
+              ? 'border-primary/30'
+              : 'border-white/[0.04]'
           }`}
         >
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-20 text-gray-400 hover:text-white p-1 bg-black/40 hover:bg-black/60 rounded-full border border-white/5 transition-colors cursor-pointer"
+            className="absolute top-4 right-4 z-20 text-gray-400 hover:text-white p-1 bg-black/40 hover:bg-black/60 rounded-sm border border-white/[0.04] transition-colors cursor-pointer animate-none"
           >
             <X size={18} />
           </button>
 
           {/* Left panel: Media & Interactive Mockup (6 cols) */}
-          <div className="col-span-1 md:col-span-6 bg-black/40 p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/5 flex flex-col justify-between h-[45vh] md:h-full overflow-y-auto">
+          <div className="col-span-1 md:col-span-6 bg-black/40 p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/[0.04] flex flex-col justify-between h-[45vh] md:h-full overflow-y-auto">
              <div>
               <div className="flex justify-between items-center mb-4">
                 {project.gallery[activeSlide].image ? (
                   <button
                     onClick={() => setShowSimulator(!showSimulator)}
-                    className={`flex items-center gap-1.5 px-3 py-1 border rounded-full text-[9px] font-bold hover:scale-[1.02] transition-all cursor-pointer ${
-                      isStockAi
-                        ? 'bg-yellow-500/20 border-yellow-500/30 text-yellow-400 shadow-[0_0_10px_rgba(234,179,8,0.2)] hover:bg-yellow-500/30'
-                        : 'bg-primary/20 border-primary/30 text-[#00D9FF] hover:bg-primary/35 shadow-neon-glow'
-                    }`}
+                    className="flex items-center gap-1.5 px-3 py-1 border rounded-sm text-[9px] font-bold hover:scale-[1.01] transition-all cursor-pointer bg-primary/5 border-primary/20 text-primary hover:bg-primary/10"
                   >
-                    <Sparkles size={10} className="animate-pulse" />
+                    <Sparkles size={10} />
                     {showSimulator ? "VIEW REAL SCREENSHOT" : "ACTIVATE LIVE SIMULATOR"}
                   </button>
                 ) : (
-                  <span className="text-[10px] tracking-wider text-accent font-bold uppercase font-sora">
-                    LIVE INTERACTIVE DEMO SIMULATOR
+                  <span className="text-[9px] tracking-widest text-primary font-bold uppercase font-sora">
+                    LIVE INTERACTIVE SIMULATOR
                   </span>
                 )}
-                <span className="text-[10px] text-gray-500 font-mono">
+                <span className="text-[9px] text-gray-500 font-mono tracking-widest uppercase">
                   SLIDE {activeSlide + 1} OF {project.gallery.length}
                 </span>
               </div>
 
               {/* Showcase Screen */}
-              <div className="aspect-[4/3] w-full rounded-xl overflow-hidden border border-white/5 shadow-inner relative bg-[#09090C] mb-4">
+              <div className="aspect-[4/3] w-full rounded-sm overflow-hidden border border-white/[0.04] shadow-inner relative bg-[#09090C] mb-4">
                 {showSimulator ? (
                   renderInteractiveMockup(project.gallery[activeSlide].type)
                 ) : (
                   <img
                     src={project.gallery[activeSlide].image}
                     alt={project.gallery[activeSlide].title}
-                    className="w-full h-full object-contain bg-[#08080A]"
+                    className="w-full h-full object-contain bg-[#0B0B0C] grayscale hover:grayscale-0 transition-all duration-500"
                   />
                 )}
               </div>
@@ -1017,9 +1011,9 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                 <button
                   key={idx}
                   onClick={() => setActiveSlide(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  className={`h-1 rounded-sm transition-all duration-300 cursor-pointer ${
                     activeSlide === idx 
-                      ? (isStockAi ? 'w-6 bg-yellow-400 shadow-[0_0_8px_rgba(234,179,8,0.5)]' : 'w-6 bg-primary') 
+                      ? 'w-6 bg-primary' 
                       : 'w-2 bg-gray-700 hover:bg-gray-500'
                   }`}
                 />
@@ -1032,19 +1026,19 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
             <div className="flex flex-col gap-4">
               <div className="text-left">
                 <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                  <span className={`text-xs font-semibold ${isStockAi ? 'text-yellow-400' : 'text-primary'}`}>
+                  <span className="text-[10px] font-bold font-sora tracking-widest text-primary uppercase">
                     {project.role}
                   </span>
                   {project.id === 'mumcare-platform' && (
-                    <span className="text-[9px] bg-accent/20 border border-accent/30 px-2 py-0.5 rounded-full text-accent font-bold font-sora tracking-wide">
+                    <span className="text-[9px] bg-primary/5 border border-primary/20 px-2 py-0.5 rounded-sm text-primary font-bold font-sora tracking-wide">
                       📱 MOBILE APP (EXPO) + 💻 WEB SYSTEM
                     </span>
                   )}
                   {project.subject && (
-                    <span className={`text-[9px] px-2.5 py-0.5 rounded-full font-bold font-mono tracking-wider border ${
+                    <span className={`text-[9px] px-2.5 py-0.5 rounded-sm font-bold font-mono tracking-wider border ${
                       isStockAi
-                        ? 'bg-amber-950/40 border-amber-500/30 text-amber-300'
-                        : 'bg-purple-950/40 border-purple-500/20 text-purple-400'
+                        ? 'bg-amber-950/40 border-primary/20 text-primary'
+                        : 'bg-white/5 border-white/10 text-gray-400'
                     }`}>
                       {project.id === 'stock-ai' ? '🔬 INDEPENDENT RESEARCH: ' : '📚 ACADEMIC COURSE: '}{project.subject}
                     </span>
@@ -1054,13 +1048,12 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                   <span>{project.title}</span>
                   {isStockAi && (
                     <div className="flex items-center gap-1.5 flex-shrink-0">
-                      <span className="text-[9px] px-2 py-0.5 bg-gradient-to-r from-yellow-500 to-amber-500 text-black font-black rounded-full tracking-wider uppercase font-sora shadow-[0_0_12px_rgba(234,179,8,0.3)]">
+                      <span className="text-[9px] px-2 py-0.5 bg-primary text-black font-semibold rounded-sm tracking-wider uppercase font-sora">
                         BUSINESS
                       </span>
-                      <span className="text-[9px] px-2.5 py-0.5 bg-red-500/20 border border-red-500/35 text-red-400 font-bold rounded-full tracking-wider uppercase font-sora shadow-[0_0_8px_rgba(239,68,68,0.15)] animate-pulse">
+                      <span className="text-[9px] px-2.5 py-0.5 bg-secondary/10 border border-secondary/20 text-secondary font-bold rounded-sm tracking-wider uppercase font-sora">
                         7-DAY TRIAL
                       </span>
-                      <Crown size={16} className="text-yellow-400 fill-yellow-400 animate-pulse" />
                     </div>
                   )}
                 </h2>
@@ -1072,21 +1065,21 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
               {/* Details sections */}
               <div className="flex flex-col gap-3 text-xs leading-relaxed font-sans text-left">
                 <div>
-                  <h4 className={`${isStockAi ? 'text-yellow-400' : 'text-[#00D9FF]'} font-sora font-bold text-[10px] tracking-wider uppercase mb-1`}>
+                  <h4 className="text-primary font-sora font-bold text-[10px] tracking-wider uppercase mb-1">
                     🎯 BUSINESS GOAL & IMPACT
                   </h4>
                   <p className="text-gray-400 whitespace-pre-line">{project.businessGoal}</p>
                 </div>
 
-                <div className="border-t border-white/5 pt-3">
-                  <h4 className={`${isStockAi ? 'text-yellow-400' : 'text-[#00D9FF]'} font-sora font-bold text-[10px] tracking-wider uppercase mb-1`}>
+                <div className="border-t border-white/[0.04] pt-3">
+                  <h4 className="text-primary font-sora font-bold text-[10px] tracking-wider uppercase mb-1">
                     🔥 KEY CHALLENGES
                   </h4>
                   <p className="text-gray-400 whitespace-pre-line">{project.challenges}</p>
                 </div>
 
-                <div className="border-t border-white/5 pt-3">
-                  <h4 className={`${isStockAi ? 'text-yellow-400' : 'text-[#00D9FF]'} font-sora font-bold text-[10px] tracking-wider uppercase mb-1`}>
+                <div className="border-t border-white/[0.04] pt-3">
+                  <h4 className="text-primary font-sora font-bold text-[10px] tracking-wider uppercase mb-1">
                     📖 LEARNINGS & ARCHITECTURE
                   </h4>
                   <p className="text-gray-400 whitespace-pre-line">{project.learnings}</p>
@@ -1098,7 +1091,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                 {project.techStack.map(tech => (
                   <span
                     key={tech}
-                    className="px-2 py-0.5 bg-white/5 border border-white/5 rounded text-[10px] text-gray-300 font-mono"
+                    className="px-2 py-0.5 bg-[#0B0B0C] border border-white/[0.04] rounded-sm text-[10px] text-gray-300 font-mono"
                   >
                     {tech}
                   </span>
@@ -1107,17 +1100,13 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
             </div>
 
             {/* CTAs */}
-            <div className={`grid grid-cols-1 ${project.github && project.github !== 'private' ? 'sm:grid-cols-2' : ''} gap-3 mt-6 border-t border-white/5 pt-4`}>
+            <div className={`grid grid-cols-1 ${project.github && project.github !== 'private' ? 'sm:grid-cols-2' : ''} gap-3 mt-6 border-t border-white/[0.04] pt-4`}>
               <a
                 href={project.downloadPath}
                 download={!project.downloadPath.startsWith('http')}
                 target={project.downloadPath.startsWith('http') ? '_blank' : undefined}
                 rel={project.downloadPath.startsWith('http') ? 'noreferrer' : undefined}
-                className={`py-2.5 px-4 font-sora font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 hover:scale-[1.02] active:scale-[0.95] transition-all duration-200 ${
-                  isStockAi
-                    ? 'bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-500 text-black shadow-[0_0_20px_rgba(234,179,8,0.4)] font-black hover:scale-[1.03]'
-                    : 'bg-glow-gradient text-black shadow-neon-glow'
-                }`}
+                className="py-2.5 px-4 font-sora font-semibold text-xs rounded-sm flex items-center justify-center gap-1.5 transition-all duration-200 bg-primary border border-primary text-black btn-editorial"
               >
                 <Download size={14} />
                 DOWNLOAD SOURCE {project.id === 'stock-ai' ? '(.EXE)' : '(.RAR)'}
@@ -1128,7 +1117,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="py-2.5 px-4 bg-[#121216] border border-white/5 text-gray-300 font-sora font-medium text-xs rounded-xl flex items-center justify-center gap-1.5 hover:text-white hover:border-gray-500 active:scale-95 transition-all duration-200"
+                  className="py-2.5 px-4 bg-[#131315] border border-white/[0.04] text-gray-300 font-sora font-semibold text-xs rounded-sm flex items-center justify-center gap-1.5 hover:border-primary/20 hover:text-white btn-editorial-outline transition-all duration-200"
                 >
                   <GithubIcon size={14} />
                   GITHUB CODE
@@ -1137,9 +1126,9 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
             </div>
 
             {project.github === 'private' && (
-              <p className="text-[10px] text-red-500 font-bold font-sans italic text-center mt-3 flex items-center justify-center gap-1.5">
-                <Lock size={10} className="text-red-500 flex-shrink-0" />
-                Private repository. To view the source code, please contact me directly via Zalo or the contact form at the bottom of the page.
+              <p className="text-[10px] text-[#E07A5F] font-bold font-sans italic text-center mt-3 flex items-center justify-center gap-1.5">
+                <Lock size={10} className="text-[#E07A5F] flex-shrink-0" />
+                Private repository. Contact me via Zalo or details form to request access.
               </p>
             )}
           </div>

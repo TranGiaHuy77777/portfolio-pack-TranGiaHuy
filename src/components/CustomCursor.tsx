@@ -65,7 +65,7 @@ export default function CustomCursor() {
     <>
       {/* Outer Glow Ring */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-primary/40 pointer-events-none z-[9999] hidden lg:block"
+        className="fixed top-0 left-0 w-6 h-6 rounded-full border border-primary/20 pointer-events-none z-[9999] hidden lg:block"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
@@ -73,15 +73,15 @@ export default function CustomCursor() {
           translateY: '-50%',
         }}
         animate={{
-          scale: hovered ? 1.5 : 1,
-          borderColor: hovered ? 'rgba(0, 219, 255, 0.6)' : 'rgba(109, 93, 246, 0.4)',
-          backgroundColor: hovered ? 'rgba(0, 219, 255, 0.05)' : 'rgba(0, 0, 0, 0)',
+          scale: hovered ? 1.4 : 1,
+          borderColor: hovered ? 'rgba(197, 168, 128, 0.6)' : 'rgba(197, 168, 128, 0.25)',
+          backgroundColor: hovered ? 'rgba(197, 168, 128, 0.03)' : 'rgba(0, 0, 0, 0)',
         }}
         transition={{ type: 'tween', ease: 'backOut', duration: 0.2 }}
       />
       {/* Inner Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-accent rounded-full pointer-events-none z-[9999] hidden lg:block shadow-neon-accent"
+        className="fixed top-0 left-0 w-1.5 h-1.5 bg-primary rounded-full pointer-events-none z-[9999] hidden lg:block"
         style={{
           x: cursorX,
           y: cursorY,
@@ -89,8 +89,8 @@ export default function CustomCursor() {
           translateY: '-50%',
         }}
         animate={{
-          scale: hovered ? 0.5 : 1,
-          backgroundColor: hovered ? '#6D5DF6' : '#00D9FF',
+          scale: hovered ? 0.6 : 1,
+          backgroundColor: hovered ? '#E07A5F' : '#C5A880',
         }}
       />
     </>
