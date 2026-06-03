@@ -1057,7 +1057,7 @@ export default function ProjectDetailsModal({ project, onClose }: ProjectDetails
                       <span className="text-[9px] px-2 py-0.5 bg-gradient-to-r from-yellow-500 to-amber-500 text-black font-black rounded-full tracking-wider uppercase font-sora shadow-[0_0_12px_rgba(234,179,8,0.3)]">
                         BUSINESS
                       </span>
-                      <span className="text-[9px] px-2.5 py-0.5 bg-amber-500/20 border border-amber-500/35 text-amber-300 font-bold rounded-full tracking-wider uppercase font-sora shadow-[0_0_8px_rgba(245,158,11,0.15)] animate-pulse">
+                      <span className="text-[9px] px-2.5 py-0.5 bg-red-500/20 border border-red-500/35 text-red-400 font-bold rounded-full tracking-wider uppercase font-sora shadow-[0_0_8px_rgba(239,68,68,0.15)] animate-pulse">
                         7-DAY TRIAL
                       </span>
                       <Crown size={16} className="text-yellow-400 fill-yellow-400 animate-pulse" />
